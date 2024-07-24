@@ -1,0 +1,123 @@
+website:
+  sidebar:
+    contents:
+      - index.ipynb
+      - 404.ipynb
+      - section: Python
+        contents:
+          - Python/00_outline.ipynb
+          - Python/01_basics.ipynb
+          - Python/02_variables.ipynb
+          - Python/03_numbers.ipynb
+          - Python/04_operators.ipynb
+          - Python/05_containers.ipynb
+          - Python/06_flow_control.ipynb
+          - Python/07_advanced.ipynb
+          - Python/08_modules.ipynb
+          - Python/09_file_handling.ipynb
+          - Python/11_python_objective_quiz.ipynb
+          - Python/12_true_or_false_quiz.ipynb
+          - Python/miscellaneous_exerise.ipynb
+      - section: Python-Data-Analysis
+        contents:
+          - Python-Data-Analysis/outline.ipynb
+          - section: Week1-Intro
+            contents:
+              - Python-Data-Analysis/Week1-Intro/11_python_tutorial.ipynb
+              - Python-Data-Analysis/Week1-Intro/12_numpy.ipynb
+              - Python-Data-Analysis/Week1-Intro/13_pandas.ipynb
+          - section: Week2-Cleaning-Intro
+            contents:
+              - Python-Data-Analysis/Week2-Cleaning-Intro/21_weather_data.ipynb
+              - Python-Data-Analysis/Week2-Cleaning-Intro/pandas-puzzles.ipynb
+          - section: Week3-Visualization
+            contents:
+              - Python-Data-Analysis/Week3-Visualization/31_matplotlib_refined.ipynb
+              - Python-Data-Analysis/Week3-Visualization/32_data_exploration_and_cleaning_exercise.ipynb
+              - Python-Data-Analysis/Week3-Visualization/nobel_prize_laureates_exercise.ipynb
+              - Python-Data-Analysis/Week3-Visualization/visualization_quiz.ipynb
+          - section: Week4-ML-Intro
+            contents:
+              - Python-Data-Analysis/Week4-ML-Intro/41_overview_of_machine_learning.ipynb
+              - Python-Data-Analysis/Week4-ML-Intro/42_training_models_meaning.ipynb
+              - Python-Data-Analysis/Week4-ML-Intro/43_sklearn-unsupervised-learning.ipynb
+              - Python-Data-Analysis/Week4-ML-Intro/43_sklearn-unsupervised-learning2.ipynb
+              - section: ml-ex1
+                contents:
+                  - Python-Data-Analysis/Week4-ML-Intro/ml-ex1/ml-ex1.ipynb
+          - section: Week5-Statistics
+            contents:
+              - Python-Data-Analysis/Week5-Statistics/51_descriptive_statistics.ipynb
+              - Python-Data-Analysis/Week5-Statistics/52_inferencial_statistics.ipynb
+              - Python-Data-Analysis/Week5-Statistics/53_implementing_statistical_models.ipynb
+              - Python-Data-Analysis/Week5-Statistics/hypothesis_testing.ipynb
+          - section: Week6-Visualization2
+            contents:
+              - Python-Data-Analysis/Week6-Visualization2/61_matplotlib.ipynb
+              - Python-Data-Analysis/Week6-Visualization2/62_seaborn_part1.ipynb
+              - Python-Data-Analysis/Week6-Visualization2/62_seaborn_part2.ipynb
+              - Python-Data-Analysis/Week6-Visualization2/63.visual_eda.ipynb
+          - section: Week7-Preprocessing
+            contents:
+              - Python-Data-Analysis/Week7-Preprocessing/71_feature_selection.ipynb
+              - Python-Data-Analysis/Week7-Preprocessing/72_why_scaling.ipynb
+              - Python-Data-Analysis/Week7-Preprocessing/72_why_scaling_fpl.ipynb
+              - Python-Data-Analysis/Week7-Preprocessing/73_normalization_and_standardization.ipynb
+              - Python-Data-Analysis/Week7-Preprocessing/75_bonus.ipynb
+              - Python-Data-Analysis/Week7-Preprocessing/76_handling_missing_data.ipynb
+              - Python-Data-Analysis/Week7-Preprocessing/handling_missing_data_quiz.ipynb
+          - section: Week8-More-ML
+            contents:
+              - Python-Data-Analysis/Week8-More-ML/80_classification_metrics.ipynb
+              - Python-Data-Analysis/Week8-More-ML/81_regression_metrics.ipynb
+              - Python-Data-Analysis/Week8-More-ML/82_sklearn_pipeline.ipynb
+              - Python-Data-Analysis/Week8-More-ML/83_GridSearchCV.ipynb
+              - Python-Data-Analysis/Week8-More-ML/classification_metrics_quiz.ipynb
+              - Python-Data-Analysis/Week8-More-ML/pipelining_quiz.ipynb
+          - section: Week9-Time-Series
+            contents:
+              - Python-Data-Analysis/Week9-Time-Series/90_introduction.ipynb
+              - Python-Data-Analysis/Week9-Time-Series/91_analysis.ipynb
+              - Python-Data-Analysis/Week9-Time-Series/92_forecasting.ipynb
+              - Python-Data-Analysis/Week9-Time-Series/93_python_example.ipynb
+          - section: WeekX-Extras
+            contents:
+              - Python-Data-Analysis/WeekX-Extras/classification_metrics.ipynb
+              - Python-Data-Analysis/WeekX-Extras/customer_analysis.ipynb
+              - Python-Data-Analysis/WeekX-Extras/handling_imbalanced_data.ipynb
+              - Python-Data-Analysis/WeekX-Extras/how_KNN_works.ipynb
+      - section: Pytorch
+        contents:
+          - Pytorch/pytorch_outline.ipynb
+          - section: Introduction
+            contents:
+              - Pytorch/Introduction/0_quickstart_tutorial.ipynb
+              - Pytorch/Introduction/1_tensorqs_tutorial.ipynb
+              - Pytorch/Introduction/2_data_tutorial.ipynb
+              - Pytorch/Introduction/3_transforms_tutorial.ipynb
+              - Pytorch/Introduction/4_buildmodel_tutorial.ipynb
+              - Pytorch/Introduction/5_autogradqs_tutorial.ipynb
+              - Pytorch/Introduction/6_optimization_tutorial.ipynb
+              - Pytorch/Introduction/7_saveloadrun_tutorial.ipynb
+              - Pytorch/Introduction/deep_learning_basics_quiz.ipynb
+          - section: Text
+            contents:
+              - Pytorch/Text/01_Better_Transformer_with_Torchtext_Demo.ipynb
+              - Pytorch/Text/02_char_rnn_classification_tutorial.ipynb
+              - Pytorch/Text/03_char_rnn_generation_tutorial.ipynb
+              - Pytorch/Text/04_seq2seq_translation_tutorial.ipynb
+              - Pytorch/Text/05_seq2seq_translation_tutorial.ipynb
+              - Pytorch/Text/06_seq2seq_translation_tutorial.ipynb
+              - Pytorch/Text/07_torchtext_custom_dataset_tutorial.ipynb
+          - section: Vision
+            contents:
+              - Pytorch/Vision/01_torchvision_tutorial.ipynb
+              - Pytorch/Vision/02_transfer_learning_tutorial.ipynb
+              - Pytorch/Vision/03_fgsm_tutorial.ipynb
+              - Pytorch/Vision/04_dcgan_faces_tutorial.ipynb
+              - Pytorch/Vision/05_spatial_transformer_tutorial.ipynb
+              - Pytorch/Vision/06_vt_tutorial.ipynb
+              - Pytorch/Vision/torchvision_finetuning_instance_segmentation.ipynb
+      - section: dataidea
+        contents:
+          - dataidea/quickstart.ipynb

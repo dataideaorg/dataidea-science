@@ -1,0 +1,75 @@
+project:
+  type: website
+
+format:
+  html:
+    theme: 
+      light: flatly
+      dark: darkly
+    css: styles.css
+    toc: true
+
+website:
+  # announcement:
+  #   icon: info-circle
+  #   dismissable: true
+  #   content: "**Alert** - this is some information that you should pay attention to"
+  #   type: primary
+  #   position: below-navbar
+  twitter-card: true
+  open-graph: true
+  repo-actions: [issue]
+  page-navigation: true
+  back-to-top-navigation: true
+  reader-mode: true
+  favicon: assets/dataidea-logo.png
+  navbar:
+    background: primary
+    search: true
+    right:
+      - text: Home
+        href: "https://www.dataidea.org/"
+      - text: About
+        menu:
+          - text: About Us
+            url: "https://dataidea.org/#about"
+          - text: Privacy Policy
+            url: "https://dataidea.org/privacy_policy.html"
+          - text: Terms of Service
+            url: "https://dataidea.org/terms_of_service.html"
+      - text: Download
+        menu:
+          - text: Python 3 Beginner
+            url: "http://dataidea.pythonanywhere.com/school/download-course-material/1"
+          - text: Python Data Analysis
+            url: "http://dataidea.pythonanywhere.com/school/download-course-material/2"
+          - text: Pytorch
+            url: "http://dataidea.pythonanywhere.com/school/download-course-material/3"
+      - text: Subjects
+        menu:
+          - text: Data Science
+            url: "https://blog.dataidea.org"
+          - text: Web Development
+            url: "https://web.dataidea.org"
+      - text: Resources
+        menu:
+          - text: Blog
+            url: "https://blog.dataidea.org"
+          - text: Forum
+            url: "https://chat.whatsapp.com/GuCZRyJICgO3Y7MPvDQKhi"
+          - text: French
+            url: "https://french.dataidea.org"
+          - text: Football
+            url: "https://football.dataidea.org"
+          - text: Movies
+            url: "https://movies.dataidea.org"
+      - text: Contact
+        href: "https://www.dataidea.org/#contact"
+  sidebar:
+    style: "docked"
+    title: "LPFDS"
+    twitter-card:
+    creator: "@juma_shafara"
+    site: "@dataideaorg"
+
+metadata-files: [nbdev.yml, sidebar.yml]
