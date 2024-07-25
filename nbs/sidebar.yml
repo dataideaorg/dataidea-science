@@ -118,6 +118,10 @@ website:
               - Pytorch/Vision/05_spatial_transformer_tutorial.ipynb
               - Pytorch/Vision/06_vt_tutorial.ipynb
               - Pytorch/Vision/torchvision_finetuning_instance_segmentation.ipynb
+          - section: xtras
+            contents:
+              - Pytorch/xtras/loading_datasets.ipynb
+              - Pytorch/xtras/tensors.ipynb
       - section: dataidea
         contents:
           - dataidea/quickstart.ipynb
