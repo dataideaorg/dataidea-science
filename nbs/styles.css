@@ -12,6 +12,11 @@
 }
 
 @font-face {
+  font-family: "dm sans";
+  src: url("./fonts/DM_Sans/static/DMSans-Regular.ttf") format("truetype");
+}
+
+@font-face {
   font-family: "fira";
   src: url("./fonts/fira/FiraCodeiScript-master/FiraCodeiScript-Regular.ttf")
     format("truetype");
@@ -29,7 +34,7 @@
 p,
 a,
 li {
-  font-family: "futura";
+  font-family: "dm sans";
 }
 
 h1,

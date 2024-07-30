@@ -127,6 +127,9 @@ website:
           - Pytorch-IBM/1.1_1Dtensors_v2.ipynb
           - Pytorch-IBM/1.1_2 Two-Dimensional Tensors_v2.ipynb
           - Pytorch-IBM/1.2derivativesandGraphsinPytorch_v2.ipynb
+          - Pytorch-IBM/1.3.1_simple_data_set_v2.ipynb
+          - Pytorch-IBM/1.3.3_pre-Built Datasets_and_transforms_v2.ipynb
+          - Pytorch-IBM/2.1Prediction1Dregression_v3.ipynb
       - section: dataidea
         contents:
           - dataidea/quickstart.ipynb
