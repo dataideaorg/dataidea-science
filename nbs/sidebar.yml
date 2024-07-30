@@ -122,6 +122,11 @@ website:
             contents:
               - Pytorch/xtras/loading_datasets.ipynb
               - Pytorch/xtras/tensors.ipynb
+      - section: Pytorch-IBM
+        contents:
+          - Pytorch-IBM/1.1_1Dtensors_v2.ipynb
+          - Pytorch-IBM/1.1_2 Two-Dimensional Tensors_v2.ipynb
+          - Pytorch-IBM/1.2derivativesandGraphsinPytorch_v2.ipynb
       - section: dataidea
         contents:
           - dataidea/quickstart.ipynb
