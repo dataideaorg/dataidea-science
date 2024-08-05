@@ -130,6 +130,7 @@ website:
           - Pytorch-IBM/1.3.1_simple_data_set_v2.ipynb
           - Pytorch-IBM/1.3.3_pre-Built Datasets_and_transforms_v2.ipynb
           - Pytorch-IBM/2.1Prediction1Dregression_v3.ipynb
+          - Pytorch-IBM/2.2_linear_regression_one_parameter_v3.ipynb
       - section: dataidea
         contents:
           - dataidea/quickstart.ipynb
