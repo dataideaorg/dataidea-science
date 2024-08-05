@@ -100,32 +100,35 @@ div.description {
 
 /* Newsletter */
 .newsletter-heading {
-    background-color: #3a6e68; 
-    color: #fff; 
-    padding: 5px 10px;
+  background-color: #3a6e68;
+  color: #fff;
+  padding: 5px 10px;
 }
 
 .newsletter-body {
-    background-color: #f3f4f7; 
-    color: #343a40;
-    padding-left: 10px; 
-    padding-top: 10px; 
-    padding-bottom: 10px; 
-    padding-right: 10px
+  background-color: #f3f4f7;
+  color: #343a40;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
 }
 
 .newsletter-frame {
-    margin: 0; 
-    border-radius: 0px !important; 
-    background-color: transparent; 
-    width: 100%;
+  margin: 0;
+  border-radius: 0px !important;
+  background-color: transparent;
+  width: 100%;
 }
 
 /* Alert */
 .alert {
-    background: #3a6e68;
-    color: #fff;
-    border-radius: 0.25em;
+  background: #3a6e68;
+  color: #fff;
+  border-radius: 0.25em;
 }
 
-
+/* icons */
+i {
+  color: #18bc9c;
+}
