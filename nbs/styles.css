@@ -129,6 +129,10 @@ div.description {
 }
 
 /* icons */
+.cursored-list li {
+  list-style: none;
+}
+
 i {
   color: #18bc9c;
 }
