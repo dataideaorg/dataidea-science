@@ -133,6 +133,7 @@ website:
           - Pytorch-IBM/2.2_linear_regression_one_parameter_v3.ipynb
           - Pytorch-IBM/2.3_training_slope_and_bias_v3.ipynb
           - Pytorch-IBM/3.1_stochastic_gradient_descent_v3.ipynb
+          - Pytorch-IBM/3.2_mini-batch_gradient_descent_v3.ipynb
       - section: dataidea
         contents:
           - dataidea/quickstart.ipynb

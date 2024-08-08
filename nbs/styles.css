@@ -28,7 +28,7 @@
 }
 
 .navbar {
-  background-color: #3a6e68;
+  background-color: #008374;
 }
 
 p,
@@ -100,7 +100,7 @@ div.description {
 
 /* Newsletter */
 .newsletter-heading {
-  background-color: #3a6e68;
+  background-color: #008374;
   color: #fff;
   padding: 5px 10px;
 }
@@ -123,7 +123,7 @@ div.description {
 
 /* Alert */
 .alert {
-  background: #3a6e68;
+  background: #008374;
   color: #fff;
   border-radius: 0.25em;
 }
