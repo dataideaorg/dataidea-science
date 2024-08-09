@@ -86,30 +86,49 @@ website:
               - Python-Data-Analysis/WeekX-Extras/customer_analysis.ipynb
               - Python-Data-Analysis/WeekX-Extras/handling_imbalanced_data.ipynb
               - Python-Data-Analysis/WeekX-Extras/how_KNN_works.ipynb
-      - section: Pytorch-IBM
+      - section: Pytorch-Deep-Learning
         contents:
           - section: Week1-Tensors-Datasets
             contents:
-              - Pytorch-IBM/Week1-Tensors-Datasets/1.1_1Dtensors_v2.ipynb
-              - Pytorch-IBM/Week1-Tensors-Datasets/1.1_2 Two-Dimensional Tensors_v2.ipynb
-              - Pytorch-IBM/Week1-Tensors-Datasets/1.2derivativesandGraphsinPytorch_v2.ipynb
-              - Pytorch-IBM/Week1-Tensors-Datasets/1.3.1_simple_data_set_v2.ipynb
-              - Pytorch-IBM/Week1-Tensors-Datasets/1.3.3_pre-Built Datasets_and_transforms_v2.ipynb
+              - Pytorch-Deep-Learning/Week1-Tensors-Datasets/1.1_1Dtensors_v2.ipynb
+              - Pytorch-Deep-Learning/Week1-Tensors-Datasets/1.1_2 Two-Dimensional
+                Tensors_v2.ipynb
+              - Pytorch-Deep-Learning/Week1-Tensors-Datasets/1.2derivativesandGraphsinPytorch_v2.ipynb
+              - Pytorch-Deep-Learning/Week1-Tensors-Datasets/1.3.1_simple_data_set_v2.ipynb
+              - Pytorch-Deep-Learning/Week1-Tensors-Datasets/1.3.3_pre-Built Datasets_and_transforms_v2.ipynb
           - section: Week2-Linear-Regression
             contents:
-              - Pytorch-IBM/Week2-Linear-Regression/2.1Prediction1Dregression_v3.ipynb
-              - Pytorch-IBM/Week2-Linear-Regression/2.2_linear_regression_one_parameter_v3.ipynb
-              - Pytorch-IBM/Week2-Linear-Regression/2.3_training_slope_and_bias_v3.ipynb
+              - Pytorch-Deep-Learning/Week2-Linear-Regression/2.1Prediction1Dregression_v3.ipynb
+              - Pytorch-Deep-Learning/Week2-Linear-Regression/2.2_linear_regression_one_parameter_v3.ipynb
+              - Pytorch-Deep-Learning/Week2-Linear-Regression/2.3_training_slope_and_bias_v3.ipynb
           - section: Week3-LR-PyTorch
             contents:
-              - Pytorch-IBM/Week3-LR-PyTorch/3.1_stochastic_gradient_descent_v3.ipynb
-              - Pytorch-IBM/Week3-LR-PyTorch/3.2_mini-batch_gradient_descent_v3.ipynb
-              - Pytorch-IBM/Week3-LR-PyTorch/3.3_PyTorchway_v3.ipynb
-              - Pytorch-IBM/Week3-LR-PyTorch/3.6_training_and_validation_v3.ipynb
+              - Pytorch-Deep-Learning/Week3-LR-PyTorch/3.1_stochastic_gradient_descent_v3.ipynb
+              - Pytorch-Deep-Learning/Week3-LR-PyTorch/3.2_mini-batch_gradient_descent_v3.ipynb
+              - Pytorch-Deep-Learning/Week3-LR-PyTorch/3.3_PyTorchway_v3.ipynb
+              - Pytorch-Deep-Learning/Week3-LR-PyTorch/3.6_training_and_validation_v3.ipynb
           - section: Week4-Multiple-Input-LR
             contents:
-              - Pytorch-IBM/Week4-Multiple-Input-LR/4.1.multiple_linear_regression_prediction_v2.ipynb
-              - Pytorch-IBM/Week4-Multiple-Input-LR/4.2.multiple_linear_regression_training_v2.ipynb
+              - Pytorch-Deep-Learning/Week4-Multiple-Input-LR/4.1.multiple_linear_regression_prediction_v2.ipynb
+              - Pytorch-Deep-Learning/Week4-Multiple-Input-LR/4.2.multiple_linear_regression_training_v2.ipynb
+          - section: Week5-Logistic-Regression
+            contents:
+              - Pytorch-Deep-Learning/Week5-Logistic-Regression/5.1logistic_regression_prediction_v2.ipynb
+          - section: Week6-Practice
+            contents:
+              - Pytorch-Deep-Learning/Week6-Practice/practice_1.ipynb
+          - section: Week7-Shallow-Networks
+            contents:
+              - Pytorch-Deep-Learning/Week7-Shallow-Networks/7.1_simple1hiddenlayer.ipynb
+          - section: Week8-Deep-Networks
+            contents:
+              - Pytorch-Deep-Learning/Week8-Deep-Networks/8.1.1mist2layer_v2.ipynb
+          - section: Week9-CNNs
+            contents:
+              - Pytorch-Deep-Learning/Week9-CNNs/9.1What_is_Convolution.ipynb
+          - section: WeekX-Review
+            contents:
+              - Pytorch-Deep-Learning/WeekX-Review/review1.ipynb
       - section: dataidea
         contents:
           - dataidea/quickstart.ipynb

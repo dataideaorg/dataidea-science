@@ -136,3 +136,7 @@ div.description {
 i {
   color: #18bc9c;
 }
+
+img {
+  max-width: 100%;
+}
