@@ -1,0 +1,142 @@
+/* css styles */
+
+/* Fonts */
+@font-face {
+  font-family: "horta";
+  src: url("./fonts/horta/Horta demo.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "futura";
+  src: url("./fonts/futura/Futura Book font.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "dm sans";
+  src: url("./fonts/DM_Sans/static/DMSans-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "fira";
+  src: url("./fonts/fira/FiraCodeiScript-master/FiraCodeiScript-Regular.ttf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "dm mono";
+  src: url("./fonts/DM_Mono/DMMono-Regular.ttf") format("truetype");
+}
+
+.navbar {
+  background-color: #008374;
+}
+
+p,
+a,
+li {
+  font-family: "dm sans";
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "horta";
+}
+
+code {
+  font-family: "dm mono";
+}
+
+.cell {
+  margin-bottom: 1rem;
+}
+
+.cell > .sourceCode {
+  margin-bottom: 0;
+}
+
+.cell-output > pre {
+  margin-bottom: 0;
+}
+
+.cell-output > pre,
+.cell-output > .sourceCode > pre,
+.cell-output-stdout > pre {
+  margin-left: 0.8rem;
+  margin-top: 0;
+  background: none;
+  border-left: 2px solid lightsalmon;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.cell-output > .sourceCode {
+  border: none;
+}
+
+.cell-output > .sourceCode {
+  background: none;
+  margin-top: 0;
+}
+
+div.description {
+  padding-left: 2px;
+  padding-top: 5px;
+  font-style: italic;
+  font-size: 135%;
+  opacity: 70%;
+}
+
+.keywords,
+.description {
+  display: none;
+}
+
+.quarto-title-banner {
+  background: #019b89;
+  color: white;
+}
+
+/* Newsletter */
+.newsletter-heading {
+  background-color: #008374;
+  color: #fff;
+  padding: 5px 10px;
+}
+
+.newsletter-body {
+  background-color: #f3f4f7;
+  color: #343a40;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+}
+
+.newsletter-frame {
+  margin: 0;
+  border-radius: 0px !important;
+  background-color: transparent;
+  width: 100%;
+}
+
+/* Alert */
+.alert {
+  background: #008374;
+  color: #fff;
+  border-radius: 0.25em;
+}
+
+/* icons */
+.cursored-list li {
+  list-style: none;
+}
+
+i {
+  color: #18bc9c;
+}
+
+img {
+  max-width: 100%;
+}
