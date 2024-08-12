@@ -111,6 +111,8 @@ website:
             contents:
               - Pytorch-Deep-Learning/Week4-Multiple-Input-LR/4.1.multiple_linear_regression_prediction_v2.ipynb
               - Pytorch-Deep-Learning/Week4-Multiple-Input-LR/4.2.multiple_linear_regression_training_v2.ipynb
+              - Pytorch-Deep-Learning/Week4-Multiple-Input-LR/4.3.multi-target_linear_regression.ipynb
+              - Pytorch-Deep-Learning/Week4-Multiple-Input-LR/4.4.training_multiple_output_linear_regression.ipynb
           - section: Week5-Logistic-Regression
             contents:
               - Pytorch-Deep-Learning/Week5-Logistic-Regression/5.1logistic_regression_prediction_v2.ipynb
