@@ -17,6 +17,7 @@ website:
           - Python/09_file_handling.ipynb
           - Python/11_python_objective_quiz.ipynb
           - Python/12_true_or_false_quiz.ipynb
+          - Python/13_end_of_course_exercise.ipynb
           - Python/miscellaneous_exerise.ipynb
       - section: Python-Data-Analysis
         contents:
@@ -116,21 +117,41 @@ website:
           - section: Week5-Logistic-Regression
             contents:
               - Pytorch-Deep-Learning/Week5-Logistic-Regression/5.1logistic_regression_prediction_v2.ipynb
+              - Pytorch-Deep-Learning/Week5-Logistic-Regression/5.2.2bad_inshilization_logistic_regression_with_mean_square_error_v2.ipynb
+              - Pytorch-Deep-Learning/Week5-Logistic-Regression/5.3_cross_entropy_logistic_regression_v2.ipynb
+              - Pytorch-Deep-Learning/Week5-Logistic-Regression/5.4softmax_in_one_dimension_v2.ipynb
           - section: Week6-Practice
             contents:
               - Pytorch-Deep-Learning/Week6-Practice/practice_1.ipynb
           - section: Week7-Shallow-Networks
             contents:
               - Pytorch-Deep-Learning/Week7-Shallow-Networks/7.1_simple1hiddenlayer.ipynb
+              - Pytorch-Deep-Learning/Week7-Shallow-Networks/7.2multiple_neurons.ipynb
+              - Pytorch-Deep-Learning/Week7-Shallow-Networks/7.3xor_v2.ipynb
+              - Pytorch-Deep-Learning/Week7-Shallow-Networks/7.4one_layer_neural_network_MNIST.ipynb
+              - Pytorch-Deep-Learning/Week7-Shallow-Networks/7.5.1activationfuction_v2.ipynb
+              - Pytorch-Deep-Learning/Week7-Shallow-Networks/7.5.2mist1layer_v2.ipynb
           - section: Week8-Deep-Networks
             contents:
               - Pytorch-Deep-Learning/Week8-Deep-Networks/8.1.1mist2layer_v2.ipynb
+              - Pytorch-Deep-Learning/Week8-Deep-Networks/8.1.2mulitclassspiralrulu_v2.ipynb
+              - Pytorch-Deep-Learning/Week8-Deep-Networks/8.2.1dropoutPredictin_v2.ipynb
+              - Pytorch-Deep-Learning/Week8-Deep-Networks/8.2.2dropoutRegression_v2.ipynb
+              - Pytorch-Deep-Learning/Week8-Deep-Networks/8.3.1.initializationsame.ipynb
+              - Pytorch-Deep-Learning/Week8-Deep-Networks/8.3.2Xaviermist1layer_v2.ipynb
+              - Pytorch-Deep-Learning/Week8-Deep-Networks/8.3.3.He_Initialization_v2.ipynb
+              - Pytorch-Deep-Learning/Week8-Deep-Networks/8.4.1_MomentumwithPolynomialFunctions_v2.ipynb
+              - Pytorch-Deep-Learning/Week8-Deep-Networks/8.4.2_NeuralNetworkswithMomentum_v2.ipynb
+              - Pytorch-Deep-Learning/Week8-Deep-Networks/8.5.1BachNorm_v2.ipynb
           - section: Week9-CNNs
             contents:
               - Pytorch-Deep-Learning/Week9-CNNs/9.1What_is_Convolution.ipynb
-          - section: WeekX-Review
-            contents:
-              - Pytorch-Deep-Learning/WeekX-Review/review1.ipynb
+              - Pytorch-Deep-Learning/Week9-CNNs/9.2Activation_max_pooling.ipynb
+              - Pytorch-Deep-Learning/Week9-CNNs/9.3Multiple_Channel_Convolution.ipynb
+              - Pytorch-Deep-Learning/Week9-CNNs/9.4.1ConvolutionalNeralNetworkSimple
+                example.ipynb
+              - Pytorch-Deep-Learning/Week9-CNNs/9.4.2CNN_Small_Image.ipynb
+              - Pytorch-Deep-Learning/Week9-CNNs/9.4.3CNN_Small_Image_batch.ipynb
       - section: dataidea
         contents:
           - dataidea/quickstart.ipynb
