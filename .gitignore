@@ -2,11 +2,8 @@
 book/
 
 # personalized
-nbs/Pytorch/Introduction/data/
-nbs/Pytorch/Introduction/data/*.jpg
-nbs/Pytorch/Introduction/model.pth
-nbs/Pytorch/Introduction/model_weights.pth
-nbs/Pytorch/Introduction/quickstart_model.pth
+*.ipynb_checkpoints
+*.jupyter
 
 #preset
 _docs/
