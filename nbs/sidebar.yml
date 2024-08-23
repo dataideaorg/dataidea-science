@@ -43,9 +43,6 @@ website:
               - Python-Data-Analysis/Week4-ML-Intro/42_training_models_meaning.ipynb
               - Python-Data-Analysis/Week4-ML-Intro/43_sklearn-unsupervised-learning.ipynb
               - Python-Data-Analysis/Week4-ML-Intro/43_sklearn-unsupervised-learning2.ipynb
-              - section: ml-ex1
-                contents:
-                  - Python-Data-Analysis/Week4-ML-Intro/ml-ex1/ml-ex1.ipynb
           - section: Week5-Statistics
             contents:
               - Python-Data-Analysis/Week5-Statistics/51_descriptive_statistics.ipynb
