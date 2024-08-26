@@ -86,6 +86,7 @@ website:
               - Python-Data-Analysis/WeekX-Extras/how_KNN_works.ipynb
       - section: Pytorch-Deep-Learning
         contents:
+          - Pytorch-Deep-Learning/outline.ipynb
           - section: Week1-Tensors-Datasets
             contents:
               - Pytorch-Deep-Learning/Week1-Tensors-Datasets/1.1_1Dtensors_v2.ipynb
