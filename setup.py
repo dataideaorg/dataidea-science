@@ -1,8 +1,6 @@
 from pkg_resources import parse_version
 from configparser import ConfigParser
 import setuptools, shlex
-
-
 assert parse_version(setuptools.__version__)>=parse_version('36.2')
 
 # note: all settings are in settings.ini; edit there, not here
@@ -24,13 +22,20 @@ licenses = {
 }
 statuses = [ '1 - Planning', '2 - Pre-Alpha', '3 - Alpha',
     '4 - Beta', '5 - Production/Stable', '6 - Mature', '7 - Inactive' ]
-py_versions = '3.6 3.7 3.8 3.9 3.10'.split()
+py_versions = '3.6 3.7 3.8 3.9 3.10 3.11 3.12'.split()
 
 requirements = shlex.split(cfg.get('requirements', ''))
 if cfg.get('pip_requirements'): requirements += shlex.split(cfg.get('pip_requirements', ''))
 min_python = cfg['min_python']
 lic = licenses.get(cfg['license'].lower(), (cfg['license'], None))
 dev_requirements = (cfg.get('dev_requirements') or '').split()
+
+package_data = dict()
+pkg_data = cfg.get('package_data', None)
+if pkg_data:
+    package_data[cfg['lib_name']] =  pkg_data.split() # split as multiple files might be listed
+# Add package data to setup_cfg for setuptools.setup(..., **setup_cfg)
+setup_cfg['package_data'] = package_data
 
 setuptools.setup(
     name = cfg['lib_name'],
@@ -43,7 +48,6 @@ setuptools.setup(
     url = cfg['git_url'],
     packages = setuptools.find_packages(),
     include_package_data = True,
-    package_data={'': ['datasets/*.csv']},
     install_requires = requirements,
     extras_require={ 'dev': dev_requirements },
     dependency_links = cfg.get('dep_links','').split(),

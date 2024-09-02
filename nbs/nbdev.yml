@@ -3,7 +3,7 @@ project:
 
 website:
   title: "DATAIDEA"
-  site-url: "https://science.dataidea.org"
-  description: "Learn Programming For Data Science"
+  site-url: "https://dataideaorg.github.io/dataidea-science"
+  description: "Programming for Data Science"
   repo-branch: main
-  repo-url: "https://github.com/dataidea/dataidea-science"
+  repo-url: "https://github.com/dataideaorg/dataidea-science"
