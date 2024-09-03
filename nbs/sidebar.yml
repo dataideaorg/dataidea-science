@@ -14,10 +14,13 @@ website:
           - Python/07_advanced.ipynb
           - Python/08_modules.ipynb
           - Python/09_file_handling.ipynb
-          - Python/11_python_objective_quiz.ipynb
-          - Python/12_true_or_false_quiz.ipynb
           - Python/13_end_of_course_exercise.ipynb
           - Python/miscellaneous_exerise.ipynb
+          - section: Exercises
+            contents:
+              - Python/Exercises/02_basics_exercise.ipynb
+              - Python/Exercises/11_python_objective_quiz.ipynb
+              - Python/Exercises/12_true_or_false_quiz.ipynb
       - section: Python-Data-Analysis
         contents:
           - Python-Data-Analysis/outline.ipynb
