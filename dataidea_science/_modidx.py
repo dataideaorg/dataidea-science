@@ -6,4 +6,5 @@ d = { 'settings': { 'branch': 'main',
                 'git_url': 'https://github.com/dataideaorg/dataidea-science',
                 'lib_path': 'dataidea_science'},
   'syms': { 'dataidea_science.core': {'dataidea_science.core.foo': ('core.html#foo', 'dataidea_science/core.py')},
+            'dataidea_science.datasets': {},
             'dataidea_science.plots': {}}}

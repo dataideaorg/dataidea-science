@@ -127,7 +127,9 @@ website:
               - Pytorch-Deep-Learning/Week5-Logistic-Regression/logistic_regression_exercise.ipynb
           - section: Week6-Practice
             contents:
-              - Pytorch-Deep-Learning/Week6-Practice/practice_1.ipynb
+              - Pytorch-Deep-Learning/Week6-Practice/6.1_custom_datasets.ipynb
+              - Pytorch-Deep-Learning/Week6-Practice/6.2_dataloaders.ipynb
+              - Pytorch-Deep-Learning/Week6-Practice/6.3_transforms.ipynb
           - section: Week7-Shallow-Networks
             contents:
               - Pytorch-Deep-Learning/Week7-Shallow-Networks/7.1_simple1hiddenlayer.ipynb

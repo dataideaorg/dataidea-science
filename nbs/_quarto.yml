@@ -66,7 +66,7 @@ website:
       - text: Contact
         href: "https://www.dataidea.org/#contact"
   sidebar:
-    style: "docked"
+    # style: "docked"
     title: "LPFDS"
     twitter-card:
     creator: "@juma_shafara"
