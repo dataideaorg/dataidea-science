@@ -29,21 +29,21 @@ website:
     right:
       - text: Home
         href: "https://www.dataidea.org/"
-      - text: About
-        menu:
-          - text: About Us
-            url: "https://dataidea.org/#about"
-          - text: Privacy Policy
-            url: "https://dataidea.org/privacy_policy.html"
-          - text: Terms of Service
-            url: "https://dataidea.org/terms_of_service.html"
+      # - text: About
+      #   menu:
+      #     - text: About Us
+      #       url: "https://dataidea.org/#about"
+      #     - text: Privacy Policy
+      #       url: "https://dataidea.org/privacy_policy.html"
+      #     - text: Terms of Service
+      #       url: "https://dataidea.org/terms_of_service.html"
       - text: Download
         menu:
           - text: Python 3 Beginner
             url: "http://dataidea.pythonanywhere.com/school/download-course-material/1"
           - text: Python Data Analysis
             url: "http://dataidea.pythonanywhere.com/school/download-course-material/2"
-          - text: Pytorch
+          - text: Mobile App
             url: "http://dataidea.pythonanywhere.com/school/download-course-material/3"
       - text: Subjects
         menu:
@@ -63,8 +63,6 @@ website:
             url: "https://football.dataidea.org"
           - text: Movies
             url: "https://movies.dataidea.org"
-      - text: Contact
-        href: "https://www.dataidea.org/#contact"
   sidebar:
     # style: "docked"
     title: "LPFDS"
