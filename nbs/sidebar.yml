@@ -8,6 +8,7 @@ website:
           - Python/01_basics.ipynb
           - Python/02_variables.ipynb
           - Python/03_numbers.ipynb
+          - Python/03_strings.ipynb
           - Python/04_operators.ipynb
           - Python/05_containers.ipynb
           - Python/06_flow_control.ipynb

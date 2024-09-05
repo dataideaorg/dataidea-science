@@ -68,7 +68,7 @@ Python Programming
 <p class="card-text">
 Start with the basics of Python, a versatile and powerful programming
 language. This course lays the foundation for your data science journey
-<i class="bi bi-arrow-right-circle"></i>
+<i class="bi bi-box-arrow-up-right"></i>
 </p>
 
 </div>
@@ -90,7 +90,7 @@ Python Data Analysis
 <p class="card-text">
 Explore data analysis using libraries like Pandas, NumPy, and
 Matplotlib. Learn to transform raw data into actionable insights
-<i class="bi bi-arrow-right-circle"></i>
+<i class="bi bi-box-arrow-up-right"></i>
 </p>
 
 </div>
@@ -117,7 +117,7 @@ Machine Learning (Python)
 <p class="card-text">
 Discover the principles of machine learning and gain hands-on experience
 in building and optimizing models
-<i class="bi bi-arrow-right-circle"></i>
+<i class="bi bi-box-arrow-up-right"></i>
 </p>
 
 </div>
@@ -138,7 +138,7 @@ PyTorch Deep Learning
 </h5>
 <p class="card-text">
 Dive deep into neural networks and learn to build advanced models using
-PyTorch <i class="bi bi-arrow-right-circle"></i>
+PyTorch <i class="bi bi-box-arrow-up-right"></i>
 </p>
 
 </div>
