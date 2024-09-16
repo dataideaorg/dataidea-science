@@ -1,8 +1,10 @@
 import numpy as np
+import torch
 import matplotlib.pyplot as plt
 
-# class for ploting  
 
+
+# class for ploting  
 class plot_error_surfaces(object):
     
     # Constructor
@@ -78,3 +80,5 @@ class plot_error_surfaces(object):
         plt.xlabel('w')
         plt.ylabel('b')
         plt.show()
+
+
