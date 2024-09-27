@@ -2,9 +2,12 @@ website:
   sidebar:
     contents:
       - index.ipynb
+      - section: Interview-
+        contents:
+          - Interview-/data_scientists_interview.ipynb
       - section: Python
         contents:
-          - Python/00_outline.ipynb
+          - Python/00_python_programming_outline.ipynb
           - Python/01_basics.ipynb
           - Python/02_variables.ipynb
           - Python/03_numbers.ipynb
@@ -24,7 +27,7 @@ website:
               - Python/Exercises/miscellaneous_exerise.ipynb
       - section: Python-Data-Analysis
         contents:
-          - Python-Data-Analysis/outline.ipynb
+          - Python-Data-Analysis/python_data_analysis_outline.ipynb
           - section: Week1-Intro
             contents:
               - Python-Data-Analysis/Week1-Intro/11_python_tutorial.ipynb
@@ -54,10 +57,8 @@ website:
               - Python-Data-Analysis/Week5-Statistics/hypothesis_testing.ipynb
           - section: Week6-Practice
             contents:
-              - Python-Data-Analysis/Week6-Practice/61_matplotlib.ipynb
-              - Python-Data-Analysis/Week6-Practice/62_seaborn_part1.ipynb
-              - Python-Data-Analysis/Week6-Practice/62_seaborn_part2.ipynb
-              - Python-Data-Analysis/Week6-Practice/63.visual_eda.ipynb
+              - Python-Data-Analysis/Week6-Practice/6.1_data_preprocessing.ipynb
+              - Python-Data-Analysis/Week6-Practice/6.2_exploratory_data_analysis.ipynb
           - section: Week7-Preprocessing
             contents:
               - Python-Data-Analysis/Week7-Preprocessing/71_feature_selection.ipynb
