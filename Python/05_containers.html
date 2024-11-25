@@ -1,0 +1,2425 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Juma Shafara">
+<meta name="dcterms.date" content="2023-11-01">
+<meta name="keywords" content="python containers, python collections, list, set, object, tuple, dictionary, indexing, negative indexing, range of indexes, adding items, deleting items, Juma Shafara, What is an object?">
+<meta name="description" content="Learn Programming for Data Science">
+
+<title>Python Containers – DATAIDEA</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../Python/06_flow_control.html" rel="next">
+<link href="../Python/04_operators.html" rel="prev">
+<link href="../assets/dataidea-logo.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+<meta property="og:title" content="Python Containers – DATAIDEA">
+<meta property="og:description" content="Learn Programming for Data Science">
+<meta property="og:site_name" content="DATAIDEA">
+<meta name="twitter:title" content="Python Containers – DATAIDEA">
+<meta name="twitter:description" content="Learn Programming for Data Science">
+<meta name="twitter:card" content="summary">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">DATAIDEA</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://www.dataidea.org/"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-download" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Download</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-download">    
+        <li>
+    <a class="dropdown-item" href="http://dataidea.pythonanywhere.com/library/download/1">
+ <span class="dropdown-text">Python 3 Beginner</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="http://dataidea.pythonanywhere.com/library/download/2">
+ <span class="dropdown-text">Python Data Analysis</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="http://dataidea.pythonanywhere.com/library/download/3">
+ <span class="dropdown-text">Mobile App</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-subjects" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Subjects</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-subjects">    
+        <li>
+    <a class="dropdown-item" href="https://blog.dataidea.org">
+ <span class="dropdown-text">Data Science</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://web.dataidea.org">
+ <span class="dropdown-text">Web Development</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-resources" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Resources</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-resources">    
+        <li>
+    <a class="dropdown-item" href="https://blog.dataidea.org">
+ <span class="dropdown-text">Blog</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://chat.whatsapp.com/GuCZRyJICgO3Y7MPvDQKhi">
+ <span class="dropdown-text">Forum</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://french.dataidea.org">
+ <span class="dropdown-text">French</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://football.dataidea.org">
+ <span class="dropdown-text">Football</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://movies.dataidea.org">
+ <span class="dropdown-text">Movies</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Python/00_python_programming_outline.html">Python</a></li><li class="breadcrumb-item"><a href="../Python/05_containers.html">Python Containers</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welcome to DATAIDEA</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Python</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python/00_python_programming_outline.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python3 Outline</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python/01_basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python Basics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python/02_variables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python Variables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python/03_numbers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python Numbers</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python/03_strings.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python Strings</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python/04_operators.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python Operators</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python/05_containers.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Python Containers</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python/06_flow_control.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python Flow Control</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python/07_advanced.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python Advanced</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python/08_modules.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python Modules</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python/09_file_handling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python File Handling</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python/13_end_of_course_exercise.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">End of Course Exam</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Exercises</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python/Exercises/02_basics_exercise.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python Basics Quiz</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python/Exercises/11_python_objective_quiz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python Objective Quiz</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python/Exercises/12_true_or_false_quiz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">True or False</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python/Exercises/miscellaneous_exerise.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Miscellaneous Exercise</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Python-Data-Analysis</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/python_data_analysis_outline.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Analysis Outline</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Week1-Intro</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week1-Intro/11_python_tutorial.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python Quick Review</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week1-Intro/12_numpy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Numpy Crash Course</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week1-Intro/13_pandas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Pandas Crash Course</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Week2-Cleaning-Intro</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week2-Cleaning-Intro/21_weather_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Cleaning</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week2-Cleaning-Intro/pandas-puzzles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">60 pandas puzzles</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Week3-Visualization</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week3-Visualization/31_matplotlib_refined.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Matplotlib Crash Course</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week3-Visualization/data_exploration_and_cleaning_exercise.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Exploration and Cleaning Exercise</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week3-Visualization/nobel_prize_laureates_exercise.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Nobel Prize Laureates Exercise</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week3-Visualization/visualization_quiz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Visualization Quiz</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Week4-ML-Intro</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week4-ML-Intro/41_overview_of_machine_learning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview of Machine Learning</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week4-ML-Intro/42_training_models_meaning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Training a Model, Meaning</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week4-ML-Intro/43_sklearn-unsupervised-learning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unsupervised Learning</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week4-ML-Intro/43_sklearn-unsupervised-learning2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unsupervised Learning Part 2</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">Week5-Statistics</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week5-Statistics/51_descriptive_statistics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Descriptive Statistics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week5-Statistics/52_inferencial_statistics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Inferencial Statistics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week5-Statistics/53_implementing_statistical_models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Statistical Models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week5-Statistics/hypothesis_testing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Hypothesis Testing Quiz</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
+ <span class="menu-text">Week6-Practice</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week6-Practice/6.1_data_preprocessing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Preprocessing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week6-Practice/6.2_exploratory_data_analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Visual EDA</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
+ <span class="menu-text">Week7-Preprocessing</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week7-Preprocessing/71_feature_selection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Feature Selection</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week7-Preprocessing/72_why_scaling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Why re-scaling (Iris)?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week7-Preprocessing/72_why_scaling_fpl.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Why re-scale data (fpl)?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week7-Preprocessing/73_normalization_and_standardization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Normalization vs Standardization</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week7-Preprocessing/75_bonus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ANOVA for Feature Selection</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week7-Preprocessing/76_handling_missing_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Handling Missing Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week7-Preprocessing/handling_missing_data_quiz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Handling Missing Data Quiz</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false">
+ <span class="menu-text">Week8-More-ML</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week8-More-ML/80_classification_metrics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SciKit-Learn Classification Metrics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week8-More-ML/81_regression_metrics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Regression Metrics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week8-More-ML/82_sklearn_pipeline.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Pipeline</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week8-More-ML/83_GridSearchCV.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">GridSearchCV</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week8-More-ML/classification_metrics_quiz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Classification Metrics Quiz</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week8-More-ML/pipelining_quiz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Machine Learning Pipelining Quiz</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false">
+ <span class="menu-text">Week9-Time-Series</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week9-Time-Series/90_introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">What is Time Series</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week9-Time-Series/91_analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Time Series Analysis</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week9-Time-Series/92_forecasting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Time Series Forecasting</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week9-Time-Series/93_python_example.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TSA Python Example</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
+ <span class="menu-text">WeekX-Extras</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/WeekX-Extras/classification_metrics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Classification Metrics Practice</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/WeekX-Extras/customer_analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Customer Analysis</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/WeekX-Extras/handling_imbalanced_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Imbalanced Datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/WeekX-Extras/how_KNN_works.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Understanding K-Nearest Neighbors (KNN) Regression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/WeekX-Extras/interview_questions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Technical Skills</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="true">
+ <span class="menu-text">Pytorch-Deep-Learning</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/outline.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Pytorch Deep Learning Outline</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false">
+ <span class="menu-text">Week1-Tensors-Datasets</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week1-Tensors-Datasets/1.1_1Dtensors_v2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Torch Tensors in 1D</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week1-Tensors-Datasets/1.1_2 Two-Dimensional Tensors_v2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Torch Tensors in 2D</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week1-Tensors-Datasets/1.2derivativesandGraphsinPytorch_v2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Differentiation in PyTorch</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week1-Tensors-Datasets/1.3.1_simple_data_set_v2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Simple Dataset</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week1-Tensors-Datasets/1.3.3_pre-Built Datasets_and_transforms_v2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Prebuilt Datasets and Transforms</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week1-Tensors-Datasets/tensors_and_datasets_exercise.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tensors &amp; Datasets Exercise</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="false">
+ <span class="menu-text">Week2-Linear-Regression</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week2-Linear-Regression/2.1Prediction1Dregression_v3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linear Regression 1D, Prediction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week2-Linear-Regression/2.2_linear_regression_one_parameter_v3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linear Regression 1D, Training One Parameter</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week2-Linear-Regression/2.3_training_slope_and_bias_v3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linear regression 1D, Training Two Parameters</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week2-Linear-Regression/linear_regression_exercise.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linear Regression Exercise</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" role="navigation" aria-expanded="false">
+ <span class="menu-text">Week3-LR-PyTorch</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-17" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week3-LR-PyTorch/3.1_stochastic_gradient_descent_v3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Training Two Parameter Stochastic Gradient Descent</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week3-LR-PyTorch/3.2_mini-batch_gradient_descent_v3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Training Two Parameter Mini-Batch Gradient Decent</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week3-LR-PyTorch/3.3_PyTorchway_v3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">PyTorch build-in functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week3-LR-PyTorch/3.6_training_and_validation_v3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Training and Validation Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week3-LR-PyTorch/linear_regression_in_pytorch_exercise.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linear Regression (PyTorch) Exercise</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-18" role="navigation" aria-expanded="false">
+ <span class="menu-text">Week4-Multiple-Input-LR</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-18" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-18" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week4-Multiple-Input-LR/4.1.multiple_linear_regression_prediction_v2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Multiple Linear Regression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week4-Multiple-Input-LR/4.2.multiple_linear_regression_training_v2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linear Regression Multiple Outputs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week4-Multiple-Input-LR/4.3.multi-target_linear_regression.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Clear Linear</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week4-Multiple-Input-LR/4.4.training_multiple_output_linear_regression.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linear Regression Multiple Outputs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week4-Multiple-Input-LR/muliple_input_lr_exercise.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Multiple Input LR Exercise</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-19" role="navigation" aria-expanded="false">
+ <span class="menu-text">Week5-Logistic-Regression</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-19" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-19" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week5-Logistic-Regression/5.1logistic_regression_prediction_v2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Logistic Regression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week5-Logistic-Regression/5.2.2bad_inshilization_logistic_regression_with_mean_square_error_v2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Logistic Regression and Bad Initialization Value</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week5-Logistic-Regression/5.3_cross_entropy_logistic_regression_v2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Training Negative Log likelihood (Cross-Entropy)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week5-Logistic-Regression/5.4softmax_in_one_dimension_v2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Softmax Classifer 1D</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week5-Logistic-Regression/logistic_regression_exercise.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Logistic Regression Exercise</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-20" role="navigation" aria-expanded="false">
+ <span class="menu-text">Week6-Practice</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-20" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-20" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week6-Practice/6.1_custom_datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Custom Datasets Practice</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week6-Practice/6.2_dataloaders.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">DataLoaders Practice</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week6-Practice/6.3_transforms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Transform Practice</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-21" role="navigation" aria-expanded="false">
+ <span class="menu-text">Week7-Shallow-Networks</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-21" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-21" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week7-Shallow-Networks/7.1_simple1hiddenlayer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Simple One Hidden Layer Neural Network</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week7-Shallow-Networks/7.2multiple_neurons.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Softmax Classifer 1D</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week7-Shallow-Networks/7.3xor_v2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Noisy XO</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week7-Shallow-Networks/7.4one_layer_neural_network_MNIST.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">One Hidden Layer</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week7-Shallow-Networks/7.5.1activationfuction_v2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Activation Functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week7-Shallow-Networks/7.5.2mist1layer_v2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Test Activation Functions on MNIST</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-22" role="navigation" aria-expanded="false">
+ <span class="menu-text">Week8-Deep-Networks</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-22" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-22" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week8-Deep-Networks/8.1.1mist2layer_v2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Multiple Linear Regression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week8-Deep-Networks/8.1.2mulitclassspiralrulu_v2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8.1.2mulitclassspiralrulu_v2.html</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week8-Deep-Networks/8.2.1dropoutPredictin_v2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8.2.1dropoutPredictin_v2.html</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week8-Deep-Networks/8.2.2dropoutRegression_v2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8.2.2dropoutRegression_v2.html</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week8-Deep-Networks/8.3.1.initializationsame.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8.3.1.initializationsame.html</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week8-Deep-Networks/8.3.2Xaviermist1layer_v2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8.3.2Xaviermist1layer_v2.html</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week8-Deep-Networks/8.3.3.He_Initialization_v2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8.3.3.He_Initialization_v2.html</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week8-Deep-Networks/8.4.1_MomentumwithPolynomialFunctions_v2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8.4.1_MomentumwithPolynomialFunctions_v2.html</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week8-Deep-Networks/8.4.2_NeuralNetworkswithMomentum_v2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8.4.2_NeuralNetworkswithMomentum_v2.html</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week8-Deep-Networks/8.5.1BachNorm_v2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8.5.1BachNorm_v2.html</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-23" role="navigation" aria-expanded="false">
+ <span class="menu-text">Week9-CNNs</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-23" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-23" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week9-CNNs/9.1what_is_convolution.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Convolution Neural Networks</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week9-CNNs/9.2activation_max_pooling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Activation function and Maxpooling</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week9-CNNs/9.3multiple_channel_convolution.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Multiple Channel Convolutional Network</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week9-CNNs/9.4.1convolutionalneralnetworksimple example.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Simple Convolutional Neural Network</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week9-CNNs/9.4.2CNN_Small_Image.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Convolutional Neural Network with Small Images</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week9-CNNs/9.4.3CNN_Small_Image_batch.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Convolutional Neural Network with Batch-Normalization</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-24" role="navigation" aria-expanded="true">
+ <span class="menu-text">X-Interview</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-24" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-24" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../X-Interview/data_scientists_interview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Scientist</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#what-is-an-object" id="toc-what-is-an-object" class="nav-link active" data-scroll-target="#what-is-an-object">What is an object?</a></li>
+  <li><a href="#containers" id="toc-containers" class="nav-link" data-scroll-target="#containers">Containers</a></li>
+  <li><a href="#lists" id="toc-lists" class="nav-link" data-scroll-target="#lists">Lists</a>
+  <ul class="collapse">
+  <li><a href="#indexing" id="toc-indexing" class="nav-link" data-scroll-target="#indexing">Indexing</a></li>
+  <li><a href="#negative-indexing" id="toc-negative-indexing" class="nav-link" data-scroll-target="#negative-indexing">Negative Indexing</a></li>
+  <li><a href="#range-of-indexes" id="toc-range-of-indexes" class="nav-link" data-scroll-target="#range-of-indexes">Range of Indexes</a></li>
+  <li><a href="#adding-items-to-a-list" id="toc-adding-items-to-a-list" class="nav-link" data-scroll-target="#adding-items-to-a-list">Adding items to a list</a></li>
+  <li><a href="#deleting-items-from-a-list" id="toc-deleting-items-from-a-list" class="nav-link" data-scroll-target="#deleting-items-from-a-list">Deleting Items from a list</a></li>
+  <li><a href="#getting-the-length-of-a-list" id="toc-getting-the-length-of-a-list" class="nav-link" data-scroll-target="#getting-the-length-of-a-list">Getting the length of a list</a></li>
+  <li><a href="#changing-an-items-value" id="toc-changing-an-items-value" class="nav-link" data-scroll-target="#changing-an-items-value">Changing an item’s value</a></li>
+  <li><a href="#homework" id="toc-homework" class="nav-link" data-scroll-target="#homework">Homework</a></li>
+  <li><a href="#extending-a-list" id="toc-extending-a-list" class="nav-link" data-scroll-target="#extending-a-list">Extending a list</a></li>
+  </ul></li>
+  <li><a href="#tuple" id="toc-tuple" class="nav-link" data-scroll-target="#tuple">Tuple</a></li>
+  <li><a href="#sets" id="toc-sets" class="nav-link" data-scroll-target="#sets">Sets</a>
+  <ul class="collapse">
+  <li><a href="#accessing-set-elements" id="toc-accessing-set-elements" class="nav-link" data-scroll-target="#accessing-set-elements">Accessing set elements</a></li>
+  <li><a href="#adding-elements-to-a-set" id="toc-adding-elements-to-a-set" class="nav-link" data-scroll-target="#adding-elements-to-a-set">Adding elements to a set</a></li>
+  <li><a href="#changing-an-item" id="toc-changing-an-item" class="nav-link" data-scroll-target="#changing-an-item">Changing an item</a></li>
+  <li><a href="#removing-set-elements" id="toc-removing-set-elements" class="nav-link" data-scroll-target="#removing-set-elements">Removing set elements</a></li>
+  <li><a href="#homework-1" id="toc-homework-1" class="nav-link" data-scroll-target="#homework-1">Homework</a></li>
+  <li><a href="#getting-the-difference-between-sets" id="toc-getting-the-difference-between-sets" class="nav-link" data-scroll-target="#getting-the-difference-between-sets">Getting the difference between sets</a></li>
+  </ul></li>
+  <li><a href="#dictionaries" id="toc-dictionaries" class="nav-link" data-scroll-target="#dictionaries">Dictionaries</a>
+  <ul class="collapse">
+  <li><a href="#accessing-items" id="toc-accessing-items" class="nav-link" data-scroll-target="#accessing-items">Accessing items</a></li>
+  <li><a href="#adding-items" id="toc-adding-items" class="nav-link" data-scroll-target="#adding-items">Adding items</a></li>
+  <li><a href="#changing-an-items-value-1" id="toc-changing-an-items-value-1" class="nav-link" data-scroll-target="#changing-an-items-value-1">Changing an item’s value</a></li>
+  <li><a href="#removing-an-items-value" id="toc-removing-an-items-value" class="nav-link" data-scroll-target="#removing-an-items-value">Removing an Item’s value</a></li>
+  <li><a href="#homework-2" id="toc-homework-2" class="nav-link" data-scroll-target="#homework-2">Homework</a></li>
+  <li><a href="#nested-dictionary" id="toc-nested-dictionary" class="nav-link" data-scroll-target="#nested-dictionary">Nested Dictionary</a></li>
+  </ul></li>
+  <li><a href="#free-dictionary-tip" id="toc-free-dictionary-tip" class="nav-link" data-scroll-target="#free-dictionary-tip">Free Dictionary Tip</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/dataideaorg/dataidea-science/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Python/00_python_programming_outline.html">Python</a></li><li class="breadcrumb-item"><a href="../Python/05_containers.html">Python Containers</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Python Containers</h1>
+</div>
+
+<div>
+  <div class="description">
+    Learn Programming for Data Science
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Juma Shafara </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">November 1, 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+<div>
+  <div class="keywords">
+    <div class="block-title">Keywords</div>
+    <p>python containers, python collections, list, set, object, tuple, dictionary, indexing, negative indexing, range of indexes, adding items, deleting items, Juma Shafara, What is an object?</p>
+  </div>
+</div>
+
+</header>
+
+
+<!-- WARNING: THIS FILE WAS AUTOGENERATED! DO NOT EDIT! -->
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/banner4.png" class="img-fluid figure-img"></p>
+<figcaption>Photo by DATAIDEA</figcaption>
+</figure>
+</div>
+<p>Containers in Python are objects that contain other objects</p>
+<section id="what-is-an-object" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-an-object">What is an object?</h2>
+<p>In python, everything is an object. Even the simplest strings and numbers are considered as objects</p>
+<div id="d3b380e9-2ecf-4b5b-a058-28f0b83bddcd" class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="st">'My favorite number is '</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">21</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>My favorite number is  21</code></pre>
+</div>
+</div>
+</section>
+<section id="containers" class="level2">
+<h2 class="anchored" data-anchor-id="containers">Containers</h2>
+<p>Containers (also called collections) are objects that contain objects</p>
+<p>In the example below, the <code>fruits</code> variable contains three strings</p>
+<div id="b16f99c4-010e-489c-ad2a-7fbc00160f80" class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>fruits <span class="op">=</span> [<span class="st">'bananas'</span>, <span class="st">'apples'</span>, <span class="st">'grapes'</span>]</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(fruits)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['bananas', 'apples', 'grapes']</code></pre>
+</div>
+</div>
+<!-- Newsletter -->
+<div class="newsletter">
+<div class="newsletter-heading">
+<h4 class="anchored">
+<i class="bi bi-info-circle-fill"></i> Don’t Miss Any Updates!
+</h4>
+</div>
+<div class="newsletter-body">
+<p>
+Before we continue, we have a humble request, to be among the first to hear about future updates of the course materials, simply enter your email below, follow us on <a href="https://x.com/dataideaorg"><i class="bi bi-twitter-x"></i> (formally Twitter)</a>, or subscribe to our <a href="https://www.youtube.com/@dataidea-science"><i class="bi bi-youtube"></i> YouTube channel</a>.
+</p>
+<iframe class="newsletter-frame" src="https://embeds.beehiiv.com/5fc7c425-9c7e-4e08-a514-ad6c22beee74?slim=true" data-test-id="beehiiv-embed" height="52" frameborder="0" scrolling="no">
+</iframe>
+</div>
+</div>
+</section>
+<section id="lists" class="level2">
+<h2 class="anchored" data-anchor-id="lists">Lists</h2>
+<!-- Video -->
+<div class="video-wrapper">
+<p><iframe class="video-iframe" src="https://www.youtube.com/embed/hD3ZCG08XI0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen=""> </iframe></p>
+</div>
+<ul class="cursored-list">
+<li>
+<i class="bi bi-cursor"></i> A python list is an ordered container
+</li>
+<li>
+<i class="bi bi-cursor"></i> A list is created by using square brackets (<code>[]</code>)
+</li>
+<li>
+<i class="bi bi-cursor"></i> Objects are poaced inside those brackets and are separated by commas (<code>,</code>)
+</li>
+</ul>
+<div id="ac379690-2379-4469-ae9e-283915eb8a8a" class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>pets <span class="op">=</span> [<span class="st">'dog'</span>, <span class="st">'cat'</span>, <span class="st">'rabbit'</span>, <span class="st">'monkey'</span>]</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pets)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(pets))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['dog', 'cat', 'rabbit', 'monkey']
+&lt;class 'list'&gt;</code></pre>
+</div>
+</div>
+<p>A list can contain mixed data types.</p>
+<div id="93049210-b52f-4b94-98ac-24ef4b26f459" class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="st">'dog'</span>, <span class="dv">21</span>, <span class="va">True</span>]</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['dog', 21, True]</code></pre>
+</div>
+</div>
+<section id="indexing" class="level3">
+<h3 class="anchored" data-anchor-id="indexing">Indexing</h3>
+<ul>
+<li>Indexing is used to access items of a list</li>
+<li>Indexing uses square brackets and numbers to access individual items of a list</li>
+<li>Where <code>0</code> refers to the first item, 1 refers to the second item, and so on</li>
+</ul>
+<div id="66aed556-49ef-4ba7-8491-dbab2f5a5528" class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># indexing</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>pets <span class="op">=</span> [<span class="st">'dog'</span>, <span class="st">'cat'</span>, <span class="st">'rabbit'</span>, <span class="st">'monkey'</span>]</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pets[<span class="dv">0</span>])</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pets[<span class="dv">1</span>])</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pets[<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>dog
+cat
+rabbit</code></pre>
+</div>
+</div>
+</section>
+<section id="negative-indexing" class="level3">
+<h3 class="anchored" data-anchor-id="negative-indexing">Negative Indexing</h3>
+<p>Negative indexing is used to access the items of a list using negative numbers.</p>
+<p>Where <code>-1</code> refers to the last item, <code>-2</code> refers to the second last item, and so on.</p>
+<div id="79ec7615-9c86-46da-8dfb-fcb7a928ac70" class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># negative indexing</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>pets <span class="op">=</span> [<span class="st">'dog'</span>, <span class="st">'cat'</span>, <span class="st">'rabbit'</span>, <span class="st">'monkey'</span>]</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pets[<span class="op">-</span><span class="dv">1</span>])</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pets[<span class="op">-</span><span class="dv">2</span>])</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pets[<span class="op">-</span><span class="dv">3</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>monkey
+rabbit
+cat</code></pre>
+</div>
+</div>
+</section>
+<section id="range-of-indexes" class="level3">
+<h3 class="anchored" data-anchor-id="range-of-indexes">Range of Indexes</h3>
+<p>By using a colon ie <code>:</code>, we can access a range of items at once.</p>
+<p>Simply separate two indexes using the colon.</p>
+<p>The first index is the start of the range, while the second index is the end of the range (not included)</p>
+<div id="d8b66e7a-a029-45ce-8633-228a834abc68" class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#range of indexes</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>pets <span class="op">=</span> [<span class="st">'dog'</span>, <span class="st">'cat'</span>, <span class="st">'rabbit'</span>, <span class="st">'monkey'</span>]</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pets[<span class="dv">1</span>:<span class="dv">3</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['cat', 'rabbit']</code></pre>
+</div>
+</div>
+<p>If you don’t specify the last index, the range ends with the last item of the list</p>
+<p>In this case, the range includes the last item.</p>
+<div id="eb494a7d-7bfc-44ff-a3d0-723a857aa48e" class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>pets <span class="op">=</span> [<span class="st">'dog'</span>, <span class="st">'cat'</span>, <span class="st">'rabbit'</span>, <span class="st">'monkey'</span>]</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pets[<span class="dv">2</span>:])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['rabbit', 'monkey']</code></pre>
+</div>
+</div>
+</section>
+<section id="adding-items-to-a-list" class="level3">
+<h3 class="anchored" data-anchor-id="adding-items-to-a-list">Adding items to a list</h3>
+<p>The <code>append()</code> method adds an item to the end of the list.</p>
+<p>In this example, we will add <code>'fish'</code> to our pets list</p>
+<div id="a7dd11b2-2c38-41f4-ac0b-c7c1400cbaca" class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>pets <span class="op">=</span> [<span class="st">'dog'</span>, <span class="st">'cat'</span>]</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>pets.append(<span class="st">'fish'</span>)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pets)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['dog', 'cat', 'fish']</code></pre>
+</div>
+</div>
+<p>The <code>insert()</code> method inserts an item at the specified index.</p>
+<p>In this case, we will insert <code>'rabbit'</code> to the index 0 and <code>'hamster'</code> to index 2</p>
+<div id="03527564-ea8c-40ab-b9b5-474656938bb4" class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>pets <span class="op">=</span> [<span class="st">'dog'</span>, <span class="st">'cat'</span>, <span class="st">'monkey'</span>]</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>pets.insert(<span class="dv">0</span>, <span class="st">'rabbit'</span>)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>pets.insert(<span class="dv">2</span>, <span class="st">'hamster'</span>)</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pets)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['rabbit', 'dog', 'hamster', 'cat', 'monkey']</code></pre>
+</div>
+</div>
+</section>
+<section id="deleting-items-from-a-list" class="level3">
+<h3 class="anchored" data-anchor-id="deleting-items-from-a-list">Deleting Items from a list</h3>
+<p>The <code>pop()</code> method removes the last item from a list</p>
+<div id="d17c100a-d869-4875-af94-2b7ffcddc35b" class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>pets <span class="op">=</span> [<span class="st">'dog'</span>, <span class="st">'cat'</span>, <span class="st">'rabbit'</span>, <span class="st">'monkey'</span>]</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>pets.pop()</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pets)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['dog', 'cat', 'rabbit']</code></pre>
+</div>
+</div>
+<p>The <code>remove()</code> method removes the specified item value.</p>
+<div id="8763af3c-14a1-4720-b77d-475fa845b6ef" class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>pets <span class="op">=</span> [<span class="st">'dog'</span>, <span class="st">'cat'</span>, <span class="st">'rabbit'</span>, <span class="st">'monkey'</span>]</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>pets.remove(<span class="st">'rabbit'</span>)</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pets)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['dog', 'cat', 'monkey']</code></pre>
+</div>
+</div>
+<p>To delete a specified index, use the <code>del</code> keyword</p>
+<div id="c7285404-0ffe-414b-8940-522cf36bdaa2" class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>pets <span class="op">=</span> [<span class="st">'dog'</span>, <span class="st">'cat'</span>, <span class="st">'rabbit'</span>, <span class="st">'monkey'</span>]</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> pets [<span class="dv">2</span>]</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pets)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['dog', 'cat', 'monkey']</code></pre>
+</div>
+</div>
+</section>
+<section id="getting-the-length-of-a-list" class="level3">
+<h3 class="anchored" data-anchor-id="getting-the-length-of-a-list">Getting the length of a list</h3>
+<p>The length of a list refers to the number of items in a list, use the <code>len()</code> method</p>
+</section>
+<section id="changing-an-items-value" class="level3">
+<h3 class="anchored" data-anchor-id="changing-an-items-value">Changing an item’s value</h3>
+<p>To change an item’s value, access the index first and use the assignment operator.</p>
+<div id="a317dc4d-4189-4c64-a128-f56ee9c1f9c8" class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>pets <span class="op">=</span> [<span class="st">'dog'</span>, <span class="st">'cat'</span>, <span class="st">'rabbit'</span>, <span class="st">'monkey'</span>]</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>pets[<span class="dv">2</span>] <span class="op">=</span> <span class="st">'fish'</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pets)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['dog', 'cat', 'fish', 'monkey']</code></pre>
+</div>
+</div>
+</section>
+<section id="homework" class="level3">
+<h3 class="anchored" data-anchor-id="homework">Homework</h3>
+<ul>
+<li>Check if an item exist</li>
+</ul>
+</section>
+<section id="extending-a-list" class="level3">
+<h3 class="anchored" data-anchor-id="extending-a-list">Extending a list</h3>
+<p>The <code>extend()</code> methods adds all items from one list to another</p>
+<div id="47ee394e-78a6-4de4-9407-fa1b5959f734" class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>pets <span class="op">=</span> [<span class="st">'dog'</span>, <span class="st">'cat'</span>]</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>other_pets <span class="op">=</span> [<span class="st">'rabbit'</span>, <span class="st">'monkey'</span>]</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>pets.extend(other_pets)</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pets)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['dog', 'cat', 'rabbit', 'monkey']</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="tuple" class="level2">
+<h2 class="anchored" data-anchor-id="tuple">Tuple</h2>
+<ul class="cursored-list">
+<li>
+<i class="bi bi-cursor"></i> Python tuple is an ordered container
+</li>
+<li>
+<i class="bi bi-cursor"></i> Its the same as a list but the items of tuples cannot be changed
+</li>
+<li>
+<i class="bi bi-cursor"></i> We create a tuple using round brackets <code>()</code>
+</li>
+</ul>
+<div id="fa05d175-ddbf-4f50-8845-5d25010d5aa5" class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>pets <span class="op">=</span> (<span class="st">'dog'</span>, <span class="st">'cat'</span>, <span class="st">'rabbit'</span>)</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pets)</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(pets))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>('dog', 'cat', 'rabbit')
+&lt;class 'tuple'&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="sets" class="level2">
+<h2 class="anchored" data-anchor-id="sets">Sets</h2>
+<!-- Video -->
+<div class="video-wrapper">
+<p><iframe class="video-iframe" src="https://www.youtube.com/embed/fwwIn50cQ2c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen=""> </iframe></p>
+</div>
+<ul class="cursored-list">
+<li>
+<i class="bi bi-cursor"></i> A set is a container/collection that is unordered and immutable
+</li>
+<li>
+<i class="bi bi-cursor"></i> We create a set using <code>{}</code>
+</li>
+<li>
+<i class="bi bi-cursor"></i> The objects are placed inside those brackets and are separated by commas
+</li>
+</ul>
+<div id="ef03c79d-7932-4a8b-93bc-000bab41f36d" class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>pets <span class="op">=</span> {<span class="st">'dog'</span>, <span class="st">'cat'</span>, <span class="st">'rabbit'</span>}</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pets)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{'rabbit', 'dog', 'cat'}</code></pre>
+</div>
+</div>
+<p>A set can contain mixed data types, but can NOT contain mutable items like lists, sets and dictionaries</p>
+<div id="cfa23d31-9c75-4483-bc11-9ffc8513e5a8" class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A set can contain objects of different data types</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>mixed <span class="op">=</span> {<span class="st">'dog'</span>, <span class="dv">21</span>, <span class="va">True</span>}</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(mixed)</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(mixed))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{True, 'dog', 21}
+&lt;class 'set'&gt;</code></pre>
+</div>
+</div>
+<section id="accessing-set-elements" class="level3">
+<h3 class="anchored" data-anchor-id="accessing-set-elements">Accessing set elements</h3>
+<ul>
+<li>Unlike lists and tuples, you cannot access the items in a set using indexes</li>
+<li>This is because a set is unordered and not indexed</li>
+<li>However, we can use a <code>for</code> loop to access all its items one-by-one</li>
+</ul>
+<p><strong><em>Note: We’ll discuss a for loop in the next chapter</em></strong></p>
+<div id="24af7725-743a-4e56-8306-8a4528064704" class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Accessing</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>pets <span class="op">=</span> {<span class="st">'dog'</span>, <span class="st">'cat'</span>, <span class="st">'rabbit'</span>}</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> pet <span class="kw">in</span> pets:</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(pet)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>rabbit
+dog
+cat</code></pre>
+</div>
+</div>
+</section>
+<section id="adding-elements-to-a-set" class="level3">
+<h3 class="anchored" data-anchor-id="adding-elements-to-a-set">Adding elements to a set</h3>
+<p>To add items to a set, use the <code>add()</code> or <code>update()</code> method.</p>
+<p>The <code>add()</code> method adds one item to a set.</p>
+<div id="797b3830-fd51-498d-81af-da52d7402152" class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Adding items to a set</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>pets <span class="op">=</span> {<span class="st">'dog'</span>, <span class="st">'cat'</span>, <span class="st">'rabbit'</span>}</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>pets.add(<span class="st">'fish'</span>)</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pets)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{'rabbit', 'dog', 'cat', 'fish'}</code></pre>
+</div>
+</div>
+</section>
+<section id="changing-an-item" class="level3">
+<h3 class="anchored" data-anchor-id="changing-an-item">Changing an item</h3>
+<p>The items of a set can NOT be changed because a set is immutable or unchangeable.</p>
+</section>
+<section id="removing-set-elements" class="level3">
+<h3 class="anchored" data-anchor-id="removing-set-elements">Removing set elements</h3>
+<p>To remove an item from a set, use the <code>remove()</code> method.</p>
+<p>You should specify the value of the item you want to remove.</p>
+<div id="95142864-1357-427b-89de-3f1ebe870284" class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Removing items from a set</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>pets <span class="op">=</span> {<span class="st">'dog'</span>, <span class="st">'cat'</span>, <span class="st">'rabbit'</span>}</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>pets.remove(<span class="st">'cat'</span>) <span class="co"># remove</span></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pets)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{'rabbit', 'dog'}</code></pre>
+</div>
+</div>
+<p>You can also use the <code>discard()</code> method.</p>
+<div id="2f9b75df-b998-43bf-81fc-87f01fe5cdaf" class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>pets <span class="op">=</span> {<span class="st">'dog'</span>, <span class="st">'cat'</span>, <span class="st">'rabbit'</span>}</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>pets.discard(<span class="st">'rabbit'</span>) <span class="co">#discard</span></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pets)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{'dog', 'cat'}</code></pre>
+</div>
+</div>
+<p>The difference between the <code>remove()</code> and <code>discard()</code> methods is that the <code>discard()</code> method does not raise an error if the specified item is not present.</p>
+<p>You can also use the <code>pop()</code> method to remove an item.</p>
+<p>But we cannot determine which item will be removed because a set is unordered.</p>
+<div id="739c99b3-28f2-4253-a80a-5820a28af329" class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>pets <span class="op">=</span> {<span class="st">'dog'</span>, <span class="st">'cat'</span>, <span class="st">'rabbit'</span>}</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>pets.pop() <span class="co"># pop removes the last item from the set</span></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pets)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{'dog', 'cat'}</code></pre>
+</div>
+</div>
+</section>
+<section id="homework-1" class="level3">
+<h3 class="anchored" data-anchor-id="homework-1">Homework</h3>
+<ul>
+<li>Find the length of a set</li>
+<li>Check if an element exists</li>
+<li>Combine sets</li>
+</ul>
+</section>
+<section id="getting-the-difference-between-sets" class="level3">
+<h3 class="anchored" data-anchor-id="getting-the-difference-between-sets">Getting the difference between sets</h3>
+<p>To get the difference between two sets, use the subtraction operator (<code>-</code>)</p>
+<div id="c1d46850-6ef3-4bc4-8284-e1b859e8c712" class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Getting the difference</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>first_numbers <span class="op">=</span> {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>}</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>second_numbers <span class="op">=</span> {<span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>}</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>difference <span class="op">=</span> first_numbers <span class="op">-</span> second_numbers</span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a><span class="co"># another way</span></span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>difference2 <span class="op">=</span> first_numbers.difference(second_numbers)</span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(difference)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{1, 2}</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="dictionaries" class="level2">
+<h2 class="anchored" data-anchor-id="dictionaries">Dictionaries</h2>
+<p>A dictionary is an unordered and mutable colletion of items.</p>
+<p>A dictionary is written with curly brackets.</p>
+<p>Each item in a dictionary contains a <code>key/value</code> pair.</p>
+<!-- Video -->
+<div class="video-wrapper">
+<p><iframe class="video-iframe" src="https://www.youtube.com/embed/UatrQb3tQTw?si=u2LX_giR2kJ_VqwO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen=""> </iframe></p>
+</div>
+<div id="58ab8bf0-7a9c-4ac6-8c5e-a3a6c191784d" class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating </span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>person <span class="op">=</span> {</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'first_name'</span>: <span class="st">'Voila'</span>, </span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'last_name'</span>: <span class="st">'Akullu'</span>,</span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'age'</span>: <span class="dv">16</span></span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(person)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{'first_name': 'Voila', 'last_name': 'Akullu', 'age': 16}</code></pre>
+</div>
+</div>
+<p>In the above example we have 3 items:</p>
+<ul class="cursored-list">
+<li>
+<i class="bi bi-cursor"></i> The first item has a key name of <code>'first_name'</code>, and its value is <code>'Viola'</code>.
+</li>
+<li>
+<i class="bi bi-cursor"></i> The second item has a key name of <code>'last_name'</code>, and its value is <code>'Akullu'</code>
+</li>
+<li>
+<i class="bi bi-cursor"></i> The third item has a key name of <code>'age'</code>, and its value is <code>30</code>
+</li>
+</ul>
+<section id="accessing-items" class="level3">
+<h3 class="anchored" data-anchor-id="accessing-items">Accessing items</h3>
+<p>To access an item, specify the key name of an item inside square brackets.</p>
+<div id="e98909e2-6c9a-42e8-9b9e-911d9b0bb551" class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Accessing items</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>person <span class="op">=</span> {</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'first_name'</span>: <span class="st">'Voila'</span>, </span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'last_name'</span>: <span class="st">'Akullu'</span>,</span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'age'</span>: <span class="dv">16</span></span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(person[<span class="st">'last_name'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Akullu</code></pre>
+</div>
+</div>
+<p>If you try to access an item using a key name that does not exist, an error will be raised</p>
+</section>
+<section id="adding-items" class="level3">
+<h3 class="anchored" data-anchor-id="adding-items">Adding items</h3>
+<p>To add new items, specify a new index key name inside the square brackets and assign a value using the assignment operator.</p>
+<div id="7b297676-b89b-41a0-814d-32c4b8a951ec" class="cell">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Adding items </span></span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>person <span class="op">=</span> {</span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'first_name'</span>: <span class="st">'Voila'</span>, </span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'last_name'</span>: <span class="st">'Akullu'</span>,</span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'age'</span>: <span class="dv">16</span></span>
+<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a>person[<span class="st">'middle_name'</span>] <span class="op">=</span> <span class="st">'Vee'</span></span>
+<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(person)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{'first_name': 'Voila', 'last_name': 'Akullu', 'age': 16, 'middle_name': 'Vee'}</code></pre>
+</div>
+</div>
+</section>
+<section id="changing-an-items-value-1" class="level3">
+<h3 class="anchored" data-anchor-id="changing-an-items-value-1">Changing an item’s value</h3>
+<p>To change an item, refer to its key name using square brackets and use the assignment operator.</p>
+<div id="2c5f227d-809e-4718-aa4e-4f5ef21004f0" class="cell">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Changing items </span></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>person <span class="op">=</span> {</span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'first_name'</span>: <span class="st">'Voila'</span>, </span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'last_name'</span>: <span class="st">'Akullu'</span>,</span>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'age'</span>: <span class="dv">16</span></span>
+<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb55-7"><a href="#cb55-7" aria-hidden="true" tabindex="-1"></a>person[<span class="st">'last_name'</span>] <span class="op">=</span> <span class="st">'Kibekityo'</span></span>
+<span id="cb55-8"><a href="#cb55-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-9"><a href="#cb55-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(person)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{'first_name': 'Voila', 'last_name': 'Kibekityo', 'age': 16}</code></pre>
+</div>
+</div>
+</section>
+<section id="removing-an-items-value" class="level3">
+<h3 class="anchored" data-anchor-id="removing-an-items-value">Removing an Item’s value</h3>
+<p>To remove an item, use the pop() method.</p>
+<p>The <code>pop()</code> method removes an item with the specified key name.</p>
+<div id="cae48b06-1db6-4875-bd20-750fca47758b" class="cell">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove items</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>person <span class="op">=</span> {</span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'first_name'</span>: <span class="st">'Voila'</span>, </span>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'last_name'</span>: <span class="st">'Akullu'</span>,</span>
+<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'age'</span>: <span class="dv">16</span></span>
+<span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb57-7"><a href="#cb57-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-8"><a href="#cb57-8" aria-hidden="true" tabindex="-1"></a>person.pop(<span class="st">'age'</span>)</span>
+<span id="cb57-9"><a href="#cb57-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(person)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{'first_name': 'Voila', 'last_name': 'Akullu'}</code></pre>
+</div>
+</div>
+<p>Another way to remove an item is to use the <code>del</code> keyword.</p>
+<div id="d82d010b-de7e-4e4a-a58d-193dff9f6252" class="cell">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="co"># del keyword</span></span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>person <span class="op">=</span> {</span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'first_name'</span>: <span class="st">'Voila'</span>, </span>
+<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'last_name'</span>: <span class="st">'Akullu'</span>,</span>
+<span id="cb59-5"><a href="#cb59-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'age'</span>: <span class="dv">16</span></span>
+<span id="cb59-6"><a href="#cb59-6" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb59-7"><a href="#cb59-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-8"><a href="#cb59-8" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> person[<span class="st">'age'</span>]</span>
+<span id="cb59-9"><a href="#cb59-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(person)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{'first_name': 'Voila', 'last_name': 'Akullu'}</code></pre>
+</div>
+</div>
+</section>
+<section id="homework-2" class="level3">
+<h3 class="anchored" data-anchor-id="homework-2">Homework</h3>
+<ul>
+<li>Check if an element exists</li>
+<li>Find the length of a dictionary</li>
+</ul>
+</section>
+<section id="nested-dictionary" class="level3">
+<h3 class="anchored" data-anchor-id="nested-dictionary">Nested Dictionary</h3>
+<p>A dictionary can contain another dictionary.</p>
+<div id="f071a0e9-0385-420b-ab2b-64ddeb800b5a" class="cell">
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Nesting dictionaries</span></span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>employees <span class="op">=</span> {</span>
+<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'manager'</span>: {</span>
+<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">'name'</span>: <span class="st">'Akullu Viola'</span>,</span>
+<span id="cb61-5"><a href="#cb61-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">'age'</span>: <span class="dv">29</span></span>
+<span id="cb61-6"><a href="#cb61-6" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb61-7"><a href="#cb61-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'programmer'</span>: {</span>
+<span id="cb61-8"><a href="#cb61-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">'name'</span>: <span class="st">'Juma Shafara'</span>,</span>
+<span id="cb61-9"><a href="#cb61-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">'age'</span>: <span class="dv">30</span></span>
+<span id="cb61-10"><a href="#cb61-10" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb61-11"><a href="#cb61-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb61-12"><a href="#cb61-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-13"><a href="#cb61-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(employees)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{'manager': {'name': 'Akullu Viola', 'age': 29}, 'programmer': {'name': 'Juma Shafara', 'age': 30}}</code></pre>
+</div>
+</div>
+<p>To access an item in a nested dictionary, access the key name of the dictionary then the key name of the item</p>
+<div id="6d0c9f19-e783-4d44-99a3-3471340d68eb" class="cell">
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Accessing nested dictionary</span></span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>employees <span class="op">=</span> {</span>
+<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'manager'</span>: {</span>
+<span id="cb63-4"><a href="#cb63-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">'name'</span>: <span class="st">'Akullu Viola'</span>,</span>
+<span id="cb63-5"><a href="#cb63-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">'age'</span>: <span class="dv">29</span></span>
+<span id="cb63-6"><a href="#cb63-6" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb63-7"><a href="#cb63-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'programmer'</span>: {</span>
+<span id="cb63-8"><a href="#cb63-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">'name'</span>: <span class="st">'Juma Shafara'</span>,</span>
+<span id="cb63-9"><a href="#cb63-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">'age'</span>: <span class="dv">30</span></span>
+<span id="cb63-10"><a href="#cb63-10" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb63-11"><a href="#cb63-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb63-12"><a href="#cb63-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-13"><a href="#cb63-13" aria-hidden="true" tabindex="-1"></a>programmer <span class="op">=</span> employees[<span class="st">'programmer'</span>]</span>
+<span id="cb63-14"><a href="#cb63-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(programmer[<span class="st">'name'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Juma Shafara</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="free-dictionary-tip" class="level2">
+<h2 class="anchored" data-anchor-id="free-dictionary-tip">Free Dictionary Tip</h2>
+<div id="57439506-7459-4fa9-82e9-f2044e4565f7" class="cell">
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Using a dictionary constructer</span></span>
+<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>names <span class="op">=</span> (<span class="st">'a1'</span>, <span class="st">'b2'</span>, <span class="st">'c3'</span>)</span>
+<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a>dictionary <span class="op">=</span> <span class="bu">dict</span>(names)</span>
+<span id="cb65-4"><a href="#cb65-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dictionary)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{'a': '1', 'b': '2', 'c': '3'}</code></pre>
+</div>
+</div>
+<h2 class="anchored">
+What’s on your mind? Put it in the comments!
+</h2>
+<script src="https://utteranc.es/client.js" repo="dataideaorg/dataidea-science" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
+</script>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/dataideaorg\.github\.io\/dataidea-science");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../Python/04_operators.html" class="pagination-link" aria-label="Python Operators">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Python Operators</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../Python/06_flow_control.html" class="pagination-link" aria-label="Python Flow Control">
+        <span class="nav-page-text">Python Flow Control</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/dataideaorg/dataidea-science/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
