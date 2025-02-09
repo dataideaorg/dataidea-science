@@ -49,6 +49,7 @@ website:
               - Python-Data-Analysis/Week4-ML-Intro/43_sklearn-unsupervised-learning2.ipynb
           - section: Week5-Statistics
             contents:
+              - Python-Data-Analysis/Week5-Statistics/50_maths_and_stats_for_ds.ipynb
               - Python-Data-Analysis/Week5-Statistics/51_descriptive_statistics.ipynb
               - Python-Data-Analysis/Week5-Statistics/52_inferencial_statistics.ipynb
               - Python-Data-Analysis/Week5-Statistics/53_implementing_statistical_models.ipynb

@@ -1,3 +1,17 @@
+[project]
+name = "dataidea-science-main"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "jumashafara",email = "jumashafara0@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy (>=2.2.2,<3.0.0)"
+]
+
+
 [build-system]
-requires = ["setuptools>=64.0"]
-build-backend = "setuptools.build_meta"
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
