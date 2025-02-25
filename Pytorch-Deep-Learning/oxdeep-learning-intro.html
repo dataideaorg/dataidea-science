@@ -1,0 +1,2152 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Juma Shafara">
+<meta name="dcterms.date" content="2027-01-02">
+<meta name="keywords" content="data science, data analysis, programming, dataidea">
+<meta name="description" content="Programming for Data Science is a subject we’ve designed to explore the various programming components of data science.">
+
+<title>Deep Learning Intro – DATAIDEA</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../Pytorch-Deep-Learning/Week1-Tensors-Datasets/1.1_1Dtensors_v2.html" rel="next">
+<link href="../Pytorch-Deep-Learning/outline.html" rel="prev">
+<link href="../assets/dataidea-logo.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-432aae5c2a207e3bec1f517d63d41be6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-b422cd2e59c9b372b581b230f303772c.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
+<meta property="og:title" content="Deep Learning Intro – DATAIDEA">
+<meta property="og:description" content="Programming for Data Science is a subject we’ve designed to explore the various programming components of data science.">
+<meta property="og:site_name" content="DATAIDEA">
+<meta name="twitter:title" content="Deep Learning Intro – DATAIDEA">
+<meta name="twitter:description" content="Programming for Data Science is a subject we’ve designed to explore the various programming components of data science.">
+<meta name="twitter:card" content="summary">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">DATAIDEA</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://www.dataidea.org/"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-subjects" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Subjects</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-subjects">    
+        <li>
+    <a class="dropdown-item" href="https://blog.dataidea.org">
+ <span class="dropdown-text">Data Science</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://web.dataidea.org">
+ <span class="dropdown-text">Web Development</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-resources" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Resources</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-resources">    
+        <li>
+    <a class="dropdown-item" href="https://blog.dataidea.org">
+ <span class="dropdown-text">Blog</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://chat.whatsapp.com/GuCZRyJICgO3Y7MPvDQKhi">
+ <span class="dropdown-text">Forum</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://french.dataidea.org">
+ <span class="dropdown-text">French</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://football.dataidea.org">
+ <span class="dropdown-text">Football</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://movies.dataidea.org">
+ <span class="dropdown-text">Movies</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Pytorch-Deep-Learning/outline.html">Pytorch-Deep-Learning</a></li><li class="breadcrumb-item"><a href="../Pytorch-Deep-Learning/oxdeep-learning-intro.html">Deep Learning Intro</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welcome to DATAIDEA</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Python</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python/00_python_programming_outline.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python3 Outline</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python/01_basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python Basics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python/02_variables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python Variables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python/03_numbers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python Numbers</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python/03_strings.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python Strings</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python/04_operators.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python Operators</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python/05_containers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python Containers</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python/06_flow_control.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python Flow Control</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python/07_advanced.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python Advanced</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python/08_modules.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python Modules</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python/09_file_handling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python File Handling</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python/13_end_of_course_exercise.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">End of Course Exam</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Exercises</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python/Exercises/02_basics_exercise.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python Basics Quiz</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python/Exercises/11_python_objective_quiz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python Objective Quiz</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python/Exercises/12_true_or_false_quiz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">True or False</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python/Exercises/13_end_of_course_exercise.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exam Solutions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python/Exercises/miscellaneous_exerise.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Miscellaneous Exercise</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Python-Data-Analysis</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/python_data_analysis_outline.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Analysis Outline</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Week1-Intro</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week1-Intro/11_python_tutorial.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python Quick Review</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week1-Intro/12_numpy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Numpy Crash Course</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week1-Intro/13_pandas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Pandas Crash Course</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Week2-Cleaning-Intro</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week2-Cleaning-Intro/21_weather_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Cleaning</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week2-Cleaning-Intro/pandas-puzzles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">60 pandas puzzles</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Week3-Visualization</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week3-Visualization/31_matplotlib_refined.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Matplotlib Crash Course</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week3-Visualization/data_exploration_and_cleaning_exercise.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Exploration and Cleaning Exercise</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week3-Visualization/nobel_prize_laureates_exercise.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Nobel Prize Laureates Exercise</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week3-Visualization/visualization_quiz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Visualization Quiz</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Week4-ML-Intro</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week4-ML-Intro/41_overview_of_machine_learning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview of Machine Learning</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week4-ML-Intro/42_training_models_meaning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Training a Model, Meaning</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week4-ML-Intro/43_sklearn-unsupervised-learning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unsupervised Learning</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week4-ML-Intro/43_sklearn-unsupervised-learning2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unsupervised Learning Part 2</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">Week5-Statistics</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week5-Statistics/50_maths_and_stats_for_ds.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Maths and Statistics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week5-Statistics/51_descriptive_statistics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Descriptive Statistics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week5-Statistics/52_inferencial_statistics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Inferencial Statistics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week5-Statistics/53_implementing_statistical_models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Statistical Models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week5-Statistics/hypothesis_testing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Hypothesis Testing Quiz</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
+ <span class="menu-text">Week6-Practice</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week6-Practice/6.1_data_preprocessing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Preprocessing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week6-Practice/6.2_exploratory_data_analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Visual EDA</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
+ <span class="menu-text">Week7-Preprocessing</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week7-Preprocessing/71_feature_selection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Feature Selection</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week7-Preprocessing/72_why_scaling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Why re-scaling (Iris)?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week7-Preprocessing/72_why_scaling_fpl.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Why re-scale data (fpl)?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week7-Preprocessing/73_normalization_and_standardization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Normalization vs Standardization</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week7-Preprocessing/75_bonus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ANOVA for Feature Selection</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week7-Preprocessing/76_handling_missing_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Handling Missing Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week7-Preprocessing/handling_missing_data_quiz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Handling Missing Data Quiz</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false">
+ <span class="menu-text">Week8-More-ML</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week8-More-ML/80_classification_metrics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SciKit-Learn Classification Metrics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week8-More-ML/81_regression_metrics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Regression Metrics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week8-More-ML/82_sklearn_pipeline.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Pipeline</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week8-More-ML/83_GridSearchCV.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">GridSearchCV</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week8-More-ML/classification_metrics_quiz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Classification Metrics Quiz</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week8-More-ML/pipelining_quiz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Machine Learning Pipelining Quiz</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false">
+ <span class="menu-text">Week9-Time-Series</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week9-Time-Series/90_introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">What is Time Series</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week9-Time-Series/91_analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Time Series Analysis</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week9-Time-Series/92_forecasting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Time Series Forecasting</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/Week9-Time-Series/93_python_example.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TSA Python Example</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
+ <span class="menu-text">WeekX-Extras</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/WeekX-Extras/classification_metrics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Classification Metrics Practice</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/WeekX-Extras/customer_analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Customer Analysis</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/WeekX-Extras/handling_imbalanced_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Imbalanced Datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/WeekX-Extras/how_KNN_works.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Understanding K-Nearest Neighbors (KNN) Regression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Python-Data-Analysis/WeekX-Extras/interview_questions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Technical Skills</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="true">
+ <span class="menu-text">Pytorch-Deep-Learning</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/outline.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Pytorch Deep Learning Outline</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/oxdeep-learning-intro.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Deep Learning Intro</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false">
+ <span class="menu-text">Week1-Tensors-Datasets</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week1-Tensors-Datasets/1.1_1Dtensors_v2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Torch Tensors in 1D</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week1-Tensors-Datasets/1.1_2 Two-Dimensional Tensors_v2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Torch Tensors in 2D</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week1-Tensors-Datasets/1.2derivativesandGraphsinPytorch_v2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Differentiation in PyTorch</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week1-Tensors-Datasets/1.3.1_simple_data_set_v2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Simple Dataset</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week1-Tensors-Datasets/1.3.3_pre-Built Datasets_and_transforms_v2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Prebuilt Datasets and Transforms</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week1-Tensors-Datasets/tensors_and_datasets_exercise.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tensors &amp; Datasets Exercise</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="false">
+ <span class="menu-text">Week2-Linear-Regression</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week2-Linear-Regression/2.1Prediction1Dregression_v3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linear Regression 1D, Prediction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week2-Linear-Regression/2.2_linear_regression_one_parameter_v3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linear Regression 1D, Training One Parameter</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week2-Linear-Regression/2.3_training_slope_and_bias_v3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linear regression 1D, Training Two Parameters</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week2-Linear-Regression/linear_regression_exercise.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linear Regression Exercise</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" role="navigation" aria-expanded="false">
+ <span class="menu-text">Week3-LR-PyTorch</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-17" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week3-LR-PyTorch/3.1_stochastic_gradient_descent_v3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Training Two Parameter Stochastic Gradient Descent</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week3-LR-PyTorch/3.2_mini-batch_gradient_descent_v3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Training Two Parameter Mini-Batch Gradient Decent</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week3-LR-PyTorch/3.3_PyTorchway_v3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">PyTorch build-in functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week3-LR-PyTorch/3.6_training_and_validation_v3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Training and Validation Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week3-LR-PyTorch/linear_regression_in_pytorch_exercise.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linear Regression (PyTorch) Exercise</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-18" role="navigation" aria-expanded="false">
+ <span class="menu-text">Week4-Multiple-Input-LR</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-18" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-18" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week4-Multiple-Input-LR/4.1.multiple_linear_regression_prediction_v2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Multiple Linear Regression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week4-Multiple-Input-LR/4.2.multiple_linear_regression_training_v2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linear Regression Multiple Outputs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week4-Multiple-Input-LR/4.3.multi-target_linear_regression.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Clear Linear</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week4-Multiple-Input-LR/4.4.training_multiple_output_linear_regression.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linear Regression Multiple Outputs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week4-Multiple-Input-LR/muliple_input_lr_exercise.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Multiple Input LR Exercise</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-19" role="navigation" aria-expanded="false">
+ <span class="menu-text">Week5-Logistic-Regression</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-19" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-19" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week5-Logistic-Regression/5.1logistic_regression_prediction_v2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Logistic Regression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week5-Logistic-Regression/5.2.2bad_inshilization_logistic_regression_with_mean_square_error_v2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Logistic Regression and Bad Initialization Value</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week5-Logistic-Regression/5.3_cross_entropy_logistic_regression_v2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Training Negative Log likelihood (Cross-Entropy)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week5-Logistic-Regression/5.4softmax_in_one_dimension_v2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Softmax Classifer 1D</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week5-Logistic-Regression/logistic_regression_exercise.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Logistic Regression Exercise</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-20" role="navigation" aria-expanded="false">
+ <span class="menu-text">Week6-Practice</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-20" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-20" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week6-Practice/6.1_custom_datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Custom Datasets Practice</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week6-Practice/6.2_dataloaders.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">DataLoaders Practice</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week6-Practice/6.3_transforms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Transform Practice</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-21" role="navigation" aria-expanded="false">
+ <span class="menu-text">Week7-Shallow-Networks</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-21" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-21" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week7-Shallow-Networks/7.1_simple1hiddenlayer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Simple One Hidden Layer Neural Network</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week7-Shallow-Networks/7.2multiple_neurons.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Softmax Classifer 1D</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week7-Shallow-Networks/7.3xor_v2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Noisy XO</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week7-Shallow-Networks/7.4one_layer_neural_network_MNIST.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">One Hidden Layer</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week7-Shallow-Networks/7.5.1activationfuction_v2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Activation Functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week7-Shallow-Networks/7.5.2mist1layer_v2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Test Activation Functions on MNIST</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-22" role="navigation" aria-expanded="false">
+ <span class="menu-text">Week8-Deep-Networks</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-22" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-22" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week8-Deep-Networks/8.1.1mist2layer_v2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Multiple Linear Regression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week8-Deep-Networks/8.1.2mulitclassspiralrulu_v2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8.1.2mulitclassspiralrulu_v2.html</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week8-Deep-Networks/8.2.1dropoutPredictin_v2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8.2.1dropoutPredictin_v2.html</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week8-Deep-Networks/8.2.2dropoutRegression_v2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8.2.2dropoutRegression_v2.html</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week8-Deep-Networks/8.3.1.initializationsame.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8.3.1.initializationsame.html</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week8-Deep-Networks/8.3.2Xaviermist1layer_v2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8.3.2Xaviermist1layer_v2.html</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week8-Deep-Networks/8.3.3.He_Initialization_v2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8.3.3.He_Initialization_v2.html</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week8-Deep-Networks/8.4.1_MomentumwithPolynomialFunctions_v2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8.4.1_MomentumwithPolynomialFunctions_v2.html</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week8-Deep-Networks/8.4.2_NeuralNetworkswithMomentum_v2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8.4.2_NeuralNetworkswithMomentum_v2.html</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week8-Deep-Networks/8.5.1BachNorm_v2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8.5.1BachNorm_v2.html</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-23" role="navigation" aria-expanded="false">
+ <span class="menu-text">Week9-CNNs</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-23" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-23" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week9-CNNs/9.1what_is_convolution.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Convolution Neural Networks</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week9-CNNs/9.2activation_max_pooling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Activation function and Maxpooling</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week9-CNNs/9.3multiple_channel_convolution.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Multiple Channel Convolutional Network</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week9-CNNs/9.4.1convolutionalneralnetworksimple example.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Simple Convolutional Neural Network</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week9-CNNs/9.4.2CNN_Small_Image.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Convolutional Neural Network with Small Images</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pytorch-Deep-Learning/Week9-CNNs/9.4.3CNN_Small_Image_batch.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Convolutional Neural Network with Batch-Normalization</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-24" role="navigation" aria-expanded="true">
+ <span class="menu-text">X-Interview</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-24" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-24" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../X-Interview/data_scientists_interview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Scientist</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#welcome-to-deep-learning" id="toc-welcome-to-deep-learning" class="nav-link active" data-scroll-target="#welcome-to-deep-learning">Welcome to Deep Learning!</a></li>
+  <li><a href="#what-is-deep-learning" id="toc-what-is-deep-learning" class="nav-link" data-scroll-target="#what-is-deep-learning">What is Deep Learning?</a>
+  <ul class="collapse">
+  <li><a href="#the-linear-unit" id="toc-the-linear-unit" class="nav-link" data-scroll-target="#the-linear-unit">The Linear Unit</a></li>
+  <li><a href="#example---the-linear-unit-as-a-model" id="toc-example---the-linear-unit-as-a-model" class="nav-link" data-scroll-target="#example---the-linear-unit-as-a-model">Example - The Linear Unit as a Model</a></li>
+  <li><a href="#multiple-inputs" id="toc-multiple-inputs" class="nav-link" data-scroll-target="#multiple-inputs">Multiple Inputs</a></li>
+  </ul></li>
+  <li><a href="#deep-neural-networks-introduction" id="toc-deep-neural-networks-introduction" class="nav-link" data-scroll-target="#deep-neural-networks-introduction">Deep Neural Networks Introduction</a>
+  <ul class="collapse">
+  <li><a href="#layers" id="toc-layers" class="nav-link" data-scroll-target="#layers">Layers</a></li>
+  <li><a href="#the-activation-function" id="toc-the-activation-function" class="nav-link" data-scroll-target="#the-activation-function">The Activation Function</a></li>
+  <li><a href="#stacking-dense-layers" id="toc-stacking-dense-layers" class="nav-link" data-scroll-target="#stacking-dense-layers">Stacking Dense Layers</a></li>
+  <li><a href="#building-sequential-models" id="toc-building-sequential-models" class="nav-link" data-scroll-target="#building-sequential-models">Building Sequential Models</a></li>
+  </ul></li>
+  <li><a href="#stochastic-gradient-descent" id="toc-stochastic-gradient-descent" class="nav-link" data-scroll-target="#stochastic-gradient-descent">Stochastic Gradient Descent</a>
+  <ul class="collapse">
+  <li><a href="#the-loss-function" id="toc-the-loss-function" class="nav-link" data-scroll-target="#the-loss-function">The Loss Function</a></li>
+  <li><a href="#the-optimizer---stochastic-gradient-descent" id="toc-the-optimizer---stochastic-gradient-descent" class="nav-link" data-scroll-target="#the-optimizer---stochastic-gradient-descent">The Optimizer - Stochastic Gradient Descent</a></li>
+  <li><a href="#learning-rate-and-batch-size" id="toc-learning-rate-and-batch-size" class="nav-link" data-scroll-target="#learning-rate-and-batch-size">Learning Rate and Batch Size</a></li>
+  <li><a href="#adding-the-loss-and-optimizer" id="toc-adding-the-loss-and-optimizer" class="nav-link" data-scroll-target="#adding-the-loss-and-optimizer">Adding the Loss and Optimizer</a></li>
+  </ul></li>
+  <li><a href="#overfitting-and-underfitting" id="toc-overfitting-and-underfitting" class="nav-link" data-scroll-target="#overfitting-and-underfitting">Overfitting and underfitting</a>
+  <ul class="collapse">
+  <li><a href="#interpreting-the-learning-curves" id="toc-interpreting-the-learning-curves" class="nav-link" data-scroll-target="#interpreting-the-learning-curves">Interpreting the Learning Curves</a></li>
+  <li><a href="#capacity" id="toc-capacity" class="nav-link" data-scroll-target="#capacity">Capacity</a></li>
+  <li><a href="#early-stopping" id="toc-early-stopping" class="nav-link" data-scroll-target="#early-stopping">Early Stopping</a></li>
+  <li><a href="#adding-early-stopping" id="toc-adding-early-stopping" class="nav-link" data-scroll-target="#adding-early-stopping">Adding Early Stopping</a></li>
+  </ul></li>
+  <li><a href="#drop-out-and-batch-normalization" id="toc-drop-out-and-batch-normalization" class="nav-link" data-scroll-target="#drop-out-and-batch-normalization">Drop out and batch normalization</a>
+  <ul class="collapse">
+  <li><a href="#dropout" id="toc-dropout" class="nav-link" data-scroll-target="#dropout">Dropout</a></li>
+  <li><a href="#batch-normalization" id="toc-batch-normalization" class="nav-link" data-scroll-target="#batch-normalization">Batch Normalization</a></li>
+  </ul></li>
+  <li><a href="#binary-classification" id="toc-binary-classification" class="nav-link" data-scroll-target="#binary-classification">Binary Classification</a>
+  <ul class="collapse">
+  <li><a href="#binary-classification-1" id="toc-binary-classification-1" class="nav-link" data-scroll-target="#binary-classification-1">Binary Classification</a></li>
+  <li><a href="#accuracy-and-cross-entropy" id="toc-accuracy-and-cross-entropy" class="nav-link" data-scroll-target="#accuracy-and-cross-entropy">Accuracy and Cross-Entropy</a></li>
+  <li><a href="#making-probabilities-with-the-sigmoid-function" id="toc-making-probabilities-with-the-sigmoid-function" class="nav-link" data-scroll-target="#making-probabilities-with-the-sigmoid-function">Making Probabilities with the Sigmoid Function</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/dataideaorg/dataidea-science/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Pytorch-Deep-Learning/outline.html">Pytorch-Deep-Learning</a></li><li class="breadcrumb-item"><a href="../Pytorch-Deep-Learning/oxdeep-learning-intro.html">Deep Learning Intro</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Deep Learning Intro</h1>
+</div>
+
+<div>
+  <div class="description">
+    Programming for Data Science is a subject we’ve designed to explore the various programming components of data science.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Juma Shafara </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">January 2, 2027</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+<div>
+  <div class="keywords">
+    <div class="block-title">Keywords</div>
+    <p>data science, data analysis, programming, dataidea</p>
+  </div>
+</div>
+
+</header>
+
+
+<!-- WARNING: THIS FILE WAS AUTOGENERATED! DO NOT EDIT! -->
+<section id="welcome-to-deep-learning" class="level2">
+<h2 class="anchored" data-anchor-id="welcome-to-deep-learning">Welcome to Deep Learning!</h2>
+<p>by Juma Shafara</p>
+<p>Welcome to DATAIDEA’s <em>Introduction to Deep Learning</em> You’re about to learn all you need to get started building your own deep neural networks. You’ll learn how to:</p>
+<ul>
+<li>create a <strong>fully-connected</strong> neural network architecture</li>
+<li>apply neural nets to two classic ML problems: <strong>regression</strong> and <strong>classification</strong></li>
+<li>train neural nets with <strong>stochastic gradient descent</strong>, and</li>
+<li>improve performance with <strong>dropout</strong>, <strong>batch normalization</strong>, and other techniques</li>
+</ul>
+<p>Let’s get started!</p>
+</section>
+<section id="what-is-deep-learning" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-deep-learning">What is Deep Learning?</h2>
+<p>Some of the most impressive advances in artificial intelligence in recent years have been in the field of <em>deep learning</em>. Natural language translation, image recognition, and game playing are all tasks where deep learning models have neared or even exceeded human-level performance.</p>
+<p>So what is deep learning? <strong>Deep learning</strong> is an approach to machine learning characterized by deep stacks of computations. This depth of computation is what has enabled deep learning models to disentangle the kinds of complex and hierarchical patterns found in the most challenging real-world datasets.</p>
+<p>Through their power and scalability <strong>neural networks</strong> have become the defining model of deep learning. Neural networks are composed of neurons, where each neuron individually performs only a simple computation. The power of a neural network comes instead from the complexity of the connections these neurons can form.</p>
+<section id="the-linear-unit" class="level3">
+<h3 class="anchored" data-anchor-id="the-linear-unit">The Linear Unit</h3>
+<p>So let’s begin with the fundamental component of a neural network: the individual neuron. As a diagram, a <strong>neuron</strong> (or <strong>unit</strong>) with one input looks like:</p>
+<figure style="padding: 1em;" class="figure">
+<img src="https://storage.googleapis.com/kaggle-media/learn/images/mfOlDR6.png" width="250" alt="Diagram of a linear unit." class="figure-img">
+<figcaption style="textalign: center; font-style: italic">
+<center>
+The Linear Unit: <span class="math inline">\(y = w x + b\)</span>
+</center>
+</figcaption>
+</figure>
+<p>The input is <code>x</code>. Its connection to the neuron has a <strong>weight</strong> which is <code>w</code>. Whenever a value flows through a connection, you multiply the value by the connection’s weight. For the input <code>x</code>, what reaches the neuron is <code>w * x</code>. A neural network “learns” by modifying its weights.</p>
+<p>The <code>b</code> is a special kind of weight we call the <strong>bias</strong>. The bias doesn’t have any input data associated with it; instead, we put a <code>1</code> in the diagram so that the value that reaches the neuron is just <code>b</code> (since <code>1 * b = b</code>). The bias enables the neuron to modify the output independently of its inputs.</p>
+<p>The <code>y</code> is the value the neuron ultimately outputs. To get the output, the neuron sums up all the values it receives through its connections. This neuron’s activation is <code>y = w * x + b</code>, or as a formula <span class="math inline">\(y = w x + b\)</span>.</p>
+<blockquote style="margin-right:auto; margin-left:auto; background-color: #ebf9ff; padding: 1em; margin:24px;" class="blockquote">
+<strong>Does the formula <span class="math inline">\(y=w x + b\)</span> look familiar?</strong><br> It’s an equation of a line! It’s the slope-intercept equation, where <span class="math inline">\(w\)</span> is the slope and <span class="math inline">\(b\)</span> is the y-intercept.
+</blockquote>
+</section>
+<section id="example---the-linear-unit-as-a-model" class="level3">
+<h3 class="anchored" data-anchor-id="example---the-linear-unit-as-a-model">Example - The Linear Unit as a Model</h3>
+<p>Though individual neurons will usually only function as part of a larger network, it’s often useful to start with a single neuron model as a baseline. Single neuron models are <em>linear</em> models.</p>
+<p>Let’s think about how this might work on a dataset like <a href="https://www.kaggle.com/crawford/80-cereals">80 Cereals</a>. Training a model with <code>'sugars'</code> (grams of sugars per serving) as input and <code>'calories'</code> (calories per serving) as output, we might find the bias is <code>b=90</code> and the weight is <code>w=2.5</code>. We could estimate the calorie content of a cereal with 5 grams of sugar per serving like this:</p>
+<figure style="padding: 1em;" class="figure">
+<img src="https://storage.googleapis.com/kaggle-media/learn/images/yjsfFvY.png" width="1000" alt="Computing with the linear unit." class="figure-img">
+<figcaption style="textalign: center; font-style: italic">
+<center>
+Computing with the linear unit.
+</center>
+</figcaption>
+</figure>
+<p>And, checking against our formula, we have <span class="math inline">\(calories = 2.5 \times 5 + 90 = 102.5\)</span>, just like we expect.</p>
+</section>
+<section id="multiple-inputs" class="level3">
+<h3 class="anchored" data-anchor-id="multiple-inputs">Multiple Inputs</h3>
+<p>The <em>80 Cereals</em> dataset has many more features than just <code>'sugars'</code>. What if we wanted to expand our model to include things like fiber or protein content? That’s easy enough. We can just add more input connections to the neuron, one for each additional feature. To find the output, we would multiply each input to its connection weight and then add them all together.</p>
+<figure style="padding: 1em;" class="figure">
+<img src="https://storage.googleapis.com/kaggle-media/learn/images/vyXSnlZ.png" width="300" alt="Three input connections: x0, x1, and x2, along with the bias." class="figure-img">
+<figcaption style="textalign: center; font-style: italic">
+<center>
+A linear unit with three inputs.
+</center>
+</figcaption>
+</figure>
+<p>The formula for this neuron would be <span class="math inline">\(y = w_0 x_0 + w_1 x_1 + w_2 x_2 + b\)</span>. A linear unit with two inputs will fit a plane, and a unit with more inputs than that will fit a hyperplane.</p>
+</section>
+</section>
+<section id="deep-neural-networks-introduction" class="level2">
+<h2 class="anchored" data-anchor-id="deep-neural-networks-introduction">Deep Neural Networks Introduction</h2>
+<p>In this lesson we’re going to see how we can build neural networks capable of learning the complex kinds of relationships deep neural nets are famous for.</p>
+<p>The key idea here is <em>modularity</em>, building up a complex network from simpler functional units. We’ve seen how a linear unit computes a linear function – now we’ll see how to combine and modify these single units to model more complex relationships.</p>
+<section id="layers" class="level3">
+<h3 class="anchored" data-anchor-id="layers">Layers</h3>
+<p>Neural networks typically organize their neurons into <strong>layers</strong>. When we collect together linear units having a common set of inputs we get a <strong>dense</strong> layer.</p>
+<figure style="padding: 1em;" class="figure">
+<img src="https://storage.googleapis.com/kaggle-media/learn/images/2MA4iMV.png" width="300" alt="A stack of three circles in an input layer connected to two circles in a dense layer." class="figure-img">
+<figcaption style="textalign: center; font-style: italic">
+<center>
+A dense layer of two linear units receiving two inputs and a bias.
+</center>
+</figcaption>
+</figure>
+<p>You could think of each layer in a neural network as performing some kind of relatively simple transformation. Through a deep stack of layers, a neural network can transform its inputs in more and more complex ways. In a well-trained neural network, each layer is a transformation getting us a little bit closer to a solution.</p>
+<blockquote style="margin-right:auto; margin-left:auto; background-color: #ebf9ff; padding: 1em; margin:24px;" class="blockquote">
+<strong>Many Kinds of Layers</strong><br> A “layer” in Keras is a very general kind of thing. A layer can be, essentially, any kind of <em>data transformation</em>. Many layers, like the <a href="https://www.tensorflow.org/api_docs/python/tf/keras/layers/Conv2D">convolutional</a> and <a href="https://www.tensorflow.org/api_docs/python/tf/keras/layers/RNN">recurrent</a> layers, transform data through use of neurons and differ primarily in the pattern of connections they form. Others though are used for <a href="https://www.tensorflow.org/api_docs/python/tf/keras/layers/Embedding">feature engineering</a> or just <a href="https://www.tensorflow.org/api_docs/python/tf/keras/layers/Add">simple arithmetic</a>. There’s a whole world of layers to discover – <a href="https://www.tensorflow.org/api_docs/python/tf/keras/layers">check them out</a>!
+</blockquote>
+</section>
+<section id="the-activation-function" class="level3">
+<h3 class="anchored" data-anchor-id="the-activation-function">The Activation Function</h3>
+<p>It turns out, however, that two dense layers with nothing in between are no better than a single dense layer by itself. Dense layers by themselves can never move us out of the world of lines and planes. What we need is something <em>nonlinear</em>. What we need are activation functions.</p>
+<figure style="padding: 1em;" class="figure">
+<img src="https://storage.googleapis.com/kaggle-media/learn/images/OLSUEYT.png" width="400" alt=" " class="figure-img">
+<figcaption style="textalign: center; font-style: italic">
+<center>
+Without activation functions, neural networks can only learn linear relationships. In order to fit curves, we’ll need to use activation functions.
+</center>
+</figcaption>
+</figure>
+<p>An <strong>activation function</strong> is simply some function we apply to each of a layer’s outputs (its <em>activations</em>). The most common is the <em>rectifier</em> function <span class="math inline">\(max(0, x)\)</span>.</p>
+<figure style="padding: 1em;" class="figure">
+<img src="https://storage.googleapis.com/kaggle-media/learn/images/aeIyAlF.png" width="400" alt="A graph of the rectifier function. The line y=x when x>0 and y=0 when x<0, making a 'hinge' shape like '_/'." class="figure-img">
+<figcaption style="textalign: center; font-style: italic">
+<center>
+</center>
+</figcaption>
+</figure>
+<p>The rectifier function has a graph that’s a line with the negative part “rectified” to zero. Applying the function to the outputs of a neuron will put a <em>bend</em> in the data, moving us away from simple lines.</p>
+<p>When we attach the rectifier to a linear unit, we get a <strong>rectified linear unit</strong> or <strong>ReLU</strong>. (For this reason, it’s common to call the rectifier function the “ReLU function”.) Applying a ReLU activation to a linear unit means the output becomes <code>max(0, w * x + b)</code>, which we might draw in a diagram like:</p>
+<figure style="padding: 1em;" class="figure">
+<img src="https://storage.googleapis.com/kaggle-media/learn/images/eFry7Yu.png" width="250" alt="Diagram of a single ReLU. Like a linear unit, but instead of a '+' symbol we now have a hinge '_/'. " class="figure-img">
+<figcaption style="textalign: center; font-style: italic">
+<center>
+A rectified linear unit.
+</center>
+</figcaption>
+</figure>
+</section>
+<section id="stacking-dense-layers" class="level3">
+<h3 class="anchored" data-anchor-id="stacking-dense-layers">Stacking Dense Layers</h3>
+<p>Now that we have some nonlinearity, let’s see how we can stack layers to get complex data transformations.</p>
+<figure style="padding: 1em;" class="figure">
+<img src="https://storage.googleapis.com/kaggle-media/learn/images/Y5iwFQZ.png" width="450" alt="An input layer, two hidden layers, and a final linear layer." class="figure-img">
+<figcaption style="textalign: center; font-style: italic">
+<center>
+A stack of dense layers makes a “fully-connected” network.
+</center>
+</figcaption>
+</figure>
+<p>The layers before the output layer are sometimes called <strong>hidden</strong> since we never see their outputs directly.</p>
+<p>Now, notice that the final (output) layer is a linear unit (meaning, no activation function). That makes this network appropriate to a regression task, where we are trying to predict some arbitrary numeric value. Other tasks (like classification) might require an activation function on the output.</p>
+</section>
+<section id="building-sequential-models" class="level3">
+<h3 class="anchored" data-anchor-id="building-sequential-models">Building Sequential Models</h3>
+<p>The <code>Sequential</code> model we’ve been using will connect together a list of layers in order from first to last: the first layer gets the input, the last layer produces the output. This creates the model in the figure above:</p>
+</section>
+</section>
+<section id="stochastic-gradient-descent" class="level2">
+<h2 class="anchored" data-anchor-id="stochastic-gradient-descent">Stochastic Gradient Descent</h2>
+<p>In the first two lessons, we learned how to build fully-connected networks out of stacks of dense layers. When first created, all of the network’s weights are set randomly – the network doesn’t “know” anything yet. In this lesson we’re going to see how to train a neural network; we’re going to see how neural networks <em>learn</em>.</p>
+<p>As with all machine learning tasks, we begin with a set of training data. Each example in the training data consists of some features (the inputs) together with an expected target (the output). Training the network means adjusting its weights in such a way that it can transform the features into the target. In the <em>80 Cereals</em> dataset, for instance, we want a network that can take each cereal’s <code>'sugar'</code>, <code>'fiber'</code>, and <code>'protein'</code> content and produce a prediction for that cereal’s <code>'calories'</code>. If we can successfully train a network to do that, its weights must represent in some way the relationship between those features and that target as expressed in the training data.</p>
+<p>In addition to the training data, we need two more things: - A “loss function” that measures how good the network’s predictions are. - An “optimizer” that can tell the network how to change its weights.</p>
+<section id="the-loss-function" class="level3">
+<h3 class="anchored" data-anchor-id="the-loss-function">The Loss Function</h3>
+<p>We’ve seen how to design an architecture for a network, but we haven’t seen how to tell a network <em>what</em> problem to solve. This is the job of the loss function.</p>
+<p>The <strong>loss function</strong> measures the disparity between the the target’s true value and the value the model predicts.</p>
+<p>Different problems call for different loss functions. We have been looking at <strong>regression</strong> problems, where the task is to predict some numerical value – calories in <em>80 Cereals</em>, rating in <em>Red Wine Quality</em>. Other regression tasks might be predicting the price of a house or the fuel efficiency of a car.</p>
+<p>A common loss function for regression problems is the <strong>mean absolute error</strong> or <strong>MAE</strong>. For each prediction <code>y_pred</code>, MAE measures the disparity from the true target <code>y_true</code> by an absolute difference <code>abs(y_true - y_pred)</code>.</p>
+<p>The total MAE loss on a dataset is the mean of all these absolute differences.</p>
+<figure style="padding: 1em;" class="figure">
+<img src="https://storage.googleapis.com/kaggle-media/learn/images/VDcvkZN.png" width="500" alt="A graph depicting error bars from data points to the fitted line.." class="figure-img">
+<figcaption style="textalign: center; font-style: italic">
+<center>
+The mean absolute error is the average length between the fitted curve and the data points.
+</center>
+</figcaption>
+</figure>
+<p>Besides MAE, other loss functions you might see for regression problems are the mean-squared error (MSE) or the Huber loss (both available in Keras).</p>
+<p>During training, the model will use the loss function as a guide for finding the correct values of its weights (lower loss is better). In other words, the loss function tells the network its objective.</p>
+</section>
+<section id="the-optimizer---stochastic-gradient-descent" class="level3">
+<h3 class="anchored" data-anchor-id="the-optimizer---stochastic-gradient-descent">The Optimizer - Stochastic Gradient Descent</h3>
+<p>We’ve described the problem we want the network to solve, but now we need to say <em>how</em> to solve it. This is the job of the <strong>optimizer</strong>. The optimizer is an algorithm that adjusts the weights to minimize the loss.</p>
+<p>Virtually all of the optimization algorithms used in deep learning belong to a family called <strong>stochastic gradient descent</strong>. They are iterative algorithms that train a network in steps. One <strong>step</strong> of training goes like this: 1. Sample some training data and run it through the network to make predictions. 2. Measure the loss between the predictions and the true values. 3. Finally, adjust the weights in a direction that makes the loss smaller.</p>
+<p>Then just do this over and over until the loss is as small as you like (or until it won’t decrease any further.)</p>
+<figure style="padding: 1em;" class="figure">
+<img src="https://storage.googleapis.com/kaggle-media/learn/images/rFI1tIk.gif" width="1600" alt="Fitting a line batch by batch. The loss decreases and the weights approach their true values." class="figure-img">
+<figcaption style="textalign: center; font-style: italic">
+<center>
+Training a neural network with Stochastic Gradient Descent.
+</center>
+</figcaption>
+</figure>
+<p>Each iteration’s sample of training data is called a <strong>minibatch</strong> (or often just “batch”), while a complete round of the training data is called an <strong>epoch</strong>. The number of epochs you train for is how many times the network will see each training example.</p>
+<p>The animation shows the linear model from Lesson 1 being trained with SGD. The pale red dots depict the entire training set, while the solid red dots are the minibatches. Every time SGD sees a new minibatch, it will shift the weights (<code>w</code> the slope and <code>b</code> the y-intercept) toward their correct values on that batch. Batch after batch, the line eventually converges to its best fit. You can see that the loss gets smaller as the weights get closer to their true values.</p>
+</section>
+<section id="learning-rate-and-batch-size" class="level3">
+<h3 class="anchored" data-anchor-id="learning-rate-and-batch-size">Learning Rate and Batch Size</h3>
+<p>Notice that the line only makes a small shift in the direction of each batch (instead of moving all the way). The size of these shifts is determined by the <strong>learning rate</strong>. A smaller learning rate means the network needs to see more minibatches before its weights converge to their best values.</p>
+<p>The learning rate and the size of the minibatches are the two parameters that have the largest effect on how the SGD training proceeds. Their interaction is often subtle and the right choice for these parameters isn’t always obvious. (We’ll explore these effects in the exercise.)</p>
+<p>Fortunately, for most work it won’t be necessary to do an extensive hyperparameter search to get satisfactory results. <strong>Adam</strong> is an SGD algorithm that has an adaptive learning rate that makes it suitable for most problems without any parameter tuning (it is “self tuning”, in a sense). Adam is a great general-purpose optimizer.</p>
+</section>
+<section id="adding-the-loss-and-optimizer" class="level3">
+<h3 class="anchored" data-anchor-id="adding-the-loss-and-optimizer">Adding the Loss and Optimizer</h3>
+<p>After defining a model, you can add a loss function and optimizer with the model’s <code>compile</code> method:</p>
+<pre><code>model.compile(
+    optimizer="adam",
+    loss="mae",
+)</code></pre>
+<p>Notice that we are able to specify the loss and optimizer with just a string. You can also access these directly through the Keras API – if you wanted to tune parameters, for instance – but for us, the defaults will work fine.</p>
+<blockquote style="margin-right:auto; margin-left:auto; background-color: #ebf9ff; padding: 1em; margin:24px;" class="blockquote">
+<strong>What’s In a Name?</strong><br> The <strong>gradient</strong> is a vector that tells us in what direction the weights need to go. More precisely, it tells us how to change the weights to make the loss change <em>fastest</em>. We call our process gradient <strong>descent</strong> because it uses the gradient to <em>descend</em> the loss curve towards a minimum. <strong>Stochastic</strong> means “determined by chance.” Our training is <em>stochastic</em> because the minibatches are <em>random samples</em> from the dataset. And that’s why it’s called SGD!
+</blockquote>
+</section>
+</section>
+<section id="overfitting-and-underfitting" class="level2">
+<h2 class="anchored" data-anchor-id="overfitting-and-underfitting">Overfitting and underfitting</h2>
+<p>Recall from the example in the previous lesson that Keras will keep a history of the training and validation loss over the epochs that it is training the model. In this lesson, we’re going to learn how to interpret these learning curves and how we can use them to guide model development. In particular, we’ll examine at the learning curves for evidence of <em>underfitting</em> and <em>overfitting</em> and look at a couple of strategies for correcting it.</p>
+<section id="interpreting-the-learning-curves" class="level3">
+<h3 class="anchored" data-anchor-id="interpreting-the-learning-curves">Interpreting the Learning Curves</h3>
+<p>You might think about the information in the training data as being of two kinds: <em>signal</em> and <em>noise</em>. The signal is the part that generalizes, the part that can help our model make predictions from new data. The noise is that part that is <em>only</em> true of the training data; the noise is all of the random fluctuation that comes from data in the real-world or all of the incidental, non-informative patterns that can’t actually help the model make predictions. The noise is the part might look useful but really isn’t.</p>
+<p>We train a model by choosing weights or parameters that minimize the loss on a training set. You might know, however, that to accurately assess a model’s performance, we need to evaluate it on a new set of data, the <em>validation</em> data. (You could see our lesson on <a href="https://www.kaggle.com/dansbecker/model-validation">model validation</a> in <em>Introduction to Machine Learning</em> for a review.)</p>
+<p>When we train a model we’ve been plotting the loss on the training set epoch by epoch. To this we’ll add a plot the validation data too. These plots we call the <strong>learning curves</strong>. To train deep learning models effectively, we need to be able to interpret them.</p>
+<figure style="padding: 1em;" class="figure">
+<img src="https://storage.googleapis.com/kaggle-media/learn/images/tHiVFnM.png" width="500" alt="A graph of training and validation loss." class="figure-img">
+<figcaption style="textalign: center; font-style: italic">
+<center>
+The validation loss gives an estimate of the expected error on unseen data.
+</center>
+</figcaption>
+</figure>
+<p>Now, the training loss will go down either when the model learns signal or when it learns noise. But the validation loss will go down only when the model learns signal. (Whatever noise the model learned from the training set won’t generalize to new data.) So, when a model learns signal both curves go down, but when it learns noise a <em>gap</em> is created in the curves. The size of the gap tells you how much noise the model has learned.</p>
+<p>Ideally, we would create models that learn all of the signal and none of the noise. This will practically never happen. Instead we make a trade. We can get the model to learn more signal at the cost of learning more noise. So long as the trade is in our favor, the validation loss will continue to decrease. After a certain point, however, the trade can turn against us, the cost exceeds the benefit, and the validation loss begins to rise.</p>
+<figure style="padding: 1em;" class="figure">
+<img src="https://storage.googleapis.com/kaggle-media/learn/images/eUF6mfo.png" width="600" alt="Two graphs. On the left, a line through a few data points with the true fit a parabola. On the right, a curve running through each datapoint with the true fit a parabola." class="figure-img">
+<figcaption style="textalign: center; font-style: italic">
+<center>
+Underfitting and overfitting.
+</center>
+</figcaption>
+</figure>
+<p>This trade-off indicates that there can be two problems that occur when training a model: not enough signal or too much noise. <strong>Underfitting</strong> the training set is when the loss is not as low as it could be because the model hasn’t learned enough <em>signal</em>. <strong>Overfitting</strong> the training set is when the loss is not as low as it could be because the model learned too much <em>noise</em>. The trick to training deep learning models is finding the best balance between the two.</p>
+<p>We’ll look at a couple ways of getting more signal out of the training data while reducing the amount of noise.</p>
+</section>
+<section id="capacity" class="level3">
+<h3 class="anchored" data-anchor-id="capacity">Capacity</h3>
+<p>A model’s <strong>capacity</strong> refers to the size and complexity of the patterns it is able to learn. For neural networks, this will largely be determined by how many neurons it has and how they are connected together. If it appears that your network is underfitting the data, you should try increasing its capacity.</p>
+<p>You can increase the capacity of a network either by making it <em>wider</em> (more units to existing layers) or by making it <em>deeper</em> (adding more layers). Wider networks have an easier time learning more linear relationships, while deeper networks prefer more nonlinear ones. Which is better just depends on the dataset.</p>
+<p>You’ll explore how the capacity of a network can affect its performance in the exercise.</p>
+</section>
+<section id="early-stopping" class="level3">
+<h3 class="anchored" data-anchor-id="early-stopping">Early Stopping</h3>
+<p>We mentioned that when a model is too eagerly learning noise, the validation loss may start to increase during training. To prevent this, we can simply stop the training whenever it seems the validation loss isn’t decreasing anymore. Interrupting the training this way is called <strong>early stopping</strong>.</p>
+<figure style="padding: 1em;" class="figure">
+<img src="https://storage.googleapis.com/kaggle-media/learn/images/eP0gppr.png" width="500" alt="A graph of the learning curves with early stopping at the minimum validation loss, underfitting to the left of it and overfitting to the right." class="figure-img">
+<figcaption style="textalign: center; font-style: italic">
+<center>
+We keep the model where the validation loss is at a minimum.
+</center>
+</figcaption>
+</figure>
+<p>Once we detect that the validation loss is starting to rise again, we can reset the weights back to where the minimum occured. This ensures that the model won’t continue to learn noise and overfit the data.</p>
+<p>Training with early stopping also means we’re in less danger of stopping the training too early, before the network has finished learning signal. So besides preventing overfitting from training too long, early stopping can also prevent <em>underfitting</em> from not training long enough. Just set your training epochs to some large number (more than you’ll need), and early stopping will take care of the rest.</p>
+</section>
+<section id="adding-early-stopping" class="level3">
+<h3 class="anchored" data-anchor-id="adding-early-stopping">Adding Early Stopping</h3>
+<p>We can include early stopping in our training through a callback. A <strong>callback</strong> is just a function you want run every so often while the network trains. The early stopping callback will run after every epoch. (Keras has <a href="https://www.tensorflow.org/api_docs/python/tf/keras/callbacks">a variety of useful callbacks</a> pre-defined, but you can <a href="https://www.tensorflow.org/api_docs/python/tf/keras/callbacks/LambdaCallback">define your own</a>, too.)</p>
+</section>
+</section>
+<section id="drop-out-and-batch-normalization" class="level2">
+<h2 class="anchored" data-anchor-id="drop-out-and-batch-normalization">Drop out and batch normalization</h2>
+<p>There’s more to the world of deep learning than just dense layers. There are dozens of kinds of layers you might add to a model. (Try browsing through the <a href="https://www.tensorflow.org/api_docs/python/tf/keras/layers/">Keras docs</a> for a sample!) Some are like dense layers and define connections between neurons, and others can do preprocessing or transformations of other sorts.</p>
+<p>In this lesson, we’ll learn about a two kinds of special layers, not containing any neurons themselves, but that add some functionality that can sometimes benefit a model in various ways. Both are commonly used in modern architectures.</p>
+<section id="dropout" class="level3">
+<h3 class="anchored" data-anchor-id="dropout">Dropout</h3>
+<p>The first of these is the “dropout layer”, which can help correct overfitting.</p>
+<p>In the last lesson we talked about how overfitting is caused by the network learning spurious patterns in the training data. To recognize these spurious patterns a network will often rely on very a specific combinations of weight, a kind of “conspiracy” of weights. Being so specific, they tend to be fragile: remove one and the conspiracy falls apart.</p>
+<p>This is the idea behind <strong>dropout</strong>. To break up these conspiracies, we randomly <em>drop out</em> some fraction of a layer’s input units every step of training, making it much harder for the network to learn those spurious patterns in the training data. Instead, it has to search for broad, general patterns, whose weight patterns tend to be more robust.</p>
+<figure style="padding: 1em;" class="figure">
+<img src="https://storage.googleapis.com/kaggle-media/learn/images/a86utxY.gif" width="600" alt="An animation of a network cycling through various random dropout configurations." class="figure-img">
+<figcaption style="textalign: center; font-style: italic">
+<center>
+Here, 50% dropout has been added between the two hidden layers.
+</center>
+</figcaption>
+</figure>
+<p>You could also think about dropout as creating a kind of <em>ensemble</em> of networks. The predictions will no longer be made by one big network, but instead by a committee of smaller networks. Individuals in the committee tend to make different kinds of mistakes, but be right at the same time, making the committee as a whole better than any individual. (If you’re familiar with random forests as an ensemble of decision trees, it’s the same idea.)</p>
+</section>
+<section id="batch-normalization" class="level3">
+<h3 class="anchored" data-anchor-id="batch-normalization">Batch Normalization</h3>
+<p>The next special layer we’ll look at performs “batch normalization” (or “batchnorm”), which can help correct training that is slow or unstable.</p>
+<p>With neural networks, it’s generally a good idea to put all of your data on a common scale, perhaps with something like scikit-learn’s <a href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html">StandardScaler</a> or <a href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html">MinMaxScaler</a>. The reason is that SGD will shift the network weights in proportion to how large an activation the data produces. Features that tend to produce activations of very different sizes can make for unstable training behavior.</p>
+<p>Now, if it’s good to normalize the data before it goes into the network, maybe also normalizing inside the network would be better! In fact, we have a special kind of layer that can do this, the <strong>batch normalization layer</strong>. A batch normalization layer looks at each batch as it comes in, first normalizing the batch with its own mean and standard deviation, and then also putting the data on a new scale with two trainable rescaling parameters. Batchnorm, in effect, performs a kind of coordinated rescaling of its inputs.</p>
+<p>Most often, batchnorm is added as an aid to the optimization process (though it can sometimes also help prediction performance). Models with batchnorm tend to need fewer epochs to complete training. Moreover, batchnorm can also fix various problems that can cause the training to get “stuck”. Consider adding batch normalization to your models, especially if you’re having trouble during training.</p>
+</section>
+</section>
+<section id="binary-classification" class="level2">
+<h2 class="anchored" data-anchor-id="binary-classification">Binary Classification</h2>
+<p>So far in this course, we’ve learned about how neural networks can solve regression problems. Now we’re going to apply neural networks to another common machine learning problem: classification. Most everything we’ve learned up until now still applies. The main difference is in the loss function we use and in what kind of outputs we want the final layer to produce.</p>
+<section id="binary-classification-1" class="level3">
+<h3 class="anchored" data-anchor-id="binary-classification-1">Binary Classification</h3>
+<p>Classification into one of two classes is a common machine learning problem. You might want to predict whether or not a customer is likely to make a purchase, whether or not a credit card transaction was fraudulent, whether deep space signals show evidence of a new planet, or a medical test evidence of a disease. These are all <strong>binary classification</strong> problems.</p>
+<p>In your raw data, the classes might be represented by strings like <code>"Yes"</code> and <code>"No"</code>, or <code>"Dog"</code> and <code>"Cat"</code>. Before using this data we’ll assign a <strong>class label</strong>: one class will be <code>0</code> and the other will be <code>1</code>. Assigning numeric labels puts the data in a form a neural network can use.</p>
+</section>
+<section id="accuracy-and-cross-entropy" class="level3">
+<h3 class="anchored" data-anchor-id="accuracy-and-cross-entropy">Accuracy and Cross-Entropy</h3>
+<p><strong>Accuracy</strong> is one of the many metrics in use for measuring success on a classification problem. Accuracy is the ratio of correct predictions to total predictions: <code>accuracy = number_correct / total</code>. A model that always predicted correctly would have an accuracy score of <code>1.0</code>. All else being equal, accuracy is a reasonable metric to use whenever the classes in the dataset occur with about the same frequency.</p>
+<p>The problem with accuracy (and most other classification metrics) is that it can’t be used as a loss function. SGD needs a loss function that changes smoothly, but accuracy, being a ratio of counts, changes in “jumps”. So, we have to choose a substitute to act as the loss function. This substitute is the <em>cross-entropy</em> function.</p>
+<p>Now, recall that the loss function defines the <em>objective</em> of the network during training. With regression, our goal was to minimize the distance between the expected outcome and the predicted outcome. We chose MAE to measure this distance.</p>
+<p>For classification, what we want instead is a distance between <em>probabilities</em>, and this is what cross-entropy provides. <strong>Cross-entropy</strong> is a sort of measure for the distance from one probability distribution to another.</p>
+<figure style="padding: 1em;" class="figure">
+<img src="https://storage.googleapis.com/kaggle-media/learn/images/DwVV9bR.png" width="400" alt="Graphs of accuracy and cross-entropy." class="figure-img">
+<figcaption style="textalign: center; font-style: italic">
+<center>
+Cross-entropy penalizes incorrect probability predictions.
+</center>
+</figcaption>
+</figure>
+<p>The idea is that we want our network to predict the correct class with probability <code>1.0</code>. The further away the predicted probability is from <code>1.0</code>, the greater will be the cross-entropy loss.</p>
+<p>The technical reasons we use cross-entropy are a bit subtle, but the main thing to take away from this section is just this: use cross-entropy for a classification loss; other metrics you might care about (like accuracy) will tend to improve along with it.</p>
+</section>
+<section id="making-probabilities-with-the-sigmoid-function" class="level3">
+<h3 class="anchored">Making Probabilities with the Sigmoid Function</h3>
+<p>The cross-entropy and accuracy functions both require probabilities as inputs, meaning, numbers from 0 to 1. To covert the real-valued outputs produced by a dense layer into probabilities, we attach a new kind of activation function, the <strong>sigmoid activation</strong>.</p>
+<figure style="padding: 1em;" class="figure">
+<img src="https://storage.googleapis.com/kaggle-media/learn/images/FYbRvJo.png" width="400" alt="The sigmoid graph is an 'S' shape with horizontal asymptotes at 0 to the left and 1 to the right. " class="figure-img">
+<figcaption style="textalign: center; font-style: italic">
+<center>
+The sigmoid function maps real numbers into the interval <span class="math inline">\([0, 1]\)</span>.
+</center>
+</figcaption>
+</figure>
+<p>To get the final class prediction, we define a <em>threshold</em> probability. Typically this will be 0.5, so that rounding will give us the correct class: below 0.5 means the class with label 0 and 0.5 or above means the class with label 1. A 0.5 threshold is what Keras uses by default with its <a href="https://www.tensorflow.org/api_docs/python/tf/keras/metrics/BinaryAccuracy">accuracy metric</a>.</p>
+<h2 class="anchored" data-anchor-id="making-probabilities-with-the-sigmoid-function">
+About the Author:
+</h2>
+<p>Hi, My name is Juma Shafara. Am a Data Scientist at Raising The Village and Instructor at DATAIDEA. I have taught hundreds of peope Programming, Data Analysis and Machine Learning. I enjoy developing innovative algorithms and models that can drive insights and value. I regularly share some content that I find useful throughout my work/learning/teaching journey to simplify concepts in Machine Learning, Mathematics, Programming, and related topics on my website <a href="https://jumashafara.dataidea.org">jumashafara.dataidea.org</a>. Besides these technical stuff, I enjoy watching soccer, movies and reading mystery books.</p>
+
+
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/dataideaorg\.github\.io\/dataidea-science");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../Pytorch-Deep-Learning/outline.html" class="pagination-link" aria-label="Pytorch Deep Learning Outline">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Pytorch Deep Learning Outline</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../Pytorch-Deep-Learning/Week1-Tensors-Datasets/1.1_1Dtensors_v2.html" class="pagination-link" aria-label="Torch Tensors in 1D">
+        <span class="nav-page-text">Torch Tensors in 1D</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/dataideaorg/dataidea-science/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
