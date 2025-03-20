@@ -1,0 +1,130 @@
+:root {
+    --md-primary-fg-color: #008374;
+    --md-primary-fg-color--light: #00a891;
+    --md-primary-fg-color--dark: #00695c;
+    --md-accent-fg-color: #008374;
+}
+
+footer {
+    background-color: #0d0d0d;
+    color: #fff; /* White text */
+    padding: 15px 20px; /* Increased padding for better spacing */
+    text-align: center;
+    width: 100%;
+    font-size: 14px;
+    box-shadow: 0 -2px 5px rgba(255, 255, 255, 0.1); /* Soft shadow effect */
+}
+
+/* Ensure the footer is always at the bottom */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Full height of the viewport */
+}
+
+main {
+    flex: 1; /* Pushes the footer down */
+}
+
+/* Make links look better */
+footer a {
+    color: #fff; 
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Card grid styling */
+.grid.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 1rem;
+    margin: 2rem 0;
+}
+
+.grid.cards > * {
+    border-radius: 0.2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    padding: 1.5rem;
+    margin: 0;
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--md-primary-fg-color);
+}
+
+.grid.cards > *:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.grid.cards p {
+    margin-bottom: 1rem;
+}
+
+.grid.cards a {
+    color: var(--md-primary-fg-color);
+    font-weight: bold;
+}
+
+/* Contact info styling */
+.contact-info {
+    background-color: #008374;
+    border-radius: 0.2rem;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    text-align: center;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h3 {
+    color: #fff;
+    margin-top: 0;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.contact-info p {
+    margin: 0.5rem 0;
+}
+
+/* home */
+
+/* Card styles */
+.card {
+    border: 1px solid #ddd; /* Light border for cards */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Ensure content fits within rounded corners */
+    transition: transform 0.3s; /* Smooth hover effect */
+    background: transparent;
+}
+
+.card:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Button styles */
+a.text-decoration-none {
+    text-decoration: none; /* Remove underline from links */
+    color: #007bff; /* Standard link color */
+}
+
+a.text-decoration-none:hover {
+    text-decoration: underline; /* Underline on hover for clarity */
+}
+
+/* Newsletter styles */
+.newsletter {
+    background-color: #fff; /* White background for the newsletter */
+    padding: 20px; /* Padding for spacing */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+
+
