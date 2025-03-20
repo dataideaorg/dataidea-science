@@ -1,0 +1,95 @@
+site_name: DATAIDEA DOCS
+site_url: https://docs.dataidea.org/
+site_author: Juma Shafara
+site_description: DATAIDEA Documentation
+
+markdown_extensions:
+  - pymdownx.tabbed:
+        alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.details
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+theme:
+  favicon: assets/logo.png
+  logo: assets/logo.png
+  name: material
+  # customization
+  custom_dir: overrides
+
+  # features
+  features:
+    # header
+    - header.autohide
+
+    # navigation
+    - navigation.footer
+    - navigation.top
+    - navigation.tabs
+    - navigation.expand
+    # - navigation.sections
+    - navigation.indexes
+    - content.code.copy
+
+    # announcements
+    - announce.dismiss
+    
+    # content
+    - content.tabs.link
+    - content.action.edit
+    - content.action.view
+
+  # fonts
+  font:
+    text: DM Sans
+    code: DM Mono
+
+  # palette
+  palette:
+    # Dark Mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Dark mode
+      primary: custom
+    # Light Mode
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Light mode
+      primary: custom
+
+# extra
+extra_css:
+  - styles/custom.css
+extra:
+  generator: false
+  homepage: https://www.dataidea.org/
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/dataidea
+      name: DATAIDEA on Twitter
+    - icon: fontawesome/brands/youtube
+      link: https://youtube.com/dataidea
+      name: DATAIDEA YouTube Channel
+    - icon: fontawesome/solid/envelope
+      link: mailto:dataideaorg@gmail.com
+      name: Contact us by email
+
+plugins:
+  - search
+  - git-revision-date-localized:
+      enable_creation_date: true
+  - minify:
+      minify_html: true
