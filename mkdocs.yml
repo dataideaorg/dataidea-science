@@ -1,7 +1,7 @@
-site_name: DATAIDEA DOCS
-site_url: https://docs.dataidea.org/
+site_name: DATAIDEA SCIENCE
+site_url: https://science.dataidea.org/
 site_author: Juma Shafara
-site_description: DATAIDEA Documentation
+site_description: DATAIDEA SCIENCE
 
 markdown_extensions:
   - pymdownx.tabbed:
