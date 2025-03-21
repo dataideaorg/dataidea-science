@@ -135,5 +135,9 @@ iframe {
     border-radius: 6px;
 }
 
+.video-iframe {
+    height: 40vh;
+}
+
 
 
