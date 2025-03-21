@@ -1,4 +1,4 @@
-# Welcome to DATAIDEA
+
 **Author:** Juma Shafara  
 **Date:** November 2023  
 **Date Modified:** November 5, 2024  
@@ -24,11 +24,18 @@ This subject offers a structured path to mastering the tools and techniques that
 - **Expert Guidance:** Gain insights from industry professionals who are passionate about data science and dedicated to your success.
 - **Career-Ready Skills:** By the end of this course, you'll be ready to tackle data science challenges, whether you're transitioning careers or enhancing your current role.
 
-## Newsletter
-### Don't Miss Any Updates!
-Before we continue, we have a humble request, to be among the first to hear about future updates of the course materials, simply enter your email below, follow us on [Twitter](https://x.com/dataideaorg) (formally Twitter), or subscribe to our [YouTube channel](https://www.youtube.com/@dataidea-science).
-
-<iframe class="newsletter-frame" src="https://embeds.beehiiv.com/5fc7c425-9c7e-4e08-a514-ad6c22beee74?slim=true" data-test-id="beehiiv-embed" height="52" frameborder="0" scrolling="no"></iframe>
+<!-- Newsletter -->
+<div class="newsletter">
+<h4><i class="bi bi-info-circle-fill"></i> Don't Miss Any Updates!</h4>
+<div class="newsletter-body">
+<p>
+Before we continue, I have a humble request, to be among the first to hear about future updates of the course materials, simply enter your email below, follow us on <a href="https://x.com/dataideaorg"><i class="bi bi-twitter-x"></i>
+(formally Twitter)</a>, or subscribe to our <a href="https://www.youtube.com/@dataidea-science"><i class="bi bi-youtube"></i> YouTube channel</a>.
+</p>
+<iframe class="newsletter-frame" src="https://embeds.beehiiv.com/5fc7c425-9c7e-4e08-a514-ad6c22beee74?slim=true" data-test-id="beehiiv-embed" height="52" frameborder="0" scrolling="no">
+</iframe>
+</div>
+</div>
 
 ## About the Author
 Hi, My name is Juma Shafara. I am a Data Scientist at Raising The Village and Instructor at DATAIDEA. I have taught hundreds of people Programming, Data Analysis, and Machine Learning. I enjoy developing innovative algorithms and models that can drive insights and value. I regularly share some content that I find useful throughout my work/learning/teaching journey to simplify concepts in Machine Learning, Mathematics, Programming, and related topics on my website [jumashafara.dataidea.org](https://jumashafara.dataidea.org). Besides these technical stuff, I enjoy watching soccer, movies, and reading mystery books.
