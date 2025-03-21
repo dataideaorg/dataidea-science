@@ -1,7 +1,9 @@
 :root {
     --md-primary-fg-color: #008374;
     --md-primary-fg-color--light: #00a891;
+    --md-default-fg-color--light: #f8f8f2;
     --md-primary-fg-color--dark: #00695c;
+    --md-default-bg-color--dark: #282a36;
     --md-accent-fg-color: #008374;
 }
 
@@ -120,10 +122,17 @@ a.text-decoration-none:hover {
 
 /* Newsletter styles */
 .newsletter {
-    background-color: #fff; /* White background for the newsletter */
-    padding: 20px; /* Padding for spacing */
+    background-color: transparent; /* White background for the newsletter */
+    padding: 10px 30px;
     border-radius: 8px; /* Rounded corners */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border: 2px solid #008374;
+}
+
+iframe {
+    background: transparent;
+    width: 100%;
+    border-radius: 6px;
 }
 
 
