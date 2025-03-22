@@ -5,52 +5,89 @@
     --md-primary-fg-color--dark: #00695c;
     --md-default-bg-color--dark: #282a36;
     --md-accent-fg-color: #008374;
+    
+    /* Material Design depth variables */
+    --md-shadow-z1: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --md-shadow-z2: 0 4px 8px rgba(0, 0, 0, 0.12);
+    --md-shadow-z3: 0 8px 16px rgba(0, 0, 0, 0.14);
+    --md-shadow-z4: 0 16px 24px rgba(0, 0, 0, 0.16);
+    
+    /* Material Design spacing */
+    --md-spacing-xs: 0.25rem;
+    --md-spacing-sm: 0.5rem;
+    --md-spacing-md: 1rem;
+    --md-spacing-lg: 1.5rem;
+    --md-spacing-xl: 2.5rem;
+    
+    /* Material Design radius */
+    --md-radius-sm: 4px;
+    --md-radius-md: 8px;
+    --md-radius-lg: 16px;
+    --md-radius-xl: 24px;
 }
 
-footer {
-    background-color: #0d0d0d;
-    color: #fff; /* White text */
-    padding: 15px 20px; /* Increased padding for better spacing */
-    text-align: center;
-    width: 100%;
-    font-size: 14px;
-    box-shadow: 0 -2px 5px rgba(255, 255, 255, 0.1); /* Soft shadow effect */
-}
-
-/* Ensure the footer is always at the bottom */
+/* Global Material Design Styles */
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Full height of the viewport */
+    min-height: 100vh;
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 main {
-    flex: 1; /* Pushes the footer down */
+    flex: 1;
 }
 
-/* Make links look better */
-footer a {
-    color: #fff; 
-    text-decoration: none;
-    font-weight: bold;
+/* Improved Material Design Elevation */
+.md-header {
+    /* box-shadow: var(--md-shadow-z2); */
 }
 
-footer a:hover {
-    text-decoration: underline;
+.md-main__inner {
+    margin-top: var(--md-spacing-xl);
+    margin-bottom: var(--md-spacing-xl);
 }
 
-/* Card grid styling */
+/* Material buttons */
+.md-button {
+    padding: 0.625em 1.25em;
+    font-weight: 500;
+    border-radius: var(--md-radius-sm);
+    transition: all 0.25s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+    font-size: 0.9rem;
+}
+
+.md-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--md-shadow-z2);
+}
+
+.md-button--primary {
+    background-color: var(--md-primary-fg-color);
+    color: white;
+    border: none;
+}
+
+.md-button--primary:hover {
+    background-color: var(--md-primary-fg-color--light);
+}
+
+/* Card grid styling with Material Design */
 .grid.cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 1rem;
-    margin: 2rem 0;
+    grid-gap: var(--md-spacing-lg);
+    margin: var(--md-spacing-xl) 0;
 }
 
 .grid.cards > * {
-    border-radius: 0.2rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    padding: 1.5rem;
+    border-radius: var(--md-radius-md);
+    box-shadow: var(--md-shadow-z1);
+    padding: var(--md-spacing-lg);
     margin: 0;
     transition: all 0.3s ease;
     border-left: 4px solid var(--md-primary-fg-color);
@@ -58,85 +95,290 @@ footer a:hover {
 
 .grid.cards > *:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--md-shadow-z3);
 }
 
 .grid.cards p {
-    margin-bottom: 1rem;
+    margin-bottom: var(--md-spacing-md);
 }
 
 .grid.cards a {
-    color: var(--md-primary-fg-color);
-    font-weight: bold;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+.grid.cards a .material-icons {
+    margin-left: var(--md-spacing-xs);
+    font-size: 1.1rem;
 }
 
 /* Contact info styling */
 .contact-info {
-    background-color: #008374;
-    border-radius: 0.2rem;
-    padding: 1.5rem;
-    margin-top: 2rem;
+    border-radius: var(--md-radius-md);
+    padding: var(--md-spacing-lg);
+    margin-top: var(--md-spacing-xl);
     text-align: center;
     max-width: 500px;
     margin-left: auto;
     margin-right: auto;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--md-shadow-z1);
+    border-top: 4px solid var(--md-primary-fg-color);
 }
 
 .contact-info h3 {
-    color: #fff;
     margin-top: 0;
-    border-bottom: 1px solid #e0e0e0;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: var(--md-spacing-sm);
+    margin-bottom: var(--md-spacing-md);
 }
 
 .contact-info p {
-    margin: 0.5rem 0;
+    margin: var(--md-spacing-sm) 0;
 }
 
-/* home */
-
-/* Card styles */
+/* Material Design Cards */
 .card {
-    border: 1px solid #ddd; /* Light border for cards */
-    border-radius: 8px; /* Rounded corners */
-    overflow: hidden; /* Ensure content fits within rounded corners */
-    transition: transform 0.3s; /* Smooth hover effect */
-    background: transparent;
+    border: none;
+    border-radius: var(--md-radius-md);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: var(--md-shadow-z1);
 }
 
 .card:hover {
-    transform: scale(1.05); /* Slightly enlarge on hover */
+    transform: translateY(-5px);
+    box-shadow: var(--md-shadow-z3);
 }
 
-/* Button styles */
+/* Button styles with Material Design */
 a.text-decoration-none {
-    text-decoration: none; /* Remove underline from links */
-    color: #007bff; /* Standard link color */
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
 }
 
 a.text-decoration-none:hover {
-    text-decoration: underline; /* Underline on hover for clarity */
+    color: var(--md-primary-fg-color--light);
 }
 
-/* Newsletter styles */
+/* Newsletter styles with Material Design */
 .newsletter {
-    background-color: transparent; /* White background for the newsletter */
-    padding: 10px 30px;
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    border: 2px solid #008374;
+    padding: var(--md-spacing-lg) var(--md-spacing-xl);
+    border-radius: var(--md-radius-md);
+    box-shadow: var(--md-shadow-z1);
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.newsletter::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--md-primary-fg-color);
+}
+
+.newsletter h4 {
+    font-size: 1.4rem;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    gap: var(--md-spacing-sm);
+    font-weight: 500;
+}
+
+.newsletter-body {
+    padding: var(--md-spacing-md) 0;
+}
+
+.newsletter-frame {
+    background: transparent;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    display: block;
+    border-radius: var(--md-radius-sm);
+    border: none;
 }
 
 iframe {
     background: transparent;
     width: 100%;
-    border-radius: 6px;
+    border-radius: var(--md-radius-sm);
 }
 
 .video-iframe {
     height: 40vh;
+    border-radius: var(--md-radius-md);
+    box-shadow: var(--md-shadow-z1);
+}
+
+/* Footer with Material Design */
+footer {
+    background-color: #0d0d0d;
+    color: #fff;
+    padding: var(--md-spacing-md) var(--md-spacing-lg);
+    text-align: center;
+    width: 100%;
+    font-size: 14px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer a {
+    color: #fff; 
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+footer a:hover {
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+/* Material Design Typography Improvements */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+}
+
+/* Material Design Icons Integration */
+.material-icons {
+    vertical-align: middle;
+}
+
+/* Announcement Banner Material Design */
+.announce {
+    text-align: center;
+    font-weight: 500;
+    padding: var(--md-spacing-sm) var(--md-spacing-md);
+}
+
+.announce p {
+    margin: 0;
+}
+
+/* Material Design Table Styling */
+table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: var(--md-spacing-lg);
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: var(--md-radius-md);
+    overflow: hidden;
+    box-shadow: var(--md-shadow-z1);
+    display: block;
+    overflow-x: auto;  /* Ensures tables don't expand beyond available width */
+    white-space: nowrap;
+}
+
+/* For wider screens, allow tables to break words */
+@media (min-width: 960px) {
+    table {
+        white-space: normal;
+    }
+}
+
+/* Table header styling */
+thead {
+    background-color: var(--md-primary-fg-color);
+    color: white;
+}
+
+/* Table header cells */
+th {
+    text-align: left;
+    padding: var(--md-spacing-md);
+    font-weight: 500;
+    border: none;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+/* Table body cells */
+td {
+    padding: var(--md-spacing-md);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+}
+
+/* Zebra striping for better readability */
+tbody tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+/* Hover effect on table rows */
+tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Remove bottom border from last row */
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* For tables that need to maintain full width even on mobile */
+.table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: var(--md-spacing-lg);
+}
+
+.table-responsive table {
+    margin-bottom: 0;
+}
+
+/* Compact table variant */
+.table-compact th,
+.table-compact td {
+    padding: var(--md-spacing-sm);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 960px) {
+    .md-main__inner {
+        margin-top: var(--md-spacing-lg);
+        margin-bottom: var(--md-spacing-lg);
+    }
+    
+    .grid.cards {
+        grid-gap: var(--md-spacing-md);
+    }
+
+    /* For small screens, allow horizontal scrolling on tables */
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
 }
 
 
