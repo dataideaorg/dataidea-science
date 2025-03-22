@@ -276,7 +276,7 @@ hide:
       <p>Start with the basics of Python, a versatile and powerful programming language. This course lays the foundation for your data science journey.</p>
     </div>
     <div class="card-footer">
-      <a href="https://science.dataidea.org/Python/00_python_programming_outline.html" class="card-link">
+      <a href="/Python/11_python_tutorial/" class="card-link">
         Get Started
         <span class="material-icons">arrow_forward</span>
       </a>
@@ -292,7 +292,7 @@ hide:
       <p>Explore data analysis using libraries like Pandas, NumPy, and Matplotlib. Learn to transform raw data into actionable insights.</p>
     </div>
     <div class="card-footer">
-      <a href="https://science.dataidea.org/Python-Data-Analysis/python_data_analysis_outline.html" class="card-link">
+      <a href="/Data%20Collection%20and%20Visulization/31_matplotlib_refined/" class="card-link">
         Get Started
         <span class="material-icons">arrow_forward</span>
       </a>
@@ -308,23 +308,7 @@ hide:
       <p>Discover the principles of machine learning and gain hands-on experience in building and optimizing models.</p>
     </div>
     <div class="card-footer">
-      <a href="https://science.dataidea.org/Python-Data-Analysis/Week4-ML-Intro/41_overview_of_machine_learning.html" class="card-link">
-        Get Started
-        <span class="material-icons">arrow_forward</span>
-      </a>
-    </div>
-  </div>
-  
-  <div class="course-card">
-    <div class="card-image" style="height: 160px; overflow: hidden; position: relative;">
-      <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="PyTorch Deep Learning" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;">
-    </div>
-    <div class="card-content">
-      <h3 class="card-title">PyTorch Deep Learning</h3>
-      <p>Dive deep into neural networks and learn to build advanced models using PyTorch.</p>
-    </div>
-    <div class="card-footer">
-      <a href="https://science.dataidea.org/Pytorch-Deep-Learning/outline.html" class="card-link">
+      <a href="/Machine%20Learning/41_overview_of_machine_learning/" class="card-link">
         Get Started
         <span class="material-icons">arrow_forward</span>
       </a>
