@@ -3,6 +3,47 @@ site_url: https://science.dataidea.org/
 site_author: Juma Shafara
 site_description: DATAIDEA SCIENCE
 
+nav:
+  - Home: index.md
+  - Python:
+      - Overview: Python/11_python_tutorial.md
+      - End of Course Exercise: Python/13_end_of_course_exercise.md
+      - Basics:
+          - Outline: Python/Basics/00_python_programming_outline.md
+          - Introduction: Python/Basics/01_basics.md
+          - Variables: Python/Basics/02_variables.md
+          - Numbers: Python/Basics/03_numbers.md
+          - Strings: Python/Basics/03_strings.md
+          - Operators: Python/Basics/04_operators.md
+          - Containers: Python/Basics/05_containers.md
+          - Flow Control: Python/Basics/06_flow_control.md
+          - Advanced: Python/Basics/07_advanced.md
+          - Modules: Python/Basics/08_modules.md
+          - File Handling: Python/Basics/09_file_handling.md
+          - End of Course Exercise: Python/Basics/13_end_of_course_exercise.md
+      - Libraries:
+          - NumPy: Python/Libraries/12_numpy.md
+          - Pandas: Python/Libraries/13_pandas.md
+          - Matplotlib: Data Collection and Visulization/31_matplotlib_refined.md           
+  - Data Collection and Visualization:
+      - Weather Data: Data Collection and Visulization/21_weather_data.md
+      - Matplotlib: Data Collection and Visulization/31_matplotlib_refined.md
+  - Machine Learning:
+      - Overview: Machine Learning/41_overview_of_machine_learning.md
+      - Training Models: Machine Learning/42_training_models_meaning.md
+      - Unsupervised Learning: Machine Learning/43_sklearn-unsupervised-learning.md
+      - Unsupervised Learning (More): Machine Learning/43_sklearn-unsupervised-learning2.md
+  - Maths & Statistics:
+      - Overview: Maths & Statistics/50_maths_and_stats_for_ds.md
+      - Descriptive Statistics: Maths & Statistics/51_descriptive_statistics.md
+      - Inferential Statistics: Maths & Statistics/52_inferencial_statistics.md
+      - Statistical Models: Maths & Statistics/53_implementing_statistical_models.md
+      - Hypothesis Testing: Maths & Statistics/hypothesis_testing.md
+  # - About:
+  #     - License: LICENSE
+  #     - ReadMe: README.md
+
+
 markdown_extensions:
   - pymdownx.tabbed:
         alternate_style: true
