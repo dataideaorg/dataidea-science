@@ -23,7 +23,7 @@ hide:
 
 .hero p {
   font-size: 1.2rem;
-  padding: 2rem 0;
+  padding: 0 2rem;
   max-width: 800px;
   margin: 0 auto 2rem;
   opacity: 0.9;
