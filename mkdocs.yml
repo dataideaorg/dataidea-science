@@ -39,6 +39,12 @@ nav:
       - Inferential Statistics: Maths & Statistics/52_inferencial_statistics.md
       - Statistical Models: Maths & Statistics/53_implementing_statistical_models.md
       - Hypothesis Testing: Maths & Statistics/hypothesis_testing.md
+  - Markdown:
+      - Overview: Markdown/index.md
+      - Basic Syntax: Markdown/basic-syntax.md
+      - Extended Syntax: Markdown/extended-syntax.md
+      - Markdown for Data Science: Markdown/data-science.md
+      - Tools and Workflows: Markdown/tools.md
   # - About:
   #     - License: LICENSE
   #     - ReadMe: README.md
