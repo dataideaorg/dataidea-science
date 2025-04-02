@@ -7,6 +7,7 @@ nav:
   - Home: index.md
   - Python:
       - Overview: Python/11_python_tutorial.md
+      - Beginner Practice Projects: Python/12_practice_projects.md
       - End of Course Exercise: Python/13_end_of_course_exercise.md
       - Basics:
           - Outline: Python/Basics/00_python_programming_outline.md
