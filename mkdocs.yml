@@ -28,20 +28,40 @@ nav:
   - Data Collection and Visualization:
       - Weather Data: Data Collection and Visulization/21_weather_data.md
       - Matplotlib: Data Collection and Visulization/31_matplotlib_refined.md
+      - Data Exploration Exercise: Data Collection and Visulization/32_data_exploration_and_cleaning_exercise.md
+      - Handling Missing Data: Data Collection and Visulization/76_handling_missing_data.md
   - Machine Learning:
       - Overview: Machine Learning/41_overview_of_machine_learning.md
       - Training Models: Machine Learning/42_training_models_meaning.md
       - Unsupervised Learning: Machine Learning/43_sklearn-unsupervised-learning.md
       - Unsupervised Learning (More): Machine Learning/43_sklearn-unsupervised-learning2.md
+      - Feature Engineering:
+          - Feature Selection: Machine Learning/71_feature_selection.md
+          - Why Scaling: Machine Learning/72_why_scaling.md
+          - Why Scaling (FPL): Machine Learning/72_why_scaling_fpl.md
+          - Normalization & Standardization: Machine Learning/73_normalization_and_standardization.md
+      - Model Evaluation:
+          - Classification Metrics: Machine Learning/80_classification_metrics.md
+          - Regression Metrics: Machine Learning/81_regression_metrics.md
+      - Advanced Techniques:
+          - Sklearn Pipeline: Machine Learning/82_sklearn_pipeline.md
+          - GridSearchCV: Machine Learning/83_GridSearchCV.md
+          - Handling Missing Data: Machine Learning/76_handling_missing_data.md
+          - Bonus: Machine Learning/75_bonus.md
+  - Time Series:
+      - Introduction: Time Series/90_introduction.md
+      - Analysis: Time Series/91_analysis.md
+      - Forecasting: Time Series/92_forecasting.md
+      - Python Example: Time Series/93_python_example.md
   - Maths & Statistics:
       - Overview: Maths & Statistics/50_maths_and_stats_for_ds.md
       - Descriptive Statistics: Maths & Statistics/51_descriptive_statistics.md
       - Inferential Statistics: Maths & Statistics/52_inferencial_statistics.md
       - Statistical Models: Maths & Statistics/53_implementing_statistical_models.md
       - Hypothesis Testing: Maths & Statistics/hypothesis_testing.md
-  # - About:
-  #     - License: LICENSE
-  #     - ReadMe: README.md
+  - About:
+      - License: LICENSE
+      - ReadMe: README.md
 
 
 markdown_extensions:
