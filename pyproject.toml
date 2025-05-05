@@ -45,7 +45,8 @@ dependencies = [
     "six (==1.17.0)",
     "smmap (==5.0.2)",
     "urllib3 (==2.3.0)",
-    "watchdog (==6.0.0)"
+    "watchdog (==6.0.0)",
+    "mkdocs-jupyter (>=0.25.1,<0.26.0)"
 ]
 
 
