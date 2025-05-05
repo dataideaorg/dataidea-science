@@ -26,10 +26,12 @@ nav:
           - Map Function: Python/Python Builtin/map_function.md
           - Reduce Function: Python/Python Builtin/reduce_function.md
       - Libraries:
-          - NumPy: Python/Libraries/12_numpy.md
-          - Pandas: Python/Libraries/13_pandas.md
-          - Matplotlib: Data Collection and Visulization/31_matplotlib_refined.md           
+          - NumPy Crash Course: Python/Libraries/12_numpy.md
+          - Pandas Crash Course: Python/Libraries/13_pandas.md
+          - Matplotlib Crash Course: Data Collection and Visulization/31_matplotlib_refined.md           
   - Data Collection and Visualization:
+      - NumPy Crash Course: Python/Libraries/12_numpy.md
+      - Pandas Crash Course: Python/Libraries/13_pandas.md
       - Weather Data: Data Collection and Visulization/21_weather_data.md
       - Matplotlib: Data Collection and Visulization/31_matplotlib_refined.md
       - Data Exploration Exercise: Data Collection and Visulization/32_data_exploration_and_cleaning_exercise.md
