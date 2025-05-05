@@ -21,6 +21,10 @@ nav:
           - Modules: Python/Basics/08_modules.md
           - File Handling: Python/Basics/09_file_handling.md
           - End of Course Exercise: Python/Basics/13_end_of_course_exercise.md
+      - Python Built-in:
+          - Filter Function: Python/Python Builtin/filter_function.md
+          - Map Function: Python/Python Builtin/map_function.md
+          - Reduce Function: Python/Python Builtin/reduce_function.md
       - Libraries:
           - NumPy: Python/Libraries/12_numpy.md
           - Pandas: Python/Libraries/13_pandas.md
@@ -162,6 +166,7 @@ extra:
 
 plugins:
   - search
+  - mkdocs-jupyter
   - git-revision-date-localized:
       enable_creation_date: true
   - minify:
