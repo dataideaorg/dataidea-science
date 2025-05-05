@@ -21,7 +21,7 @@ nav:
           - Modules: Python/Basics/08_modules.md
           - File Handling: Python/Basics/09_file_handling.md
           - End of Course Exercise: Python/Basics/13_end_of_course_exercise.md
-      - Python Built-in:
+      - Built-in:
           - Filter Function: Python/Python Builtin/filter_function.md
           - Map Function: Python/Python Builtin/map_function.md
           - Reduce Function: Python/Python Builtin/reduce_function.md
