@@ -54,6 +54,67 @@ nav:
       - Advanced Techniques:
           - Pipelines: Machine Learning/82_sklearn_pipeline.md
           - Hyperparameter Tuning: Machine Learning/83_GridSearchCV.md
+  - Deep Learning:
+      - Introduction: Deep Learning/outline.ipynb
+      - Week 1 - Tensors & Datasets:
+          - 1D Tensors: Deep Learning/Week1-Tensors-Datasets/1.1_1Dtensors_v2.ipynb
+          - 2D Tensors: Deep Learning/Week1-Tensors-Datasets/1.1_2 Two-Dimensional Tensors_v2.ipynb
+          - Derivatives & Graphs: Deep Learning/Week1-Tensors-Datasets/1.2derivativesandGraphsinPytorch_v2.ipynb
+          - Simple Datasets: Deep Learning/Week1-Tensors-Datasets/1.3.1_simple_data_set_v2.ipynb
+          - Pre-Built Datasets: Deep Learning/Week1-Tensors-Datasets/1.3.3_pre-Built Datasets_and_transforms_v2.ipynb
+          - Exercise: Deep Learning/Week1-Tensors-Datasets/tensors_and_datasets_exercise.ipynb
+      - Week 2 - Linear Regression:
+          - 1D Regression: Deep Learning/Week2-Linear-Regression/2.1Prediction1Dregression_v3.ipynb
+          - One Parameter: Deep Learning/Week2-Linear-Regression/2.2_linear_regression_one_parameter_v3.ipynb
+          - Slope & Bias: Deep Learning/Week2-Linear-Regression/2.3_training_slope_and_bias_v3.ipynb
+          - Exercise: Deep Learning/Week2-Linear-Regression/linear_regression_exercise.ipynb
+      - Week 3 - LR in PyTorch:
+          - SGD: Deep Learning/Week3-LR-PyTorch/3.1_stochastic_gradient_descent_v3.ipynb
+          - Mini-Batch GD: Deep Learning/Week3-LR-PyTorch/3.2_mini-batch_gradient_descent_v3.ipynb
+          - PyTorch Way: Deep Learning/Week3-LR-PyTorch/3.3_PyTorchway_v3.ipynb
+          - Training & Validation: Deep Learning/Week3-LR-PyTorch/3.6_training_and_validation_v3.ipynb
+          - Exercise: Deep Learning/Week3-LR-PyTorch/linear_regression_in_pytorch_exercise.ipynb
+      - Week 4 - Multiple Input LR:
+          - Multiple LR Prediction: Deep Learning/Week4-Multiple-Input-LR/4.1.multiple_linear_regression_prediction_v2.ipynb
+          - Multiple LR Training: Deep Learning/Week4-Multiple-Input-LR/4.2.multiple_linear_regression_training_v2.ipynb
+          - Multi-Target LR: Deep Learning/Week4-Multiple-Input-LR/4.3.multi-target_linear_regression.ipynb
+          - Training Multiple Output: Deep Learning/Week4-Multiple-Input-LR/4.4.training_multiple_output_linear_regression.ipynb
+          - Exercise: Deep Learning/Week4-Multiple-Input-LR/muliple_input_lr_exercise.ipynb
+      - Week 5 - Logistic Regression:
+          - Prediction: Deep Learning/Week5-Logistic-Regression/5.1logistic_regression_prediction_v2.ipynb
+          - MSE Issues: Deep Learning/Week5-Logistic-Regression/5.2.2bad_inshilization_logistic_regression_with_mean_square_error_v2.ipynb
+          - Cross Entropy: Deep Learning/Week5-Logistic-Regression/5.3_cross_entropy_logistic_regression_v2.ipynb
+          - Softmax: Deep Learning/Week5-Logistic-Regression/5.4softmax_in_one_dimension_v2.ipynb
+          - Exercise: Deep Learning/Week5-Logistic-Regression/logistic_regression_exercise.ipynb
+      - Week 6 - Practice:
+          - Custom Datasets: Deep Learning/Week6-Practice/6.1_custom_datasets.ipynb
+          - DataLoaders: Deep Learning/Week6-Practice/6.2_dataloaders.ipynb
+          - Transforms: Deep Learning/Week6-Practice/6.3_transforms.ipynb
+      - Week 7 - Shallow Networks:
+          - Simple Hidden Layer: Deep Learning/Week7-Shallow-Networks/7.1_simple1hiddenlayer.ipynb
+          - Multiple Neurons: Deep Learning/Week7-Shallow-Networks/7.2multiple_neurons.ipynb
+          - XOR Problem: Deep Learning/Week7-Shallow-Networks/7.3xor_v2.ipynb
+          - MNIST: Deep Learning/Week7-Shallow-Networks/7.4one_layer_neural_network_MNIST.ipynb
+          - Activation Functions: Deep Learning/Week7-Shallow-Networks/7.5.1activationfuction_v2.ipynb
+          - MNIST One Layer: Deep Learning/Week7-Shallow-Networks/7.5.2mist1layer_v2.ipynb
+      - Week 8 - Deep Networks:
+          - MNIST Two Layer: Deep Learning/Week8-Deep-Networks/8.1.1mist2layer_v2.ipynb
+          - Multiclass Spiral: Deep Learning/Week8-Deep-Networks/8.1.2mulitclassspiralrulu_v2.ipynb
+          - Dropout Prediction: Deep Learning/Week8-Deep-Networks/8.2.1dropoutPredictin_v2.ipynb
+          - Dropout Regression: Deep Learning/Week8-Deep-Networks/8.2.2dropoutRegression_v2.ipynb
+          - Initialization: Deep Learning/Week8-Deep-Networks/8.3.1.initializationsame.ipynb
+          - Xavier Init: Deep Learning/Week8-Deep-Networks/8.3.2Xaviermist1layer_v2.ipynb
+          - He Init: Deep Learning/Week8-Deep-Networks/8.3.3.He_Initialization_v2.ipynb
+          - Momentum: Deep Learning/Week8-Deep-Networks/8.4.1_MomentumwithPolynomialFunctions_v2.ipynb
+          - NN with Momentum: Deep Learning/Week8-Deep-Networks/8.4.2_NeuralNetworkswithMomentum_v2.ipynb
+          - Batch Normalization: Deep Learning/Week8-Deep-Networks/8.5.1BachNorm_v2.ipynb
+      - Week 9 - CNNs:
+          - Convolution Basics: Deep Learning/Week9-CNNs/9.1What_is_Convolution.ipynb
+          - Activation & Pooling: Deep Learning/Week9-CNNs/9.2Activation_max_pooling.ipynb
+          - Multiple Channels: Deep Learning/Week9-CNNs/9.3Multiple_Channel_Convolution.ipynb
+          - Simple CNN: Deep Learning/Week9-CNNs/9.4.1ConvolutionalNeralNetworkSimple example.ipynb
+          - CNN Small Image: Deep Learning/Week9-CNNs/9.4.2CNN_Small_Image.ipynb
+          - CNN Batch Processing: Deep Learning/Week9-CNNs/9.4.3CNN_Small_Image_batch.ipynb
   - Time Series:
       - Introduction: Time Series/90_introduction.md
       - Analysis: Time Series/91_analysis.md
