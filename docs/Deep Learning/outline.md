@@ -23,7 +23,7 @@ Before we continue, we have a humble request, to be among the first to hear abou
 </div>
 </div>
 
-## Week 1: Tensors and Datasets [<i class="bi bi-box-arrow-up-right" title="Get Started"></i>](./Week1-Tensors-Datasets/1.1_1Dtensors_v2.ipynb)
+## Week 1: Tensors and Datasets [<i class="bi bi-box-arrow-up-right" title="Get Started"></i>](./Week1-Tensors-Datasets/1.1_1Dtensors_v2.md)
 - 1 Dimension Tensors
 - Two Dimension Tensors
 - Derivatives and Graphs in PyTorch
@@ -32,12 +32,12 @@ Before we continue, we have a humble request, to be among the first to hear abou
 
 [Get Started <i class="bi bi-box-arrow-up-right"></i>](./Week1-Tensors-Datasets/1.1_1Dtensors_v2.md)
 
-## Week 2: Linear Regression [<i class="bi bi-box-arrow-up-right" title="Get Started"></i>](./Week2-Linear-Regression/2.1Prediction1Dregression_v3.ipynb)
+## Week 2: Linear Regression [<i class="bi bi-box-arrow-up-right" title="Get Started"></i>](./Week2-Linear-Regression/2.1Prediction1Dregression_v3.md)
 - Linear Regression 1 Dimension
 - Linear Regression with 1 Parameter
 - Training Slope and Bias
 
-[Get Started <i class="bi bi-box-arrow-up-right"></i>](./Week2-Linear-Regression/2.1Prediction1Dregression_v3.ipynb)
+[Get Started <i class="bi bi-box-arrow-up-right"></i>](./Week2-Linear-Regression/2.1Prediction1Dregression_v3.md)
 
 ## Week 3: Linear Regression in PyTorch [<i class="bi bi-box-arrow-up-right" title="Get Started"></i>](./Week3-LR-PyTorch/3.1_stochastic_gradient_descent_v3.ipynb)
 - Stochastic Gradient Descent
