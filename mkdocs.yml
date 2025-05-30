@@ -69,11 +69,11 @@ nav:
           - Slope & Bias: Deep Learning/Week2-Linear-Regression/2.3_training_slope_and_bias_v3.md
           - Exercise: Deep Learning/Week2-Linear-Regression/linear_regression_exercise.md
       - LR in PyTorch:
-          - SGD: Deep Learning/Week3-LR-PyTorch/3.1_stochastic_gradient_descent_v3.ipynb
-          - Mini-Batch GD: Deep Learning/Week3-LR-PyTorch/3.2_mini-batch_gradient_descent_v3.ipynb
-          - PyTorch Way: Deep Learning/Week3-LR-PyTorch/3.3_PyTorchway_v3.ipynb
-          - Training & Validation: Deep Learning/Week3-LR-PyTorch/3.6_training_and_validation_v3.ipynb
-          - Exercise: Deep Learning/Week3-LR-PyTorch/linear_regression_in_pytorch_exercise.ipynb
+          - SGD: Deep Learning/Week3-LR-PyTorch/3.1_stochastic_gradient_descent_v3.md
+          - Mini-Batch GD: Deep Learning/Week3-LR-PyTorch/3.2_mini-batch_gradient_descent_v3.md
+          - PyTorch Way: Deep Learning/Week3-LR-PyTorch/3.3_PyTorchway_v3.md
+          - Training & Validation: Deep Learning/Week3-LR-PyTorch/3.6_training_and_validation_v3.md
+          - Exercise: Deep Learning/Week3-LR-PyTorch/linear_regression_in_pytorch_exercise.md
       - Multiple Input LR:
           - Multiple LR Prediction: Deep Learning/Week4-Multiple-Input-LR/4.1.multiple_linear_regression_prediction_v2.ipynb
           - Multiple LR Training: Deep Learning/Week4-Multiple-Input-LR/4.2.multiple_linear_regression_training_v2.ipynb
