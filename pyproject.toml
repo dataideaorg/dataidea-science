@@ -1,5 +1,6 @@
 [project]
 name = "dataidea-science"
+package-mode = false
 version = "0.1.0"
 description = ""
 authors = [
@@ -46,7 +47,8 @@ dependencies = [
     "smmap (==5.0.2)",
     "urllib3 (==2.3.0)",
     "watchdog (==6.0.0)",
-    "mkdocs-jupyter (>=0.25.1,<0.26.0)"
+    "mkdocs-jupyter (>=0.25.1,<0.26.0)",
+    "jupyterlab (>=4.4.3,<5.0.0)"
 ]
 
 
