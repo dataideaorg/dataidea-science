@@ -75,11 +75,11 @@ nav:
           - Training & Validation: Deep Learning/Week3-LR-PyTorch/3.6_training_and_validation_v3.md
           - Exercise: Deep Learning/Week3-LR-PyTorch/linear_regression_in_pytorch_exercise.md
       - Multiple Input LR:
-          - Multiple LR Prediction: Deep Learning/Week4-Multiple-Input-LR/4.1.multiple_linear_regression_prediction_v2.ipynb
-          - Multiple LR Training: Deep Learning/Week4-Multiple-Input-LR/4.2.multiple_linear_regression_training_v2.ipynb
-          - Multi-Target LR: Deep Learning/Week4-Multiple-Input-LR/4.3.multi-target_linear_regression.ipynb
-          - Training Multiple Output: Deep Learning/Week4-Multiple-Input-LR/4.4.training_multiple_output_linear_regression.ipynb
-          - Exercise: Deep Learning/Week4-Multiple-Input-LR/muliple_input_lr_exercise.ipynb
+          - Multiple LR Prediction: Deep Learning/Week4-Multiple-Input-LR/4.1.multiple_linear_regression_prediction_v2.md
+          - Multiple LR Training: Deep Learning/Week4-Multiple-Input-LR/4.2.multiple_linear_regression_training_v2.md
+          - Multi-Target LR: Deep Learning/Week4-Multiple-Input-LR/4.3.multi-target_linear_regression.md
+          - Training Multiple Output: Deep Learning/Week4-Multiple-Input-LR/4.4.training_multiple_output_linear_regression.md
+          - Exercise: Deep Learning/Week4-Multiple-Input-LR/muliple_input_lr_exercise.md
       - Logistic Regression:
           - Prediction: Deep Learning/Week5-Logistic-Regression/5.1logistic_regression_prediction_v2.ipynb
           - MSE Issues: Deep Learning/Week5-Logistic-Regression/5.2.2bad_inshilization_logistic_regression_with_mean_square_error_v2.ipynb
