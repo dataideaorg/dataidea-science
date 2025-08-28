@@ -6,7 +6,7 @@ author: Juma Shafara
 date: "2023-11"
 ---
 
-![Photo by DATAIDEA](../assets/banner4.png)
+![Photo by DATAIDEA](../../assets/banner4.png)
 
 ## Modules
 A module in Python is a python file that can contain variables, functions and classes

@@ -6,7 +6,7 @@ description: Objective of time series analysis is to understand how change in ti
 keywords: [time series analysis, time series characteristics, trend, seasonality, cyclicity, irregularities]
 ---
 
-![Photo by DATAIDEA](../../assets/banner4.png)
+![Photo by DATAIDEA](../../../assets/banner4.png)
 
 As name suggest its analysis of the time series data to identify the patterns in it. I will briefly explain the different techniques and test for time series data analysis.
 

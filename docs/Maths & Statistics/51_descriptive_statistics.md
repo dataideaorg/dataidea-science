@@ -7,7 +7,7 @@ description: Descriptive statistics is a branch of statistics that deals with th
 keywords: [descriptive statistics, "what is descriptive statistics", Measures of central tendency, mean, median, mode, Measures of variability, range, variance,standard deviation, Measures of distribution shape, skewness, kurtosis, Measures of association, quantify the relationship between variables, coefficients]
 ---
 
-![Photo by DATAIDEA](../../assets/banner4.png)
+![Photo by DATAIDEA](../../../assets/banner4.png)
 
 
 ```python

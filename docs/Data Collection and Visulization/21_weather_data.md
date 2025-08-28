@@ -7,7 +7,7 @@ description: we’ll be using numpy and pandas, to explore some techniques we ca
 keywords: []
 ---
 
-![Photo by DATAIDEA](../../assets/banner4.png)
+![Photo by DATAIDEA](../../../assets/banner4.png)
 
 ## Cleaning the weather dataset
 

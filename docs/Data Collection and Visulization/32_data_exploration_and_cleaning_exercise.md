@@ -1,6 +1,6 @@
 # Data Exploration and Cleaning Exercise
 
-![Photo by DATAIDEA](../../assets/banner4.png)
+![Photo by DATAIDEA](../../../assets/banner4.png)
 
 <!-- Newsletter -->
 <div class="newsletter">

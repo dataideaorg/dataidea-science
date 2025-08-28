@@ -6,7 +6,7 @@ author: Juma Shafara
 date: "2023-11"
 ---
 
-![Photo by DATAIDEA](../assets/banner4.png)
+![Photo by DATAIDEA](../../assets/banner4.png)
 
 Python allows us to read, write, create and delete files. This process is called file handling. This is what we will discuss in this lesson
 

@@ -7,7 +7,7 @@ description: Training a model means finding the best parameters that describe th
 keywords: [Understanding Linear Regression, Fitting a Model]
 ---
 
-![Photo by DATAIDEA](../../assets/banner4.png)
+![Photo by DATAIDEA](../../../assets/banner4.png)
 
 In this lesson you will learn what it means to train a machine learning for:
 <ul class="cursored-list">

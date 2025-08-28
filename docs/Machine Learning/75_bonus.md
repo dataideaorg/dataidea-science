@@ -22,7 +22,7 @@ author: Juma Shafara
 date: "2023-03"
 ---
 
-![Photo by DATAIDEA](../../assets/banner4.png)
+![Photo by DATAIDEA](../../../assets/banner4.png)
 
 In this notebook, we demonstrate how ANOVA (Analysis of Variance) can be used to identify better features for machine learning models. We'll use the Fantasy Premier League (FPL) dataset to show how ANOVA helps in selecting features that best differentiate categories.
 

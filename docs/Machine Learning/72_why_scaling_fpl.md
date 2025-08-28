@@ -6,7 +6,7 @@ description: In this notebook, we’ll use Kmeans clustering to demonstrate the 
 date: "2024-04"
 ---
 
-![Photo by DATAIDEA](../../assets/banner4.png)
+![Photo by DATAIDEA](../../../assets/banner4.png)
 
 In this notebook, we'll use **Kmeans clustering** to demonstrate the importance of scaling data
 

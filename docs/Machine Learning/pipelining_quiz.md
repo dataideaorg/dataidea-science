@@ -6,7 +6,7 @@ author: Juma Shafara
 date: "2024-06"
 ---
 
-![Photo by DATAIDEA](../../assets/banner4.png)
+![Photo by DATAIDEA](../../../assets/banner4.png)
 
 Here are some multiple choice and true/false questions on machine learning pipelining:
 

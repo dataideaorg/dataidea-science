@@ -7,7 +7,7 @@ date: "2024-08-12"
 modified: "2024-09-09"
 ---
 
-![Photo by DATAIDEA](../assets/banner4.png)
+![Photo by DATAIDEA](../../assets/banner4.png)
 
 ## Objectives
 - Write and run Python code

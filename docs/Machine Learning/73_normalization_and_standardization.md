@@ -6,7 +6,7 @@ date: "2024-03"
 description: This Jupyter Notebook provides an overview of the importance of data normalization and standardization in preparing data for analysis and modeling
 ---
 
-![Photo by DATAIDEA](../../assets/banner4.png)
+![Photo by DATAIDEA](../../../assets/banner4.png)
 
 #### Introduction:
 In data analysis and machine learning, preprocessing steps such as data normalization and standardization are crucial for improving the performance and interpretability of models.

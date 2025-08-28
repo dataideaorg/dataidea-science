@@ -7,7 +7,7 @@ description: What are strings and how do we use them in Python?
 keywords: [python, python programming, python variables, strings]
 ---
 
-![Photo by DATAIDEA](../assets/banner4.png)
+![Photo by DATAIDEA](../../assets/banner4.png)
 
 ## Strings
 

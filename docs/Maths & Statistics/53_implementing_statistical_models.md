@@ -7,7 +7,7 @@ description: Statistical models are mathematical representations of relationship
 keywords: [statistical models, linear regression, logistic regression, statsmodels.api, statistics]
 ---
 
-![Photo by DATAIDEA](../../assets/banner4.png)
+![Photo by DATAIDEA](../../../assets/banner4.png)
 
 
 ```python

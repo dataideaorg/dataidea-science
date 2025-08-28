@@ -7,7 +7,7 @@ keywords: [machine learning, machine learning classification, machine learning c
 description: Learn Programming for Data Science. Demonstrate loading, preparing, training, and evaluating a machine learning model using the Iris dataset  
 ---
 
-![Photo by DATAIDEA](../../assets/banner4.png)
+![Photo by DATAIDEA](../../../assets/banner4.png)
 
 In this notebook, we'll walk through the process of building and evaluating a decision tree classifier using Scikit-Learn. We'll use the Iris dataset for demonstration and then provide an exercise to apply the same steps to the Wine dataset.
 

@@ -8,7 +8,7 @@ keywords: [Python Operators]
 body-header: This page was developed by Juma Shafara
 ---
 
-![](../assets/banner4.png)
+![](../../assets/banner4.png)
 
 ## What are Python Operators
 Operators are symbols that perform operations on operands. Operands can be variables, strings, numbers, booleans etc

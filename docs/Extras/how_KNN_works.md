@@ -6,7 +6,7 @@ author: Juma Shafara
 date: "2024-07-08"
 ---
 
-![Photo by DATAIDEA](../../assets/banner4.png)
+![Photo by DATAIDEA](../../../assets/banner4.png)
 
 ## Introduction to KNN Regression
 

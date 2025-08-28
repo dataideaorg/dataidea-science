@@ -7,7 +7,7 @@ description: Statistical inference is a process in which conclusions about popul
 keywords: [inferencial statistics, "what is inferencial statistics", chi-square, chi-square test, normal distribution, standard normal, p-value, z-value, hypothesis testing, anova]
 ---
 
-![Photo by DATAIDEA](../../assets/banner4.png)
+![Photo by DATAIDEA](../../../assets/banner4.png)
 
 ## Hypothesis Testing Tutorial
 

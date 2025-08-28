@@ -6,7 +6,7 @@ author: Juma Shafara
 date: "2024-03"
 ---
 
-![Photo by DATAIDEA](../../assets/banner4.png)
+![Photo by DATAIDEA](../../../assets/banner4.png)
 
 In regression tasks, the goal is to predict continuous numerical values. Scikit-learn provides several metrics to evaluate the performance of regression models. In this notebook, we will look at the following
 

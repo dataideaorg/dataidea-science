@@ -7,7 +7,7 @@ description: Matplotlib is a powerful plotting library in Python commonly used f
 keywords: [python visualization, matplotlib, bar chart, histogram, scatter plot, line plot, box plot, pie chart, stacked bar chart, quiz, python quiz, dataidea, data science,]
 ---
 
-![Photo by DATAIDEA](../../assets/banner4.png)
+![Photo by DATAIDEA](../../../assets/banner4.png)
 
 <div class="video-wrapper">
   <iframe

@@ -8,7 +8,7 @@ keywords: [python basics, variables, numbers, operators, containers, flow contro
 ---
 
 
-<!-- ![Photo by DATAIDEA](../assets/banner4.png) -->
+<!-- ![Photo by DATAIDEA](../../assets/banner4.png) -->
 
 <div class="video-wrapper">
   <iframe

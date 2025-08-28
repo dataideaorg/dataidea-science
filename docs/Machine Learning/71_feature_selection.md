@@ -7,7 +7,7 @@ date: "2024-03"
 date-modified: "2024-07-25"
 ---
 
-![Photo by DATAIDEA](../../assets/banner4.png)
+![Photo by DATAIDEA](../../../assets/banner4.png)
 
 ## What is Feature Selection
 

@@ -7,7 +7,7 @@ description: Pandas is a fast, powerful, flexible and easy to use open source da
 keywords: [Creating Dataframes, Concatenating DataFrames, Sampling values in the DataFrame, Selecting, Boolean Indexing and Setting, Dropping, Retrieving information about DataFrame]
 ---
 
-<!-- ![Photo by DATAIDEA](../assets/banner4.png) -->
+<!-- ![Photo by DATAIDEA](../../assets/banner4.png) -->
 
 <div class="video-wrapper">
   <iframe

@@ -7,7 +7,7 @@ description: What are variables and how do we use them in Python?
 keywords: [python, python programming, python variables]
 ---
 
-![Photo by DATAIDEA](../assets/banner4.png)
+![Photo by DATAIDEA](../../assets/banner4.png)
 
 ## Variables
 
