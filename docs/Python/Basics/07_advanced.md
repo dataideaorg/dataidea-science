@@ -7,7 +7,7 @@ date: "2023-11"
 date-modified: "2024-07-23"
 ---
 
-![Photo by DATAIDEA](../assets/banner4.png)
+![Photo by DATAIDEA](../../assets/banner4.png)
 
 In this notebook, we will explore some fundamental concepts in Python that are essential for writing clean, efficient, and maintainable code. These concepts include:
 

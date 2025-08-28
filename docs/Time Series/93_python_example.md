@@ -6,7 +6,7 @@ description: Objective of time series analysis is to understand how change in ti
 keywords: [time series analysis, time series characteristics, trend, seasonality, cyclicity, irregularities]
 ---
 
-![Photo by DATAIDEA](../../assets/banner4.png)
+![Photo by DATAIDEA](../../../assets/banner4.png)
 
 We have a monthly time series data of the air passengers from 1 Jan 1949 to 1 Dec 1960. Each row contains the air passenger number for a month of that particular year. Objective is to build a model to forecast the air passenger traffic for future months.
 

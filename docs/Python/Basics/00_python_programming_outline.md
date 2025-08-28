@@ -6,7 +6,7 @@ description: Python 3 Beginner Course Outline
 keywords: [Python Course Outline]
 ---
 
-![Photo by DATAIDEA](../assets/banner4.png)
+![Photo by DATAIDEA](../../assets/banner4.png)
 
 <!-- Newsletter -->
 <div class="newsletter">

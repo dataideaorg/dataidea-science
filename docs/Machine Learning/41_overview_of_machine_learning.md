@@ -7,7 +7,7 @@ description: Machine learning (ML) is a branch of artificial intelligence (AI) a
 keywords: [What is Machine Learning, ]
 ---
 
-![Photo by DATAIDEA](../../assets/banner4.png)
+![Photo by DATAIDEA](../../../assets/banner4.png)
 
 ## 1. Introduction to Machine Learning
 Machine learning (ML) is a branch of artificial intelligence that involves training algorithms to make predictions or decisions based on data. It's widely used in many fields, such as healthcare, finance, and marketing.

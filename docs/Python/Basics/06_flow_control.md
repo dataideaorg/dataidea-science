@@ -7,7 +7,7 @@ date: "2023-11"
 date-modified: "11-07-2024"
 ---
 
-![Photo by DATAIDEA](../assets/banner4.png)
+![Photo by DATAIDEA](../../assets/banner4.png)
 
 Python control flow tools change the flow of how code is executed by the Python interpreter.
 

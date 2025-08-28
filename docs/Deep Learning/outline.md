@@ -6,7 +6,7 @@ keywords: [data science, data analysis, programming, dataidea]
 description: Programming for Data Science is a subject we’ve designed to explore the various programming components of data science.
 ---
 
-![Photo by DATAIDEA](../../assets/banner4.png)
+![Photo by DATAIDEA](../../../assets/banner4.png)
 
 <!-- Newsletter -->
 <div class="newsletter">

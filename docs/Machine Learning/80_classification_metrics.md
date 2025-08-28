@@ -7,7 +7,7 @@ date: "2024-03"
 date-modified: "2024-09-18"
 ---
 
-![Photo by DATAIDEA](../../assets/banner4.png)
+![Photo by DATAIDEA](../../../assets/banner4.png)
 
 In scikit-learn, classification metrics are essential tools to evaluate the performance of a classification model. 
 

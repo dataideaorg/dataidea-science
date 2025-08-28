@@ -7,7 +7,7 @@ description: What are the different types of Python Numbers
 keywords: [python numbers, number types, number arithmetics, number methods]
 ---
 
-![Photo by DATAIDEA](../assets/banner4.png)
+![Photo by DATAIDEA](../../assets/banner4.png)
 
 ## Numbers
 

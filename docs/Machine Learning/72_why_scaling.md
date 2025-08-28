@@ -6,7 +6,7 @@ date: "2024-04"
 keywords: [clustering, rescaling, machine learning]
 ---
 
-![Photo by DATAIDEA](../../assets/banner4.png)
+![Photo by DATAIDEA](../../../assets/banner4.png)
 
 Let's use the Iris dataset, a popular dataset in machine learning. The Iris dataset consists of 150 samples of iris flowers, with each sample containing four features: sepal length, sepal width, petal length, and petal width. We'll demonstrate the effect of not scaling the features on K-means clustering.
 

@@ -7,7 +7,7 @@ date: "2023-11"
 date-modified: "2024-11-25"
 ---
 
-![Photo by DATAIDEA](../assets/banner4.png)
+![Photo by DATAIDEA](../../assets/banner4.png)
 
 ### Table of Contents
 

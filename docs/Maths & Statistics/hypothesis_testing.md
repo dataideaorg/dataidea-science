@@ -7,7 +7,7 @@ description: Test you knowledge in the basics of hypothesis testing with this si
 keywords: [inferencial statistics, "what is inferencial statistics", chi-square, chi-square test, normal distribution, standard normal, p-value, z-value, hypothesis testing, anova]
 ---
 
-![Photo by DATAIDEA](../../assets/banner4.png)
+![Photo by DATAIDEA](../../../assets/banner4.png)
 
 1. What is the primary purpose of inferential statistics?
    - A. To describe the main features of a dataset

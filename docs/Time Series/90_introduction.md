@@ -6,7 +6,7 @@ description: Objective of time series analysis is to understand how change in ti
 keywords: [time series analysis, time series characteristics, trend, seasonality, cyclicity, irregularities]
 ---
 
-![Photo by DATAIDEA](../../assets/banner4.png)
+![Photo by DATAIDEA](../../../assets/banner4.png)
 
 Any data recorded with some fixed interval of time is called as time series data. This fixed interval can be hourly, daily, monthly or yearly. e.g. hourly temperature reading, daily changing fuel prices, monthly electricity bill, annul company profit report etc. In time series data, time will always be independent variable and there can be one or many dependent variable. 
 

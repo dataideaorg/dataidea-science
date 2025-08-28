@@ -6,7 +6,7 @@ description: Objective of time series analysis is to understand how change in ti
 keywords: [time series analysis, time series characteristics, trend, seasonality, cyclicity, irregularities]
 ---
 
-![Photo by DATAIDEA](../../assets/banner4.png)
+![Photo by DATAIDEA](../../../assets/banner4.png)
 
 Forecasting refers to the future predictions based on the time series data analysis. Below are the steps performed during time series forecasting
 

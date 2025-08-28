@@ -7,7 +7,7 @@ description: Unsupervised machine learning refers to the category of machine lea
 keywords: [Introduction to Unsupervised Learning, Clustering, K Means Clustering, what number of clusters is good enough]
 ---
 
-![Photo by DATAIDEA](../../assets/banner4.png)
+![Photo by DATAIDEA](../../../assets/banner4.png)
 
 The following topics are covered in this tutorial:
 <ul class="cursored-list">

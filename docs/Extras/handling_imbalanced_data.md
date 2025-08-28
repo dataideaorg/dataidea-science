@@ -6,7 +6,7 @@ date: "2024-02"
 author: Juma Shafara
 ---
 
-![Photo by DATAIDEA](../../assets/banner4.png)
+![Photo by DATAIDEA](../../../assets/banner4.png)
 
 ## Handling Imbalanced Dataset
 

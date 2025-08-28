@@ -6,7 +6,7 @@ author: Juma Shafara
 date: "2024-03"
 ---
 
-![Photo by DATAIDEA](../../assets/banner4.png)
+![Photo by DATAIDEA](../../../assets/banner4.png)
 
 ## Pipeline
 

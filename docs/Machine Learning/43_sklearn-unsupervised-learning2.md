@@ -7,7 +7,7 @@ description: Unsupervised machine learning refers to the category of machine lea
 keywords: [Introduction to Unsupervised Learning, Clustering, DBSCAN]
 ---
 
-![Photo by DATAIDEA](../../assets/banner4.png)
+![Photo by DATAIDEA](../../../assets/banner4.png)
 
 In the previous section, we looked clustering and KMeans as model for cluster analysis. In this section, we will look at more clustering algorithms and Dimensionality reduction.
 

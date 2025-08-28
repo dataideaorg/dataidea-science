@@ -8,7 +8,7 @@ keywords: [numpy, data types, array mathematics, aggregate functions, Subsetting
 ---
 
 
-<!-- ![Photo by DATAIDEA](../assets/banner4.png) -->
+<!-- ![Photo by DATAIDEA](../../assets/banner4.png) -->
 
 ## Objective
 
