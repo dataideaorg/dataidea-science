@@ -218,9 +218,74 @@ article.md-content__inner {
   </div>
 </section>
 
+<section id="partnerships-section">
+  <div class="partnerships-container">
+    <span class="partnerships-badge">Alumni Success</span>
+    <h2 class="partnerships-title">Our Alumni Have Worked With</h2>
+    <p class="partnerships-description">
+      Our graduates and partners have gone on to work with leading organizations across East Africa and beyond.
+    </p>
+  </div>
+
+  <div class="carousel-wrapper">
+    <div class="carousel-track">
+      <!-- First set -->
+      <div class="partner-card">
+        <img src="./assets/partners/centre_for_policy_analysis.webp" alt="Centre for Policy Analysis" class="partner-logo">
+      </div>
+      <div class="partner-card">
+        <img src="./assets/partners/east_african_statistics_institute.jpg" alt="East African Statistics Institute" class="partner-logo">
+      </div>
+      <div class="partner-card">
+        <img src="./assets/partners/raising_the_village.png" alt="Raising the Village" class="partner-logo">
+      </div>
+      <div class="partner-card">
+        <img src="./assets/partners/twaweza.png" alt="Twaweza" class="partner-logo">
+      </div>
+      <div class="partner-card">
+        <img src="./assets/partners/watu.png" alt="Watu" class="partner-logo">
+      </div>
+
+      <!-- Second set for seamless loop -->
+      <div class="partner-card">
+        <img src="./assets/partners/centre_for_policy_analysis.webp" alt="Centre for Policy Analysis" class="partner-logo">
+      </div>
+      <div class="partner-card">
+        <img src="./assets/partners/east_african_statistics_institute.jpg" alt="East African Statistics Institute" class="partner-logo">
+      </div>
+      <div class="partner-card">
+        <img src="./assets/partners/raising_the_village.png" alt="Raising the Village" class="partner-logo">
+      </div>
+      <div class="partner-card">
+        <img src="./assets/partners/twaweza.png" alt="Twaweza" class="partner-logo">
+      </div>
+      <div class="partner-card">
+        <img src="./assets/partners/watu.png" alt="Watu" class="partner-logo">
+      </div>
+
+      <!-- Third set for seamless loop -->
+      <div class="partner-card">
+        <img src="./assets/partners/centre_for_policy_analysis.webp" alt="Centre for Policy Analysis" class="partner-logo">
+      </div>
+      <div class="partner-card">
+        <img src="./assets/partners/east_african_statistics_institute.jpg" alt="East African Statistics Institute" class="partner-logo">
+      </div>
+      <div class="partner-card">
+        <img src="./assets/partners/raising_the_village.png" alt="Raising the Village" class="partner-logo">
+      </div>
+      <div class="partner-card">
+        <img src="./assets/partners/twaweza.png" alt="Twaweza" class="partner-logo">
+      </div>
+      <div class="partner-card">
+        <img src="./assets/partners/watu.png" alt="Watu" class="partner-logo">
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="courses-section">
   <div class="section-header">
-    <h2 class="section-title-modern">Why Choose This Course?</h2>
+    <h2 class="section-title-modern">Why Choose Our Courses?</h2>
     <p class="section-subtitle">Our comprehensive approach ensures you gain practical, job-ready skills</p>
   </div>
 
@@ -239,11 +304,6 @@ article.md-content__inner {
       <h3 class="course-card-title">Expert Guidance</h3>
       <p class="course-card-description">Gain insights from industry professionals who are passionate about data science and dedicated to your success.</p>
     </div>
-
-    <div class="course-card-modern">
-      <h3 class="course-card-title">Career-Ready Skills</h3>
-      <p class="course-card-description">By the end of this course, you'll be ready to tackle data science challenges, whether you're transitioning careers or enhancing your current role.</p>
-    </div>
   </div>
 </section>
 
@@ -259,29 +319,6 @@ article.md-content__inner {
   </div>
 </div>
 
-<section class="courses-section" id="about">
-  <div class="section-header">
-    <h2 class="section-title-modern">About the Author</h2>
-  </div>
-
-  <div class="course-card-modern" style="max-width: 800px; margin: 0 auto;">
-    <div style="text-align: center; margin-bottom: 2rem;">
-      <img src="./assets/logo.png" alt="Juma Shafara" style="width: 120px; height: 120px; border-radius: 50%; border: 4px solid #333; object-fit: cover;">
-    </div>
-    <h3 class="course-card-title" style="text-align: center;">Juma Shafara</h3>
-    <div class="course-card-description">
-      <p>Hi, My name is Juma Shafara. I am a Data Scientist at Raising The Village and Instructor at DATAIDEA. I have taught hundreds of people Programming, Data Analysis, and Machine Learning.</p>
-      <p>I enjoy developing innovative algorithms and models that can drive insights and value. I regularly share content that I find useful throughout my work/learning/teaching journey to simplify concepts in Machine Learning, Mathematics, Programming, and related topics on my website <a href="https://jumashafara.dataidea.org" style="color: #e5e5e5;">jumashafara.dataidea.org</a>.</p>
-      <p>Besides these technical stuff, I enjoy watching soccer, movies, and reading mystery books.</p>
-    </div>
-    <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 2rem;">
-      <a href="https://twitter.com/jumashafara" target="_blank" class="btn btn-secondary btn-small">Twitter</a>
-      <a href="https://github.com/jumashafara" target="_blank" class="btn btn-secondary btn-small">GitHub</a>
-      <a href="mailto:example@email.com" class="btn btn-secondary btn-small">Email</a>
-    </div>
-  </div>
-</section>
-
 <small style="display: block; text-align: center; margin-top: 2rem; color: #888;">
-  **Last Updated:** November 5, 2024 | **Author:** Juma Shafara
+  **Last Updated:** November 5, 2025 | **Author:** Juma Shafara
 </small>

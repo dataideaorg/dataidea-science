@@ -885,4 +885,119 @@ tbody tr:last-child td {
     transform: translateY(-2px);
 }
 
+/* ===== PARTNERSHIPS SECTION STYLING ===== */
+#partnerships-section {
+    width: 100%;
+    padding: 5rem 0;
+    background: linear-gradient(to bottom right, #1a1a1a, #222);
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    #partnerships-section {
+        padding: 8rem 0;
+    }
+}
+
+.partnerships-container {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 0 1rem 4rem 1rem;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .partnerships-container {
+        padding: 0 2rem 4rem 2rem;
+    }
+}
+
+.partnerships-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: #333;
+    color: #e5e5e5;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.partnerships-title {
+    font-size: 2.25rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 1.5rem;
+    font-family: 'DM Serif Display', serif;
+}
+
+@media (min-width: 768px) {
+    .partnerships-title {
+        font-size: 3rem;
+    }
+}
+
+.partnerships-description {
+    font-size: 1.125rem;
+    color: #bbb;
+    max-width: 42rem;
+    margin: 0 auto;
+}
+
+.carousel-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 2rem;
+    animation: scroll 30s linear infinite;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-280px * 5 - 2rem * 5));
+    }
+}
+
+.partner-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+    background: white;
+    border-radius: 0.75rem;
+    height: 12rem;
+    min-width: 280px;
+    border: 1px solid #444;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.partner-card:hover {
+    transform: scale(1.05);
+}
+
+.partner-logo {
+    max-height: 8rem;
+    max-width: 100%;
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.partner-card:hover .partner-logo {
+    filter: grayscale(0%);
+}
+
+/* Pause animation on hover */
+.carousel-track:hover {
+    animation-play-state: paused;
+}
+
 
