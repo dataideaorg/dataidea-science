@@ -850,7 +850,7 @@ tbody tr:last-child td {
 }
 
 .meta-label {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     color: #999;
     margin-bottom: 0.25rem;
 }
@@ -858,7 +858,7 @@ tbody tr:last-child td {
 .meta-value {
     font-weight: 600;
     color: white;
-    font-size: 0.875rem;
+    font-size: 0.8rem;
 }
 
 /* Course card buttons */
@@ -871,7 +871,7 @@ tbody tr:last-child td {
 
 .btn-small {
     padding: 0.5rem 1rem;
-    font-size: 0.875rem;
+    font-size: 0.8rem;
     width: 100%;
 }
 
