@@ -735,15 +735,15 @@ tbody tr:last-child td {
 }
 
 .section-title-modern {
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: clamp(1.5rem, 3vw, 2rem);
     font-weight: 700;
     color: white;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
     font-family: 'DM Serif Display', serif;
 }
 
 .section-subtitle {
-    font-size: 1.125rem;
+    font-size: 0.95rem;
     color: #bbb;
     max-width: 600px;
     margin: 0 auto;
@@ -801,8 +801,8 @@ tbody tr:last-child td {
 }
 
 .course-card-title {
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-size: 1.25rem;
+    font-weight: 800;
     color: white;
     margin-bottom: 1rem;
     line-height: 1.3;
@@ -811,8 +811,8 @@ tbody tr:last-child td {
 
 .course-card-description {
     color: #bbb;
-    font-size: 0.9375rem;
-    line-height: 1.6;
+    font-size: 0.85rem;
+    line-height: 1.5;
     margin-bottom: 1.5rem;
     flex-grow: 1;
 }
