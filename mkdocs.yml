@@ -191,20 +191,10 @@ theme:
     text: DM Sans
     code: DM Mono
 
-  # palette
+  # palette - forced dark mode
   palette:
-    # Dark Mode
-    - scheme: slate
-      toggle:
-        icon: material/weather-sunny
-        name: Dark mode
-      primary: custom
-    # Light Mode
-    - scheme: default
-      toggle:
-        icon: material/weather-night
-        name: Light mode
-      primary: custom
+    scheme: slate
+    primary: custom
 
 # extra
 extra_css:
