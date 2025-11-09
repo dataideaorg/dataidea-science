@@ -38,7 +38,10 @@ article.md-content__inner {
 
 <section class="courses-section" id="courses" style="margin-top: 0; padding-top: 0;">
   <div class="section-header">
-    <h1 class="section-title-modern">All Courses</h1>
+    <h2 class="section-title-modern">All Courses</h2>
+<p class="partnerships-description">
+      Our courses can be taken individually or as a whole comprehensive course.
+    </p>
   </div>
 
   <div class="course-cards-grid">
