@@ -2,350 +2,250 @@
 hide:
   - navigation
   - toc
+title: " "
 ---
 
 <style>
-.hero {
-  padding: 4rem 0;
-  text-align: center;
-  background: linear-gradient(135deg, var(--md-primary-fg-color) 0%, var(--md-primary-fg-color--light) 100%);
-  color: white;
-  border-radius: 8px;
-  margin-bottom: 3rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+/* Hide the page title on home page */
+.md-content h1:first-of-type {
+  display: none;
 }
 
-.hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  font-weight: 700;
+/* Remove extra spacing at the top */
+.md-content__inner {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
 }
 
-.hero p {
-  font-size: 1.2rem;
-  padding: 0 2rem;
-  max-width: 800px;
-  margin: 0 auto 2rem;
-  opacity: 0.9;
+.md-content {
+  padding-top: 0 !important;
 }
 
-.hero-buttons {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  margin-top: 2rem;
+.md-typeset {
+  padding-top: 0 !important;
 }
 
-.hero-button {
-  display: inline-block;
-  padding: 0.8rem 1.5rem;
-  border-radius: 4px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  text-decoration: none;
+article.md-content__inner {
+  margin-top: 0 !important;
 }
 
-.primary-button {
-  background-color: white;
-  color: var(--md-primary-fg-color);
-}
-
-.primary-button:hover {
-  background-color: #f5f5f5;
-  transform: translateY(-2px);
-}
-
-.secondary-button {
-  background-color: rgba(255, 255, 255, 0.2);
-  color: white;
-}
-
-.secondary-button:hover {
-  background-color: rgba(255, 255, 255, 0.3);
-  transform: translateY(-2px);
-}
-
-.section-title {
-  font-size: 2rem;
-  text-align: center;
-  margin: 2rem 0;
-  position: relative;
-  padding-bottom: 0.5rem;
-}
-
-.section-title::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100px;
-  height: 4px;
-  background-color: var(--md-primary-fg-color);
-  border-radius: 2px;
-}
-
-.course-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin: 2rem 0;
-}
-
-.course-card {
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.course-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-}
-
-.card-content {
-  padding: 1.5rem;
-  flex-grow: 1;
-}
-
-.card-title {
-  font-size: 1.4rem;
-  margin-top: 0;
-  margin-bottom: 1rem;
-  color: var(--md-primary-fg-color);
-}
-
-.card-footer {
-  padding: 1rem 1.5rem;
-  text-align: right;
-}
-
-.card-link {
-  color: var(--md-primary-fg-color);
-  font-weight: 600;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  transition: all 0.3s ease;
-}
-
-.card-link:hover {
-  color: var(--md-primary-fg-color--light);
-}
-
-.card-link .material-icons {
-  margin-left: 0.5rem;
-  font-size: 1.2rem;
-}
-
-.features-section {
-  padding: 3rem 2rem;
-  border-radius: 8px;
-  margin: 3rem 0;
-}
-
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-}
-
-.feature-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  transition: all 0.3s ease;
-}
-
-.feature-item:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.feature-icon {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: var(--md-primary-fg-color);
-}
-
-.feature-title {
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-.newsletter {
-  padding: 2rem;
-  border-radius: 8px;
-  margin: 3rem 0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  border: none;
-}
-
-.newsletter h4 {
-  font-size: 1.4rem;
-  margin-top: 0;
-  color: var(--md-primary-fg-color);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.newsletter-body {
-  padding: 1rem 0;
-}
-
-.newsletter-frame {
-  width: 100%;
-  max-width: 500px;
-  margin: 0 auto;
-  display: block;
-}
-
-.author-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  margin: 3rem 0;
-}
-
-.author-image {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 1.5rem;
-  border: 4px solid var(--md-primary-fg-color);
-}
-
-.author-bio {
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.social-links {
-  display: flex;
-  gap: 1rem;
-  margin-top: 1.5rem;
-}
-
-.social-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  color: white;
-  transition: all 0.3s ease;
-}
-
-.social-link:hover {
-  transform: translateY(-3px);
+/* Remove default spacing from main content area */
+.md-main__inner {
+  margin-top: 0 !important;
+  padding-top: 1rem !important;
 }
 </style>
 
-<div class="hero">
-  <h1>Programming for Data Science</h1>
-  <p>A comprehensive and dynamic course designed to equip you with the skills to thrive in the world of data science</p>
-  <div class="hero-buttons">
-    <a href="#courses" class="hero-button primary-button">Explore Courses</a>
-    <a href="#about" class="hero-button secondary-button">About the Author</a>
+<section class="courses-section" id="courses" style="margin-top: 0; padding-top: 0;">
+  <div class="section-header">
+    <h1 class="section-title-modern">All Courses</h1>
   </div>
-</div>
 
-<h2 class="section-title" id="courses">What You Will Learn</h2>
+  <div class="course-cards-grid">
+    <!-- Python Programming Card -->
+    <div class="course-card-modern">
+      <h3 class="course-card-title">Python Programming</h3>
+      <p class="course-card-description">Start with the basics of Python, a versatile and powerful programming language. This course lays the foundation for your data science journey.</p>
 
-<div class="course-cards">
-  <div class="course-card">
-    <div class="card-image" style="height: 160px; overflow: hidden; position: relative;">
-      <img src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Python Programming" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;">
-    </div>
-    <div class="card-content">
-      <h3 class="card-title">Python Programming</h3>
-      <p>Start with the basics of Python, a versatile and powerful programming language. This course lays the foundation for your data science journey.</p>
-    </div>
-    <div class="card-footer">
-      <a href="/Python/11_python_tutorial/" class="card-link">
-        Get Started
-        <span class="material-icons">arrow_forward</span>
-      </a>
-    </div>
-  </div>
-  
-  <div class="course-card">
-    <div class="card-image" style="height: 160px; overflow: hidden; position: relative;">
-      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Python Data Analysis" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;">
-    </div>
-    <div class="card-content">
-      <h3 class="card-title">Python Data Analysis</h3>
-      <p>Explore data analysis using libraries like Pandas, NumPy, and Matplotlib. Learn to transform raw data into actionable insights.</p>
-    </div>
-    <div class="card-footer">
-      <a href="/Data%20Collection%20and%20Visulization/31_matplotlib_refined/" class="card-link">
-        Get Started
-        <span class="material-icons">arrow_forward</span>
-      </a>
-    </div>
-  </div>
-  
-  <div class="course-card">
-    <div class="card-image" style="height: 160px; overflow: hidden; position: relative;">
-      <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Machine Learning (Python)" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;">
-    </div>
-    <div class="card-content">
-      <h3 class="card-title">Machine Learning (Python)</h3>
-      <p>Discover the principles of machine learning and gain hands-on experience in building and optimizing models.</p>
-    </div>
-    <div class="card-footer">
-      <a href="/Machine%20Learning/41_overview_of_machine_learning/" class="card-link">
-        Get Started
-        <span class="material-icons">arrow_forward</span>
-      </a>
-    </div>
-  </div>
-</div>
+      <div class="course-skills">
+        <span class="skill-tag">Variables</span>
+        <span class="skill-tag">Functions</span>
+        <span class="skill-tag">OOP</span>
+        <span class="skill-tag">Libraries</span>
+      </div>
 
-<div class="features-section">
-  <h2 class="section-title">Why Choose This Course?</h2>
-  
-  <div class="features-grid">
-    <div class="feature-item">
-      <span class="material-icons feature-icon">code</span>
-      <h3 class="feature-title">Hands-On Learning</h3>
-      <p>Each module is designed with practical exercises and real-world projects to ensure you can apply what you've learned.</p>
+      <div class="course-meta">
+        <div class="meta-item">
+          <span class="meta-label">Duration</span>
+          <span class="meta-value">4 weeks</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Level</span>
+          <span class="meta-value">Beginner</span>
+        </div>
+      </div>
+
+      <div class="course-card-buttons">
+        <a href="https://forms.gle/CPL4Rs2pmuR4yToKA" target="_blank" class="btn btn-primary btn-small">Enroll Now</a>
+        <a href="/Python/11_python_tutorial/" class="btn btn-secondary btn-small">Use Free Resources</a>
+      </div>
     </div>
-    
-    <div class="feature-item">
-      <span class="material-icons feature-icon">route</span>
-      <h3 class="feature-title">Flexible Learning Path</h3>
-      <p>Choose to follow the entire course or focus on specific modules that meet your individual learning goals.</p>
+
+    <!-- Data Analysis Card -->
+    <div class="course-card-modern">
+      <h3 class="course-card-title">Python Data Analysis</h3>
+      <p class="course-card-description">Explore data analysis using libraries like Pandas, NumPy, and Matplotlib. Learn to transform raw data into actionable insights.</p>
+
+      <div class="course-skills">
+        <span class="skill-tag">Pandas</span>
+        <span class="skill-tag">NumPy</span>
+        <span class="skill-tag">Matplotlib</span>
+        <span class="skill-tag">Seaborn</span>
+      </div>
+
+      <div class="course-meta">
+        <div class="meta-item">
+          <span class="meta-label">Duration</span>
+          <span class="meta-value">5 weeks</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Level</span>
+          <span class="meta-value">Intermediate</span>
+        </div>
+      </div>
+
+      <div class="course-card-buttons">
+        <a href="https://forms.gle/CPL4Rs2pmuR4yToKA" target="_blank" class="btn btn-primary btn-small">Enroll Now</a>
+        <a href="/Data%20Collection%20and%20Visulization/31_matplotlib_refined/" class="btn btn-secondary btn-small">Use Free Resources</a>
+      </div>
     </div>
-    
-    <div class="feature-item">
-      <span class="material-icons feature-icon">psychology</span>
-      <h3 class="feature-title">Expert Guidance</h3>
-      <p>Gain insights from industry professionals who are passionate about data science and dedicated to your success.</p>
+
+    <!-- Machine Learning Card -->
+    <div class="course-card-modern">
+      <h3 class="course-card-title">Machine Learning</h3>
+      <p class="course-card-description">Discover the principles of machine learning and gain hands-on experience in building and optimizing models.</p>
+
+      <div class="course-skills">
+        <span class="skill-tag">Scikit-learn</span>
+        <span class="skill-tag">Algorithms</span>
+        <span class="skill-tag">Models</span>
+        <span class="skill-tag">Tuning</span>
+      </div>
+
+      <div class="course-meta">
+        <div class="meta-item">
+          <span class="meta-label">Duration</span>
+          <span class="meta-value">6 weeks</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Level</span>
+          <span class="meta-value">Advanced</span>
+        </div>
+      </div>
+
+      <div class="course-card-buttons">
+        <a href="https://forms.gle/CPL4Rs2pmuR4yToKA" target="_blank" class="btn btn-primary btn-small">Enroll Now</a>
+        <a href="/Machine%20Learning/41_overview_of_machine_learning/" class="btn btn-secondary btn-small">Use Free Resources</a>
+      </div>
     </div>
-    
-    <div class="feature-item">
-      <span class="material-icons feature-icon">trending_up</span>
-      <h3 class="feature-title">Career-Ready Skills</h3>
-      <p>By the end of this course, you'll be ready to tackle data science challenges, whether you're transitioning careers or enhancing your current role.</p>
+
+    <!-- Deep Learning & AI Card -->
+    <div class="course-card-modern">
+      <h3 class="course-card-title">Deep Learning & AI</h3>
+      <p class="course-card-description">Master neural networks, deep learning architectures, and AI techniques. Build cutting-edge models using PyTorch and modern deep learning frameworks.</p>
+
+      <div class="course-skills">
+        <span class="skill-tag">PyTorch</span>
+        <span class="skill-tag">Neural Networks</span>
+        <span class="skill-tag">CNNs</span>
+        <span class="skill-tag">RNNs</span>
+      </div>
+
+      <div class="course-meta">
+        <div class="meta-item">
+          <span class="meta-label">Duration</span>
+          <span class="meta-value">8 weeks</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Level</span>
+          <span class="meta-value">Advanced</span>
+        </div>
+      </div>
+
+      <div class="course-card-buttons">
+        <a href="https://forms.gle/CPL4Rs2pmuR4yToKA" target="_blank" class="btn btn-primary btn-small">Enroll Now</a>
+        <a href="/Deep%20Learning/outline/" class="btn btn-secondary btn-small">Use Free Resources</a>
+      </div>
+    </div>
+
+    <!-- Time Series Card -->
+    <div class="course-card-modern">
+      <h3 class="course-card-title">Time Series</h3>
+      <p class="course-card-description">Learn time series analysis and forecasting techniques. Master ARIMA, seasonal decomposition, and advanced forecasting methods.</p>
+
+      <div class="course-skills">
+        <span class="skill-tag">ARIMA</span>
+        <span class="skill-tag">Forecasting</span>
+        <span class="skill-tag">Seasonality</span>
+        <span class="skill-tag">Trends</span>
+      </div>
+
+      <div class="course-meta">
+        <div class="meta-item">
+          <span class="meta-label">Duration</span>
+          <span class="meta-value">4 weeks</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Level</span>
+          <span class="meta-value">Intermediate</span>
+        </div>
+      </div>
+
+      <div class="course-card-buttons">
+        <a href="https://forms.gle/CPL4Rs2pmuR4yToKA" target="_blank" class="btn btn-primary btn-small">Enroll Now</a>
+        <a href="/Time%20Series/90_introduction/" class="btn btn-secondary btn-small">Use Free Resources</a>
+      </div>
+    </div>
+
+    <!-- Maths & Statistics Card -->
+    <div class="course-card-modern">
+      <h3 class="course-card-title">Maths & Statistics</h3>
+      <p class="course-card-description">Build a strong mathematical foundation for data science. Master statistics, probability, linear algebra, and calculus concepts.</p>
+
+      <div class="course-skills">
+        <span class="skill-tag">Statistics</span>
+        <span class="skill-tag">Probability</span>
+        <span class="skill-tag">Linear Algebra</span>
+        <span class="skill-tag">Calculus</span>
+      </div>
+
+      <div class="course-meta">
+        <div class="meta-item">
+          <span class="meta-label">Duration</span>
+          <span class="meta-value">6 weeks</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Level</span>
+          <span class="meta-value">Intermediate</span>
+        </div>
+      </div>
+
+      <div class="course-card-buttons">
+        <a href="https://forms.gle/CPL4Rs2pmuR4yToKA" target="_blank" class="btn btn-primary btn-small">Enroll Now</a>
+        <a href="/Maths%20%26%20Statistics/50_maths_and_stats_for_ds/" class="btn btn-secondary btn-small">Use Free Resources</a>
+      </div>
     </div>
   </div>
-</div>
+</section>
+
+<section class="courses-section">
+  <div class="section-header">
+    <h2 class="section-title-modern">Why Choose This Course?</h2>
+    <p class="section-subtitle">Our comprehensive approach ensures you gain practical, job-ready skills</p>
+  </div>
+
+  <div class="course-cards-grid">
+    <div class="course-card-modern">
+      <h3 class="course-card-title">Hands-On Learning</h3>
+      <p class="course-card-description">Each module is designed with practical exercises and real-world projects to ensure you can apply what you've learned.</p>
+    </div>
+
+    <div class="course-card-modern">
+      <h3 class="course-card-title">Flexible Learning Path</h3>
+      <p class="course-card-description">Choose to follow the entire course or focus on specific modules that meet your individual learning goals.</p>
+    </div>
+
+    <div class="course-card-modern">
+      <h3 class="course-card-title">Expert Guidance</h3>
+      <p class="course-card-description">Gain insights from industry professionals who are passionate about data science and dedicated to your success.</p>
+    </div>
+
+    <div class="course-card-modern">
+      <h3 class="course-card-title">Career-Ready Skills</h3>
+      <p class="course-card-description">By the end of this course, you'll be ready to tackle data science challenges, whether you're transitioning careers or enhancing your current role.</p>
+    </div>
+  </div>
+</section>
 
 <div class="newsletter">
   <h4><span class="material-icons">notifications</span> Don't Miss Any Updates!</h4>
@@ -359,20 +259,28 @@ hide:
   </div>
 </div>
 
-<div class="author-section" id="about">
-  <img src="./assets/logo.png" alt="Juma Shafara" class="author-image">
-  <h2>About the Author</h2>
-  <div class="author-bio">
-    <p>Hi, My name is Juma Shafara. I am a Data Scientist at Raising The Village and Instructor at DATAIDEA. I have taught hundreds of people Programming, Data Analysis, and Machine Learning.</p>
-    <p>I enjoy developing innovative algorithms and models that can drive insights and value. I regularly share content that I find useful throughout my work/learning/teaching journey to simplify concepts in Machine Learning, Mathematics, Programming, and related topics on my website <a href="https://jumashafara.dataidea.org">jumashafara.dataidea.org</a>.</p>
-    <p>Besides these technical stuff, I enjoy watching soccer, movies, and reading mystery books.</p>
+<section class="courses-section" id="about">
+  <div class="section-header">
+    <h2 class="section-title-modern">About the Author</h2>
   </div>
-  <div class="social-links">
-    <a href="https://twitter.com/jumashafara" class="social-link" target="_blank"><span class="material-icons">language</span></a>
-    <a href="https://github.com/jumashafara" class="social-link" target="_blank"><span class="material-icons">code</span></a>
-    <a href="mailto:example@email.com" class="social-link"><span class="material-icons">email</span></a>
+
+  <div class="course-card-modern" style="max-width: 800px; margin: 0 auto;">
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <img src="./assets/logo.png" alt="Juma Shafara" style="width: 120px; height: 120px; border-radius: 50%; border: 4px solid #333; object-fit: cover;">
+    </div>
+    <h3 class="course-card-title" style="text-align: center;">Juma Shafara</h3>
+    <div class="course-card-description">
+      <p>Hi, My name is Juma Shafara. I am a Data Scientist at Raising The Village and Instructor at DATAIDEA. I have taught hundreds of people Programming, Data Analysis, and Machine Learning.</p>
+      <p>I enjoy developing innovative algorithms and models that can drive insights and value. I regularly share content that I find useful throughout my work/learning/teaching journey to simplify concepts in Machine Learning, Mathematics, Programming, and related topics on my website <a href="https://jumashafara.dataidea.org" style="color: #e5e5e5;">jumashafara.dataidea.org</a>.</p>
+      <p>Besides these technical stuff, I enjoy watching soccer, movies, and reading mystery books.</p>
+    </div>
+    <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 2rem;">
+      <a href="https://twitter.com/jumashafara" target="_blank" class="btn btn-secondary btn-small">Twitter</a>
+      <a href="https://github.com/jumashafara" target="_blank" class="btn btn-secondary btn-small">GitHub</a>
+      <a href="mailto:example@email.com" class="btn btn-secondary btn-small">Email</a>
+    </div>
   </div>
-</div>
+</section>
 
 <small style="display: block; text-align: center; margin-top: 2rem; color: #888;">
   **Last Updated:** November 5, 2024 | **Author:** Juma Shafara
