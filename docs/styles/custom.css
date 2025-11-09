@@ -888,14 +888,11 @@ tbody tr:last-child td {
 /* ===== PARTNERSHIPS SECTION STYLING ===== */
 #partnerships-section {
     width: 100%;
-    padding: 5rem 0;
-    background: linear-gradient(to bottom right, #1a1a1a, #222);
     overflow: hidden;
 }
 
 @media (min-width: 768px) {
     #partnerships-section {
-        padding: 8rem 0;
     }
 }
 
