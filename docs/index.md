@@ -314,11 +314,12 @@ article.md-content__inner {
   <h4><span class="material-icons">notifications</span> Don't Miss Any Updates!</h4>
   <div class="newsletter-body">
     <p>
-      To be among the first to hear about future updates of the course materials, simply enter your email below, follow us on 
-      <a href="https://x.com/dataideaorg"><span class="material-icons" style="font-size: 1rem; vertical-align: middle;">open_in_new</span> Twitter</a>, 
+      To be among the first to hear about future updates of the course materials, simply enter your email below, follow us on
+      <a href="https://x.com/dataideaorg"><span class="material-icons" style="font-size: 1rem; vertical-align: middle;">open_in_new</span> Twitter</a>,
       or subscribe to our <a href="https://www.youtube.com/@dataidea-science"><span class="material-icons" style="font-size: 1rem; vertical-align: middle;">play_circle</span> YouTube channel</a>.
     </p>
-    <iframe class="newsletter-frame" src="https://embeds.beehiiv.com/5fc7c425-9c7e-4e08-a514-ad6c22beee74?slim=true" data-test-id="beehiiv-embed" height="52" frameborder="0" scrolling="no"></iframe>
+    <script async src="https://subscribe-forms.beehiiv.com/embed.js"></script>
+    <iframe src="https://subscribe-forms.beehiiv.com/1183471d-1aea-40d3-aa5e-81264543bdac" class="beehiiv-embed" data-test-id="beehiiv-embed" frameborder="0" scrolling="no" style="width: 400px; height: 45px; margin: 0; border-radius: 0px 0px 0px 0px !important; background-color: transparent; box-shadow: 0 0 #0000; max-width: 100%;"></iframe>
   </div>
 </div>
 
