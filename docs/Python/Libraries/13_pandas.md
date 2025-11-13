@@ -97,88 +97,13 @@ data.sample(n=5)
 
 
 
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Age</th>
-      <th>Gender</th>
-      <th>Marital Status</th>
-      <th>Address</th>
-      <th>Income</th>
-      <th>Income Category</th>
-      <th>Job Category</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>137</th>
-      <td>32</td>
-      <td>m</td>
-      <td>0</td>
-      <td>1</td>
-      <td>26</td>
-      <td>2</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>92</th>
-      <td>61</td>
-      <td>m</td>
-      <td>1</td>
-      <td>18</td>
-      <td>23</td>
-      <td>1</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>39</th>
-      <td>21</td>
-      <td>f</td>
-      <td>0</td>
-      <td>0</td>
-      <td>13</td>
-      <td>1</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>41</th>
-      <td>56</td>
-      <td>f</td>
-      <td>0</td>
-      <td>7</td>
-      <td>213</td>
-      <td>4</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>48</th>
-      <td>51</td>
-      <td>f</td>
-      <td>0</td>
-      <td>0</td>
-      <td>47</td>
-      <td>2</td>
-      <td>1</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+|     | Age | Gender | Marital Status | Address | Income | Income Category | Job Category |
+|-----|-----|--------|----------------|---------|--------|-----------------|--------------|
+| 137 | 32  | m      | 0              | 1       | 26     | 2               | 2            |
+| 92  | 61  | m      | 1              | 18      | 23     | 1               | 3            |
+| 39  | 21  | f      | 0              | 0       | 13     | 1               | 1            |
+| 41  | 56  | f      | 0              | 7       | 213    | 4               | 3            |
+| 48  | 51  | f      | 0              | 0       | 47     | 2               | 1            |
 
 
 
@@ -218,63 +143,13 @@ dataframe_from_dict
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>age</th>
-      <th>gender</th>
-      <th>income</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>65</td>
-      <td>m</td>
-      <td>42</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>51</td>
-      <td>m</td>
-      <td>148</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>45</td>
-      <td>m</td>
-      <td>147</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>38</td>
-      <td>f</td>
-      <td>43</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>40</td>
-      <td>m</td>
-      <td>89</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+|   | age | gender | income |
+|---|-----|--------|--------|
+| 0 | 65  | m      | 42     |
+| 1 | 51  | m      | 148    |
+| 2 | 45  | m      | 147    |
+| 3 | 38  | f      | 43     |
+| 4 | 40  | m      | 89     |
 
 
 
@@ -308,63 +183,13 @@ dataframe_from_list
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>age</th>
-      <th>gender</th>
-      <th>income</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>28</td>
-      <td>m</td>
-      <td>24</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>59</td>
-      <td>m</td>
-      <td>841</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>54</td>
-      <td>m</td>
-      <td>741</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>83</td>
-      <td>f</td>
-      <td>34</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>34</td>
-      <td>m</td>
-      <td>98</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+|   | age | gender | income |
+|---|-----|--------|--------|
+| 0 | 28  | m      | 24     |
+| 1 | 59  | m      | 841    |
+| 2 | 54  | m      | 741    |
+| 3 | 83  | f      | 34     |
+| 4 | 34  | m      | 98     |
 
 
 
@@ -425,93 +250,18 @@ concatenated_dataframe
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>age</th>
-      <th>gender</th>
-      <th>income</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>65</td>
-      <td>m</td>
-      <td>42</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>51</td>
-      <td>m</td>
-      <td>148</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>45</td>
-      <td>m</td>
-      <td>147</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>38</td>
-      <td>f</td>
-      <td>43</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>40</td>
-      <td>m</td>
-      <td>89</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>28</td>
-      <td>m</td>
-      <td>24</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>59</td>
-      <td>m</td>
-      <td>841</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>54</td>
-      <td>m</td>
-      <td>741</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>83</td>
-      <td>f</td>
-      <td>34</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>34</td>
-      <td>m</td>
-      <td>98</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+|   | age | gender | income |
+|---|-----|--------|--------|
+| 0 | 65  | m      | 42     |
+| 1 | 51  | m      | 148    |
+| 2 | 45  | m      | 147    |
+| 3 | 38  | f      | 43     |
+| 4 | 40  | m      | 89     |
+| 5 | 28  | m      | 24     |
+| 6 | 59  | m      | 841    |
+| 7 | 54  | m      | 741    |
+| 8 | 83  | f      | 34     |
+| 9 | 34  | m      | 98     |
 
 
 
@@ -536,51 +286,11 @@ concatenated_dataframe.head(n=3)
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>age</th>
-      <th>gender</th>
-      <th>income</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>65</td>
-      <td>m</td>
-      <td>42</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>51</td>
-      <td>m</td>
-      <td>148</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>45</td>
-      <td>m</td>
-      <td>147</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+|   | age | gender | income |
+|---|-----|--------|--------|
+| 0 | 65  | m      | 42     |
+| 1 | 51  | m      | 148    |
+| 2 | 45  | m      | 147    |
 
 
 
@@ -595,51 +305,11 @@ concatenated_dataframe.tail(n=3)
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>age</th>
-      <th>gender</th>
-      <th>income</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>7</th>
-      <td>54</td>
-      <td>m</td>
-      <td>741</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>83</td>
-      <td>f</td>
-      <td>34</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>34</td>
-      <td>m</td>
-      <td>98</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+|   | age | gender | income |
+|---|-----|--------|--------|
+| 7 | 54  | m      | 741    |
+| 8 | 83  | f      | 34     |
+| 9 | 34  | m      | 98     |
 
 
 
@@ -654,51 +324,11 @@ concatenated_dataframe.sample(n=3)
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>age</th>
-      <th>gender</th>
-      <th>income</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>65</td>
-      <td>m</td>
-      <td>42</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>45</td>
-      <td>m</td>
-      <td>147</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>83</td>
-      <td>f</td>
-      <td>34</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+|   | age | gender | income |
+|---|-----|--------|--------|
+| 0 | 65  | m      | 42     |
+| 2 | 45  | m      | 147    |
+| 8 | 83  | f      | 34     |
 
 <!-- inline_horizontal -->
 <ins class="adsbygoogle"
@@ -730,51 +360,11 @@ country_data
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Country</th>
-      <th>Capital</th>
-      <th>Population</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Uganda</td>
-      <td>Kampala</td>
-      <td>11190846</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Kenya</td>
-      <td>Nairobi</td>
-      <td>1303171035</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Tanzania</td>
-      <td>Dodoma</td>
-      <td>207847528</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+|  | Country | Capital | Population |
+|---|---|---|---|
+| 0 | Uganda | Kampala | 11190846 |
+| 1 | Kenya | Nairobi | 1303171035 |
+| 2 | Tanzania | Dodoma | 207847528 |
 
 
 
@@ -888,55 +478,11 @@ country_data
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Country</th>
-      <th>Capital</th>
-      <th>Population</th>
-      <th>Lake</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Uganda</td>
-      <td>Kampala</td>
-      <td>11190846</td>
-      <td>Albert</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Kenya</td>
-      <td>Nairobi</td>
-      <td>1303171035</td>
-      <td>Turkana</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Tanzania</td>
-      <td>Dodoma</td>
-      <td>207847528</td>
-      <td>Tanganyika</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+|  | Country | Capital | Population | Lake |
+|---|---|---|---|---|
+| 0 | Uganda | Kampala | 11190846 | Albert |
+| 1 | Kenya | Nairobi | 1303171035 | Turkana |
+| 2 | Tanzania | Dodoma | 207847528 | Tanganyika |
 
 
 
@@ -981,48 +527,10 @@ country_data.iloc[0:2]
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Country</th>
-      <th>Capital</th>
-      <th>Population</th>
-      <th>Lake</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Uganda</td>
-      <td>Kampala</td>
-      <td>11190846</td>
-      <td>Albert</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Kenya</td>
-      <td>Nairobi</td>
-      <td>1303171035</td>
-      <td>Turkana</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+|  | Country | Capital | Population | Lake |
+|---|---|---|---|---|
+| 0 | Uganda | Kampala | 11190846 | Albert |
+| 1 | Kenya | Nairobi | 1303171035 | Turkana |
 
 
 
@@ -1038,41 +546,9 @@ country_data[country_data['Country'] == 'Uganda']
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Country</th>
-      <th>Capital</th>
-      <th>Population</th>
-      <th>Lake</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Uganda</td>
-      <td>Kampala</td>
-      <td>11190846</td>
-      <td>Albert</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+|  | Country | Capital | Population | Lake |
+|---|---|---|---|---|
+| 0 | Uganda | Kampala | 11190846 | Albert |
 
 
 
@@ -1106,55 +582,11 @@ country_data
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Country</th>
-      <th>Capital</th>
-      <th>Population</th>
-      <th>Lake</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Uganda</td>
-      <td>Kampala</td>
-      <td>11190846</td>
-      <td>Albert</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Kenya</td>
-      <td>Nairobi</td>
-      <td>1303171035</td>
-      <td>Turkana</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Tanzania</td>
-      <td>Dodoma</td>
-      <td>207847528</td>
-      <td>Tanganyika</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+|  | Country | Capital | Population | Lake |
+|---|---|---|---|---|
+| 0 | Uganda | Kampala | 11190846 | Albert |
+| 1 | Kenya | Nairobi | 1303171035 | Turkana |
+| 2 | Tanzania | Dodoma | 207847528 | Tanganyika |
 
 
 
@@ -1172,51 +604,11 @@ country_data.drop(
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Country</th>
-      <th>Capital</th>
-      <th>Lake</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Uganda</td>
-      <td>Kampala</td>
-      <td>Albert</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Kenya</td>
-      <td>Nairobi</td>
-      <td>Turkana</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Tanzania</td>
-      <td>Dodoma</td>
-      <td>Tanganyika</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+|  | Country | Capital | Lake |
+|---|---|---|---|
+| 0 | Uganda | Kampala | Albert |
+| 1 | Kenya | Nairobi | Turkana |
+| 2 | Tanzania | Dodoma | Tanganyika |
 
 
 
@@ -1233,47 +625,11 @@ country_data.drop(
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Country</th>
-      <th>Capital</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Uganda</td>
-      <td>Kampala</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Kenya</td>
-      <td>Nairobi</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Tanzania</td>
-      <td>Dodoma</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+|  | Country | Capital |
+|---|---|---|
+| 0 | Uganda | Kampala |
+| 1 | Kenya | Nairobi |
+| 2 | Tanzania | Dodoma |
 
 
 
@@ -1288,47 +644,11 @@ country_data.drop(columns=['Country', 'Population'])
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Capital</th>
-      <th>Lake</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Kampala</td>
-      <td>Albert</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Nairobi</td>
-      <td>Turkana</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Dodoma</td>
-      <td>Tanganyika</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+|  | Capital | Lake |
+|---|---|---|
+| 0 | Kampala | Albert |
+| 1 | Nairobi | Turkana |
+| 2 | Dodoma | Tanganyika |
 
 
 
@@ -1343,48 +663,10 @@ country_data.drop(labels=0) # drops out Uganda
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Country</th>
-      <th>Capital</th>
-      <th>Population</th>
-      <th>Lake</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1</th>
-      <td>Kenya</td>
-      <td>Nairobi</td>
-      <td>1303171035</td>
-      <td>Turkana</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Tanzania</td>
-      <td>Dodoma</td>
-      <td>207847528</td>
-      <td>Tanganyika</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+|  | Country | Capital | Population | Lake |
+|---|---|---|---|---|
+| 1 | Kenya | Nairobi | 1303171035 | Turkana |
+| 2 | Tanzania | Dodoma | 207847528 | Tanganyika |
 
 
 
@@ -1397,41 +679,9 @@ country_data.drop(labels=[0, 2], axis=0)
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Country</th>
-      <th>Capital</th>
-      <th>Population</th>
-      <th>Lake</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1</th>
-      <td>Kenya</td>
-      <td>Nairobi</td>
-      <td>1303171035</td>
-      <td>Turkana</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+|  | Country | Capital | Population | Lake |
+|---|---|---|---|---|
+| 1 | Kenya | Nairobi | 1303171035 | Turkana |
 
 
 
@@ -1460,51 +710,11 @@ country_data
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Country</th>
-      <th>Capital</th>
-      <th>Population</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Uganda</td>
-      <td>Kampala</td>
-      <td>11190846</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Kenya</td>
-      <td>None</td>
-      <td>1303171035</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Tanzania</td>
-      <td>None</td>
-      <td>207847528</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+|  | Country | Capital | Population |
+|---|---|---|---|
+| 0 | Uganda | Kampala | 11190846 |
+| 1 | Kenya | None | 1303171035 |
+| 2 | Tanzania | None | 207847528 |
 
 
 
@@ -1633,63 +843,16 @@ country_data.describe()
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Population</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>count</th>
-      <td>3.000000e+00</td>
-    </tr>
-    <tr>
-      <th>mean</th>
-      <td>5.074031e+08</td>
-    </tr>
-    <tr>
-      <th>std</th>
-      <td>6.961346e+08</td>
-    </tr>
-    <tr>
-      <th>min</th>
-      <td>1.119085e+07</td>
-    </tr>
-    <tr>
-      <th>25%</th>
-      <td>1.095192e+08</td>
-    </tr>
-    <tr>
-      <th>50%</th>
-      <td>2.078475e+08</td>
-    </tr>
-    <tr>
-      <th>75%</th>
-      <td>7.555093e+08</td>
-    </tr>
-    <tr>
-      <th>max</th>
-      <td>1.303171e+09</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+|  | Population |
+|---|---|
+| count | 3.000000e+00 |
+| mean | 5.074031e+08 |
+| std | 6.961346e+08 |
+| min | 1.119085e+07 |
+| 25% | 1.095192e+08 |
+| 50% | 2.078475e+08 |
+| 75% | 7.555093e+08 |
+| max | 1.303171e+09 |
 
 
 

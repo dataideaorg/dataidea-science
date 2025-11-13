@@ -349,15 +349,145 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
 
-/* Material Design Table Styling - Dark Gray Theme */
-.md-typeset__table {
-    width: 100%;
-    max-width: 100%;
-    margin-bottom: var(--md-spacing-lg);
-    overflow-x: auto;
-    overflow-y: visible;
-    -webkit-overflow-scrolling: touch;
+table {
+    width: auto;
+    min-width: 100%;
+    max-width: max-content;
+    margin-bottom: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    display: table;
+    table-layout: auto;
+    background-color: #2a2a2a;
+    border: 1px solid #3a3a3a;
+    white-space: nowrap;
+}
+
+/* Table header styling - Dark gray theme */
+thead {
+    background-color: #2f2f2f;
+    color: #e5e5e5;
+    border-bottom: 2px solid #444;
+    position: relative;
+}
+
+/* Add subtle gradient to header */
+thead::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #666, transparent);
+}
+
+/* Table header cells */
+th {
+    text-align: left;
+    padding: var(--md-spacing-sm) var(--md-spacing-md);
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+    color: #bbb;
+    border: none;
+    border-right: 1px solid #3a3a3a;
+    position: relative;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+th:last-child {
+    border-right: none;
+}
+
+/* Table body */
+tbody {
+    background-color: #2a2a2a;
+}
+
+/* Table body cells */
+td {
+    padding: var(--md-spacing-sm) var(--md-spacing-md);
+    border-bottom: 1px solid #3a3a3a;
+    border-right: 1px solid #3a3a3a;
+    color: #d5d5d5;
+    transition: all 0.2s ease;
+    background-color: transparent;
+    font-size: 0.85rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+td:last-child {
+    border-right: none;
+}
+
+/* Zebra striping for better readability - dark gray */
+tbody tr:nth-child(even) {
+    background-color: #2d2d2d;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #2a2a2a;
+}
+
+/* Hover effect on table rows - subtle highlight */
+tbody tr:hover {
+    background-color: #353535 !important;
+    box-shadow: inset 0 0 0 1px #444;
+}
+
+tbody tr:hover td {
+    color: #fff;
+}
+
+/* Remove bottom border from last row */
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* First column styling - slightly emphasized */
+td:first-child {
+    font-weight: 500;
+    color: #e5e5e5;
+}
+
+/* For tables that need to maintain full width even on mobile */
+.table-responsive {
     display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: var(--md-spacing-lg);
+}
+
+.table-responsive table {
+    margin-bottom: 0;
+}
+
+/* Compact table variant */
+.table-compact th,
+.table-compact td {
+    padding: var(--md-spacing-sm);
+    font-size: 0.85rem;
+}
+
+/* Responsive adjustments for tables */
+@media (min-width: 960px) {
+    table {
+        white-space: normal;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    /* For small screens, allow horizontal scrolling on tables */
+    table {
+        display: block;
+        overflow-x: auto;
+    }
 }
 
 /* Image Styling - Full Width */
