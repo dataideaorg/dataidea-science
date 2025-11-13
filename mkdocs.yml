@@ -29,7 +29,7 @@ nav:
       - Libraries:
           - NumPy Crash Course: Python/Libraries/12_numpy.md
           - Pandas Crash Course: Python/Libraries/13_pandas.md
-          - Matplotlib Crash Course: Data Collection and Visulization/31_matplotlib_refined.md           
+          - Matplotlib Crash Course: Data Collection and Visulization/31_matplotlib_refined.md
   - Data Collection and Visualization:
       - NumPy Crash Course: Python/Libraries/12_numpy.md
       - Pandas Crash Course: Python/Libraries/13_pandas.md
@@ -40,7 +40,7 @@ nav:
   - Machine Learning:
       - Overview: Machine Learning/41_overview_of_machine_learning.md
       - Training Models: Machine Learning/42_training_models_meaning.md
-      - Unsupervised Learning: 
+      - Unsupervised Learning:
           - Introduction: Machine Learning/43_sklearn-unsupervised-learning.md
           - Advanced: Machine Learning/43_sklearn-unsupervised-learning2.md
       - Feature Engineering:
