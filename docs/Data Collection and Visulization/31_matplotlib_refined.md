@@ -76,130 +76,13 @@ titanic_df.head(n=5)
 
 
 
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>pclass</th>
-      <th>survived</th>
-      <th>name</th>
-      <th>sex</th>
-      <th>age</th>
-      <th>sibsp</th>
-      <th>parch</th>
-      <th>ticket</th>
-      <th>fare</th>
-      <th>cabin</th>
-      <th>embarked</th>
-      <th>boat</th>
-      <th>body</th>
-      <th>home.dest</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>Allen, Miss. Elisabeth Walton</td>
-      <td>female</td>
-      <td>29.0000</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>24160</td>
-      <td>211.3375</td>
-      <td>B5</td>
-      <td>S</td>
-      <td>2</td>
-      <td>NaN</td>
-      <td>St Louis, MO</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>Allison, Master. Hudson Trevor</td>
-      <td>male</td>
-      <td>0.9167</td>
-      <td>1.0</td>
-      <td>2.0</td>
-      <td>113781</td>
-      <td>151.5500</td>
-      <td>C22 C26</td>
-      <td>S</td>
-      <td>11</td>
-      <td>NaN</td>
-      <td>Montreal, PQ / Chesterville, ON</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>Allison, Miss. Helen Loraine</td>
-      <td>female</td>
-      <td>2.0000</td>
-      <td>1.0</td>
-      <td>2.0</td>
-      <td>113781</td>
-      <td>151.5500</td>
-      <td>C22 C26</td>
-      <td>S</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Montreal, PQ / Chesterville, ON</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>Allison, Mr. Hudson Joshua Creighton</td>
-      <td>male</td>
-      <td>30.0000</td>
-      <td>1.0</td>
-      <td>2.0</td>
-      <td>113781</td>
-      <td>151.5500</td>
-      <td>C22 C26</td>
-      <td>S</td>
-      <td>NaN</td>
-      <td>135.0</td>
-      <td>Montreal, PQ / Chesterville, ON</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>Allison, Mrs. Hudson J C (Bessie Waldo Daniels)</td>
-      <td>female</td>
-      <td>25.0000</td>
-      <td>1.0</td>
-      <td>2.0</td>
-      <td>113781</td>
-      <td>151.5500</td>
-      <td>C22 C26</td>
-      <td>S</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Montreal, PQ / Chesterville, ON</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+|   | pclass | survived | name | sex | age | sibsp | parch | ticket | fare | cabin | embarked | boat | body | home.dest |
+|---|--------|----------|------|-----|-----|-------|-------|--------|------|-------|----------|------|------|-----------|
+| 0 | 1.0 | 1.0 | Allen, Miss. Elisabeth Walton | female | 29.0000 | 0.0 | 0.0 | 24160 | 211.3375 | B5 | S | 2 | NaN | St Louis, MO |
+| 1 | 1.0 | 1.0 | Allison, Master. Hudson Trevor | male | 0.9167 | 1.0 | 2.0 | 113781 | 151.5500 | C22 C26 | S | 11 | NaN | Montreal, PQ / Chesterville, ON |
+| 2 | 1.0 | 0.0 | Allison, Miss. Helen Loraine | female | 2.0000 | 1.0 | 2.0 | 113781 | 151.5500 | C22 C26 | S | NaN | NaN | Montreal, PQ / Chesterville, ON |
+| 3 | 1.0 | 0.0 | Allison, Mr. Hudson Joshua Creighton | male | 30.0000 | 1.0 | 2.0 | 113781 | 151.5500 | C22 C26 | S | NaN | 135.0 | Montreal, PQ / Chesterville, ON |
+| 4 | 1.0 | 0.0 | Allison, Mrs. Hudson J C (Bessie Waldo Daniels) | female | 25.0000 | 1.0 | 2.0 | 113781 | 151.5500 | C22 C26 | S | NaN | NaN | Montreal, PQ / Chesterville, ON |
 
 
 
@@ -399,55 +282,11 @@ titanic_df.groupby(['pclass', 'survived']).size().unstack()
 
 
 
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>survived</th>
-      <th>0.0</th>
-      <th>1.0</th>
-    </tr>
-    <tr>
-      <th>pclass</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1.0</th>
-      <td>123</td>
-      <td>200</td>
-    </tr>
-    <tr>
-      <th>2.0</th>
-      <td>158</td>
-      <td>119</td>
-    </tr>
-    <tr>
-      <th>3.0</th>
-      <td>528</td>
-      <td>181</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
+| pclass | 0.0 | 1.0 |
+|--------|-----|-----|
+| 1.0 | 123 | 200 |
+| 2.0 | 158 | 119 |
+| 3.0 | 528 | 181 |
 
 We observe that:
 
@@ -496,62 +335,13 @@ air_passengers_data.head()
 ```
 
 
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Month</th>
-      <th>Passengers</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1949-01</td>
-      <td>112</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1949-02</td>
-      <td>118</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1949-03</td>
-      <td>132</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>1949-04</td>
-      <td>129</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>1949-05</td>
-      <td>121</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
+|   | Month | Passengers |
+|---|-------|------------|
+| 0 | 1949-01 | 112 |
+| 1 | 1949-02 | 118 |
+| 2 | 1949-03 | 132 |
+| 3 | 1949-04 | 129 |
+| 4 | 1949-05 | 121 |
 
 ```python
 air_passengers_data['Month'] = pd.to_datetime(air_passengers_data.Month)
