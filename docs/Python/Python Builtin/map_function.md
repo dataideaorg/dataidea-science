@@ -1,3 +1,11 @@
+---
+date: 2025-11-12
+categories:
+  - AI/ML
+  - Data Science
+author: Juma Shafara
+---
+
 # The `map()` function:
 
 The `map()` function in Python is used to apply a function to every item in an iterable—like a list or a tuple—and returns a new map object with the results.

@@ -1,3 +1,11 @@
+---
+date: 2025-11-12
+categories:
+  - AI/ML
+  - Data Science
+author: Juma Shafara
+---
+
 # The `filter()` function in Python
 
 The filter() function is used to filter elements from an iterable based on a condition.

@@ -1,3 +1,11 @@
+---
+date: 2025-11-12
+categories:
+  - AI/ML
+  - Data Science
+author: Juma Shafara
+---
+
 # Python `reduce()` Function Explained
 
 
