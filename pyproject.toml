@@ -49,7 +49,7 @@ dependencies = [
     "watchdog (==6.0.0)",
     "mkdocs-jupyter (>=0.25.1,<0.26.0)",
     "jupyterlab (>=4.4.3,<5.0.0)",
-    "matplotlib (>=3.10.3,<4.0.0)"
+    "matplotlib (>=3.10.3,<4.0.0)",
 ]
 
 
