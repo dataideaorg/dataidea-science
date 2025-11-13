@@ -216,6 +216,9 @@ extra:
     - icon: fontawesome/solid/envelope
       link: mailto:dataideaorg@gmail.com
       name: Contact us by email
+  analytics:
+    provider: google
+    property: G-ZD84FCME05
 
 plugins:
   - search
