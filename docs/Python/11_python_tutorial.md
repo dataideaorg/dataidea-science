@@ -388,6 +388,9 @@ statement.strip()
 
 You can find a list of all string methods in the [documentation](https://docs.python.org/3/library/stdtypes.html#string-methods).
 
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8076040302380238"
+     crossorigin="anonymous"></script>
+<!-- inline_horizontal -->
 <ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-8076040302380238"
@@ -909,6 +912,9 @@ def greet(name:str='You')->str:
     [0;31mType:[0m      function
 
 
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8076040302380238"
+     crossorigin="anonymous"></script>
+<!-- inline_horizontal -->
 <ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-8076040302380238"
