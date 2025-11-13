@@ -192,10 +192,11 @@ theme:
     text: DM Sans
     code: DM Mono
 
-  # palette - forced dark mode
+  # palette - forced dark mode (always)
   palette:
-    scheme: slate
-    primary: custom
+    - scheme: slate
+      primary: grey
+      accent: grey
 
 # extra
 extra_css:
