@@ -4,7 +4,8 @@ site_author: Juma Shafara
 site_description: DATAIDEA SCIENCE
 
 nav:
-  - Home: index.md
+  - Home: https://www.dataidea.org/
+  - All Courses: index.md
   - Python:
       - Overview: Python/11_python_tutorial.md
       - End of Course Exercise: Python/13_end_of_course_exercise.md
