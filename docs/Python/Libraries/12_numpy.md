@@ -111,15 +111,15 @@ type(num_arr)
 #### Data Types
 The table below describes some of the most common data types we use in numpy
 
-Data Type | Description
-----------|-----------
-`np.int64`|Signed 64-bit integer types
-`np.float32`|Standard double-precision floating point
-`np.complex`|Complex numbers represented by 128 floats
-`np.bool`|Boolean type storing `True` and `False` values
-`np.object`|Python object type
-`np.string_`|Fixed-length string type
-`np.unicode_`|Fixed-length unicode type
+| Data Type      | Description                                    |
+|----------------|------------------------------------------------|
+| `np.int64`     | Signed 64-bit integer types                    |
+| `np.float32`   | Standard double-precision floating point       |
+| `np.complex`   | Complex numbers represented by 128 floats      |
+| `np.bool`      | Boolean type storing `True` and `False` values |
+| `np.object`    | Python object type                             |
+| `np.string_`   | Fixed-length string type                       |
+| `np.unicode_`  | Fixed-length unicode type                      |
 
 We can check the shape of a numpy array by using the `shape` attribute as demonstrated below
 
