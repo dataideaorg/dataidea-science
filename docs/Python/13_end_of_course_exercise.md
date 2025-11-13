@@ -137,6 +137,15 @@ Answer : 8.00
 # your solution
 ```
 
+<!-- inline_horizontal -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8076040302380238"
+     data-ad-slot="9021194372"
+     data-ad-format="auto"
+     data-full-width-responsive="true">
+</ins>
+
 11. Write a program to calculate the sum of all the even numbers up to 100.
 
 
@@ -234,6 +243,15 @@ Implement calculation of circumference and areas as separate functions.
 ```python
 # your solution
 ```
+
+<!-- inline_horizontal -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8076040302380238"
+     data-ad-slot="9021194372"
+     data-ad-format="auto"
+     data-full-width-responsive="true">
+</ins>
 
 21. Write a program to read the file “my file.txt” which has the message:
 ```
@@ -391,6 +409,15 @@ elements of the matrices are integers. Use functions to while implementing this 
 ```python
 # your solution
 ```
+
+<!-- inline_horizontal -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8076040302380238"
+     data-ad-slot="9021194372"
+     data-ad-format="auto"
+     data-full-width-responsive="true">
+</ins>
 
 ## Congratulation!
 Congratulations on completing this Python Fundamentals Course
