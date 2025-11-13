@@ -99,6 +99,15 @@ type(num_arr)
 
 
 
+<!-- inline_horizontal -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8076040302380238"
+     data-ad-slot="9021194372"
+     data-ad-format="auto"
+     data-full-width-responsive="true">
+</ins>
+
 #### Data Types
 The table below describes some of the most common data types we use in numpy
 
@@ -301,6 +310,15 @@ array1 == array2
 ```python
 array1 > 3
 ```
+
+<!-- inline_horizontal -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8076040302380238"
+     data-ad-slot="9021194372"
+     data-ad-format="auto"
+     data-full-width-responsive="true">
+</ins>
 
 #### Aggregate functions
 

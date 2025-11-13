@@ -700,7 +700,14 @@ concatenated_dataframe.sample(n=3)
 </table>
 </div>
 
-
+<!-- inline_horizontal -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8076040302380238"
+     data-ad-slot="9021194372"
+     data-ad-format="auto"
+     data-full-width-responsive="true">
+</ins>
 
 ## Selection
 
@@ -1604,6 +1611,14 @@ country_data.count()
     dtype: int64
 
 
+<!-- inline_horizontal -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8076040302380238"
+     data-ad-slot="9021194372"
+     data-ad-format="auto"
+     data-full-width-responsive="true">
+</ins>
 
 #### Summary
 
