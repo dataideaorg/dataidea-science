@@ -1935,6 +1935,24 @@ jsmin = ">=3.0.1"
 mkdocs = ">=1.4.1"
 
 [[package]]
+name = "mknotebooks"
+version = "0.8.0"
+description = "Plugin for mkdocs to generate markdown documents from jupyter notebooks."
+optional = false
+python-versions = "*"
+groups = ["main"]
+files = [
+    {file = "mknotebooks-0.8.0-py3-none-any.whl", hash = "sha256:4a9b998260c09bcc311455a19a44cc395a30ee82dc1e86e3316dd09f2445ebd3"},
+]
+
+[package.dependencies]
+gitpython = "*"
+jupyter-client = "*"
+markdown = ">=3.3.3"
+mkdocs = ">=1.5.0"
+nbconvert = ">=6.0.0"
+
+[[package]]
 name = "nbclient"
 version = "0.10.2"
 description = "A client library for executing notebooks. Formerly nbconvert's ExecutePreprocessor."
@@ -3287,4 +3305,4 @@ test = ["pytest", "websockets"]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.13"
-content-hash = "29f8dd4e87cdaab3ca6b68a56016eaea46adfe6404711c61c3d71b3536f0c274"
+content-hash = "3c648c55a99b187ea95f71da4191a24c72383570b3dafce5163faf07adf35d8a"

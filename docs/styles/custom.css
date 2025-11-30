@@ -596,20 +596,6 @@ td:first-child {
     background-color: var(--background);
 }
 
-/* Code blocks */
-.md-typeset pre,
-.md-typeset code {
-    background-color: var(--card-background) !important;
-    color: var(--text-primary) !important;
-    border: 1px solid var(--border-color);
-}
-
-/* Inline code */
-.md-typeset code {
-    background-color: var(--card-background) !important;
-    color: var(--text-primary) !important;
-}
-
 /* Links */
 .md-typeset a {
     color: var(--text-secondary);
@@ -1093,6 +1079,17 @@ td:first-child {
 /* Pause animation on hover */
 .carousel-track:hover {
     animation-play-state: paused;
+}
+
+/* Code blocks */
+.md-typeset pre,
+.md-typeset code {
+    background-color: var(--card-background) !important;
+}
+
+/* Inline code */
+.md-typeset code {
+    background-color: var(--card-background) !important;
 }
 
 

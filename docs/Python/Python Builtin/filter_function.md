@@ -43,15 +43,6 @@ print(even_numbers)
     [2, 4, 6, 8]
 
 
-<!-- inline_horizontal -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-8076040302380238"
-     data-ad-slot="9021194372"
-     data-ad-format="auto"
-     data-full-width-responsive="true">
-</ins>
-
 ### With `filter()`:
 
 
