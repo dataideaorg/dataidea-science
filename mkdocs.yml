@@ -7,34 +7,33 @@ nav:
   - Home: https://www.dataidea.org/
   - All Courses: index.md
   - Python:
-      - Overview: Python/11_python_tutorial.ipynb
+    - Overview: Python/11_python_tutorial.ipynb
+    - Basics:
+      - Outline: Python/Basics/00_python_programming_outline.ipynb
+      - Introduction: Python/Basics/01_basics.ipynb
+      - Variables: Python/Basics/02_variables.ipynb
+      - Numbers: Python/Basics/03_numbers.ipynb
+      - Strings: Python/Basics/03_strings.ipynb
+      - Operators: Python/Basics/04_operators.ipynb
+      - Containers: Python/Basics/05_containers.ipynb
+      - Flow Control: Python/Basics/06_flow_control.ipynb
+      - Advanced: Python/Basics/07_advanced.ipynb
+      - Modules: Python/Basics/08_modules.ipynb
+      - File Handling: Python/Basics/09_file_handling.ipynb
       - End of Course Exercise: Python/Basics/13_end_of_course_exercise.ipynb
-      - Basics:
-          - Outline: Python/Basics/00_python_programming_outline.ipynb
-          - Introduction: Python/Basics/01_basics.ipynb
-          - Variables: Python/Basics/02_variables.ipynb
-          - Numbers: Python/Basics/03_numbers.ipynb
-          - Strings: Python/Basics/03_strings.ipynb
-          - Operators: Python/Basics/04_operators.ipynb
-          - Containers: Python/Basics/05_containers.ipynb
-          - Flow Control: Python/Basics/06_flow_control.ipynb
-          - Advanced: Python/Basics/07_advanced.ipynb
-          - Modules: Python/Basics/08_modules.ipynb
-          - File Handling: Python/Basics/09_file_handling.ipynb
-          - End of Course Exercise: Python/Basics/13_end_of_course_exercise.ipynb
-      - Built-in:
-          - Filter Function: Python/Python Builtin/filter_function.md
-          - Map Function: Python/Python Builtin/map_function.md
-          - Reduce Function: Python/Python Builtin/reduce_function.md
-      - Libraries:
-          - NumPy Crash Course: Python/Libraries/12_numpy.md
-          - Pandas Crash Course: Python/Libraries/13_pandas.md
-          - Matplotlib Crash Course: Data Collection and Visulization/31_matplotlib_refined.md
-      - Exercises:
-          - Basics: Python/Exercises/02_basics_exercise.ipynb
-          - Objective Quiz: Python/Exercises/11_python_objective_quiz.ipynb
-          - True or False: Python/Exercises/12_true_or_false_quiz.ipynb
-          - End of Course: Python/Exercises/13_end_of_course_exercise.ipynb
+    - Built-in:
+      - Filter Function: Python/Python Builtin/filter_function.md
+      - Map Function: Python/Python Builtin/map_function.md
+      - Reduce Function: Python/Python Builtin/reduce_function.md
+    - Libraries:
+      - NumPy Crash Course: Python/Libraries/12_numpy.md
+      - Pandas Crash Course: Python/Libraries/13_pandas.md
+      - Matplotlib Crash Course: Data Collection and Visulization/31_matplotlib_refined.md
+    - Exercises:
+      - Basics: Python/Exercises/02_basics_exercise.ipynb
+      - Objective Quiz: Python/Exercises/11_python_objective_quiz.ipynb
+      - True or False: Python/Exercises/12_true_or_false_quiz.ipynb
+      - End of Course: Python/Exercises/13_end_of_course_exercise.ipynb
   - Data Collection and Visualization:
       - NumPy Crash Course: Python/Libraries/12_numpy.ipynb
       - Pandas Crash Course: Python/Libraries/13_pandas.ipynb
@@ -147,6 +146,7 @@ nav:
       - ReadMe: README.md
 
 
+
 markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
@@ -184,8 +184,8 @@ theme:
     - navigation.top
     - navigation.tabs
     - navigation.expand
-    # - navigation.sections
-    - navigation.indexes
+    - navigation.sections
+    # - navigation.indexes  # Disabled to show subsections in sidebar
     - content.code.copy
 
     # announcements
