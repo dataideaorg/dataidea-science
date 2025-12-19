@@ -1,6 +1,6 @@
 # DATAIDEA Science
 
-A comprehensive educational platform for data science, machine learning, and deep learning. This project provides structured learning materials covering Python programming, data analysis, statistical methods, machine learning algorithms, and deep learning with PyTorch.
+This project provides structured learning materials covering Python programming, data analysis, statistical methods, machine learning algorithms, and deep learning with PyTorch.
 
 ## About This Project
 
