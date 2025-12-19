@@ -1,7 +1,7 @@
 site_name: DATAIDEA
 site_url: https://science.dataidea.org/
 site_author: Juma Shafara
-site_description: DATAIDEA SCIENCE
+site_description: DATAIDEA SCIENCE - Learn Programming for Data Science
 
 nav:
   - Home: https://www.dataidea.org/
