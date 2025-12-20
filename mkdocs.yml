@@ -60,9 +60,9 @@ nav:
           - Pipelines: Machine Learning/82_sklearn_pipeline.ipynb
           - Hyperparameter Tuning: Machine Learning/83_GridSearchCV.ipynb
       - Exercises:
-          - Classification Metrics: Machine Learning/classification_metrics_quiz.ipynb
-          - Missing Data: Machine Learning/handling_missing_data_quiz.ipynb
-          - Pipeline: Machine Learning/pipelining_quiz.ipynb
+          - Classification Metrics: Machine Learning/Exercises/classification_metrics_quiz.ipynb
+          - Missing Data: Machine Learning/Exercises/handling_missing_data_quiz.ipynb
+          - Pipeline: Machine Learning/Exercises/pipelining_quiz.ipynb
   - Deep Learning:
       - Introduction: Deep Learning/outline.md
       - Tensors & Datasets:
