@@ -6,7 +6,6 @@ site_description: DATAIDEA SCIENCE - Learn Programming for Data Science
 nav:
   - Home: https://www.dataidea.org/
   - All Courses: index.md
-  - Books: books.md
   - Python:
     - Overview: Python/11_python_tutorial.ipynb
     - Basics:
@@ -142,9 +141,8 @@ nav:
       - How KNN Works: Extras/how_KNN_works.ipynb
       - Handling Imbalanced Data: Extras/handling_imbalanced_data.ipynb
       - Classification Metrics: Extras/classification_metrics.ipynb
-  - About:
-      - License: LICENSE
-      - ReadMe: README.md
+  - Books: books.md
+  - About: README.md
 
 
 
