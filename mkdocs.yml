@@ -143,6 +143,13 @@ nav:
       - Aggregate Functions: SQL/04_aggregate_functions.md
       - Joins: SQL/05_joins.md
       - Subqueries: SQL/06_subqueries.md
+  - Git & GitHub:
+      - Introduction: Git/01_introduction.md
+      - Basic Commands: Git/02_basic_commands.md
+      - Branching: Git/03_branching.md
+      - GitHub Basics: Git/04_github.md
+      - Collaboration: Git/05_collaboration.md
+      - Advanced Git: Git/06_advanced.md
   - Extras:
       - Customer Analysis: Extras/customer_analysis.ipynb
       - How KNN Works: Extras/how_KNN_works.ipynb
