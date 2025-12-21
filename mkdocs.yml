@@ -6,6 +6,7 @@ site_description: DATAIDEA SCIENCE - Learn Programming for Data Science
 nav:
   - Home: https://www.dataidea.org/
   - All Courses: index.md
+  - Books: books.md
   - Python:
     - Overview: Python/11_python_tutorial.ipynb
     - Basics:
