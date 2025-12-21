@@ -4,14 +4,18 @@ A curated collection of essential books for your data science journey. All books
 
 ---
 
-## Prog
-**Author:** Wes McKinney
+## Programming for Data Science Complete RoadMap
+**Author:** Juma Shafara
 
-The definitive guide to using Python for data analysis. Learn pandas, NumPy, and other essential tools from the creator of pandas.
+This guide is designed to help you navigate the essential skills needed to become a successful
+data scientist. Whether you
+'
+re just starting out or looking to enhance your existing skills, this
+roadmap will provide a clear and structured path.
 
 **Topics:** Python | Data Analysis | Pandas
 
-[Download PDF](#){:target="_blank"}
+[Download PDF](https://drive.google.com/file/d/19CVy9L7XxUtb80DVD3GSx4_8j6LvDxJH/view?usp=drive_link)
 
 ---
 
@@ -25,7 +29,7 @@ The definitive guide to using Python for data analysis. Learn pandas, NumPy, and
 
 **Topics:** Python | Data Analysis | Pandas
 
-[Download PDF](#){:target="_blank"}
+[Download PDF](#)
 
 ---
 
@@ -36,7 +40,7 @@ A comprehensive guide to machine learning with scikit-learn, Keras, and TensorFl
 
 **Topics:** Machine Learning | Scikit-learn | TensorFlow
 
-[Download PDF](#){:target="_blank"}
+[Download PDF](#)
 
 ---
 
@@ -47,7 +51,7 @@ The definitive textbook on deep learning. Covers the mathematical foundations an
 
 **Topics:** Deep Learning | Neural Networks | Advanced
 
-[Download PDF](#){:target="_blank"}
+[Download PDF](#)
 
 ---
 
@@ -58,7 +62,7 @@ An accessible introduction to statistical learning methods. Includes R code exam
 
 **Topics:** Statistics | Machine Learning | R
 
-[Download PDF](#){:target="_blank"}
+[Download PDF](#)
 
 ---
 
@@ -69,7 +73,7 @@ A comprehensive treatment of modern statistical learning. More advanced than ISL
 
 **Topics:** Statistics | Machine Learning | Theory | Advanced
 
-[Download PDF](#){:target="_blank"}
+[Download PDF](#)
 
 ---
 
@@ -80,7 +84,7 @@ A comprehensive introduction to pattern recognition and machine learning from a 
 
 **Topics:** Pattern Recognition | Bayesian Methods | Advanced
 
-[Download PDF](#){:target="_blank"}
+[Download PDF](#)
 
 ---
 
