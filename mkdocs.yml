@@ -153,7 +153,7 @@ nav:
         - Inferential Statistics: Maths & Statistics/52_inferencial_statistics.md
         - Statistical Models: Maths & Statistics/53_implementing_statistical_models.md
         - Hypothesis Testing: Maths & Statistics/hypothesis_testing.md
-  - Resources:
+  - Others:
     - Books: books.md
     - Extras:
         - Customer Analysis: Extras/customer_analysis.ipynb
