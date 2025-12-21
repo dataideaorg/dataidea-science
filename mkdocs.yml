@@ -6,6 +6,14 @@ site_description: DATAIDEA SCIENCE - Learn Programming for Data Science
 nav:
   - Home: https://www.dataidea.org/
   - All Courses: index.md
+  - Books: books.md
+  - SQL:
+    - Introduction: SQL/01_introduction.md
+    - Basic Queries: SQL/02_basic_queries.md
+    - Filtering: SQL/03_filtering.md
+    - Aggregate Functions: SQL/04_aggregate_functions.md
+    - Joins: SQL/05_joins.md
+    - Subqueries: SQL/06_subqueries.md
   - Python:
     - Overview: Python/11_python_tutorial.ipynb
     - Basics:
