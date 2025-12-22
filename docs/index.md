@@ -45,16 +45,16 @@ article.md-content__inner {
   </div>
 
   <div class="course-cards-grid">
-    <!-- Python Programming Card -->
+    <!-- Python Programming Fundamentals Card -->
     <div class="course-card-modern">
-      <h3 class="course-card-title">Python Programming</h3>
-      <p class="course-card-description">Start with the basics of Python, a versatile and powerful programming language. This course lays the foundation for your data science journey.</p>
+      <h3 class="course-card-title">Python Programming Fundamentals</h3>
+      <p class="course-card-description">Start with the basics of Python, a versatile and powerful programming language. Master syntax, data structures, algorithms, and essential programming concepts.</p>
 
       <div class="course-skills">
-        <span class="skill-tag">Variables</span>
+        <span class="skill-tag">Python Basics</span>
+        <span class="skill-tag">DSA</span>
         <span class="skill-tag">Functions</span>
         <span class="skill-tag">OOP</span>
-        <span class="skill-tag">Libraries</span>
       </div>
 
       <div class="course-meta">
@@ -74,16 +74,74 @@ article.md-content__inner {
       </div>
     </div>
 
-    <!-- Data Analysis Card -->
+    <!-- Git & GitHub Card -->
     <div class="course-card-modern">
-      <h3 class="course-card-title">Python Data Analysis</h3>
-      <p class="course-card-description">Explore data analysis using libraries like Pandas, NumPy, and Matplotlib. Learn to transform raw data into actionable insights.</p>
+      <h3 class="course-card-title">Version Control with Git & GitHub</h3>
+      <p class="course-card-description">Master version control with Git and collaborate effectively using GitHub. Learn branching, merging, pull requests, and modern development workflows.</p>
 
       <div class="course-skills">
-        <span class="skill-tag">Pandas</span>
+        <span class="skill-tag">Version Control</span>
+        <span class="skill-tag">Collaboration</span>
+        <span class="skill-tag">Branching</span>
+        <span class="skill-tag">Pull Requests</span>
+      </div>
+
+      <div class="course-meta">
+        <div class="meta-item">
+          <span class="meta-label">Duration</span>
+          <span class="meta-value">2 weeks</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Level</span>
+          <span class="meta-value">Beginner</span>
+        </div>
+      </div>
+
+      <div class="course-card-buttons">
+        <a href="https://forms.gle/CPL4Rs2pmuR4yToKA" target="_blank" class="btn btn-primary btn-small">Enroll Now</a>
+        <a href="/Git/01_introduction/" class="btn btn-secondary btn-small">Use Free Resources</a>
+      </div>
+    </div>
+
+    <!-- SQL Card -->
+    <div class="course-card-modern">
+      <h3 class="course-card-title">SQL for Data Analysis</h3>
+      <p class="course-card-description">Learn to query, manipulate, and analyze data using SQL. Master joins, aggregations, subqueries, and database management for data-driven insights.</p>
+
+      <div class="course-skills">
+        <span class="skill-tag">Queries</span>
+        <span class="skill-tag">Joins</span>
+        <span class="skill-tag">Aggregations</span>
+        <span class="skill-tag">Subqueries</span>
+      </div>
+
+      <div class="course-meta">
+        <div class="meta-item">
+          <span class="meta-label">Duration</span>
+          <span class="meta-value">3 weeks</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Level</span>
+          <span class="meta-value">Beginner</span>
+        </div>
+      </div>
+
+      <div class="course-card-buttons">
+        <a href="https://forms.gle/CPL4Rs2pmuR4yToKA" target="_blank" class="btn btn-primary btn-small">Enroll Now</a>
+        <a href="/Data%20Collection%20and%20Visulization/SQL/01_introduction/" class="btn btn-secondary btn-small">Use Free Resources</a>
+      </div>
+    </div>
+
+    <!-- Data Analysis & Visualization Card -->
+    <div class="course-card-modern">
+      <h3 class="course-card-title">Data Analysis & Visualization with Python</h3>
+      <p class="course-card-description">Explore data analysis using NumPy, Pandas, and Matplotlib. Learn to clean, transform, visualize, and extract actionable insights from real-world datasets.</p>
+
+      <div class="course-skills">
         <span class="skill-tag">NumPy</span>
+        <span class="skill-tag">Pandas</span>
         <span class="skill-tag">Matplotlib</span>
-        <span class="skill-tag">Seaborn</span>
+        <span class="skill-tag">Data Cleaning</span>
       </div>
 
       <div class="course-meta">
@@ -103,16 +161,45 @@ article.md-content__inner {
       </div>
     </div>
 
+    <!-- Mathematics & Statistics Card -->
+    <div class="course-card-modern">
+      <h3 class="course-card-title">Mathematics & Statistics for Data Science</h3>
+      <p class="course-card-description">Build a strong mathematical foundation for data science. Master statistics, probability, hypothesis testing, linear algebra, and essential calculus concepts.</p>
+
+      <div class="course-skills">
+        <span class="skill-tag">Statistics</span>
+        <span class="skill-tag">Probability</span>
+        <span class="skill-tag">Linear Algebra</span>
+        <span class="skill-tag">Hypothesis Testing</span>
+      </div>
+
+      <div class="course-meta">
+        <div class="meta-item">
+          <span class="meta-label">Duration</span>
+          <span class="meta-value">6 weeks</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Level</span>
+          <span class="meta-value">Intermediate</span>
+        </div>
+      </div>
+
+      <div class="course-card-buttons">
+        <a href="https://forms.gle/CPL4Rs2pmuR4yToKA" target="_blank" class="btn btn-primary btn-small">Enroll Now</a>
+        <a href="/Maths%20%26%20Statistics/50_maths_and_stats_for_ds/" class="btn btn-secondary btn-small">Use Free Resources</a>
+      </div>
+    </div>
+
     <!-- Machine Learning Card -->
     <div class="course-card-modern">
-      <h3 class="course-card-title">Machine Learning</h3>
-      <p class="course-card-description">Discover the principles of machine learning and gain hands-on experience in building and optimizing models.</p>
+      <h3 class="course-card-title">Machine Learning with Python</h3>
+      <p class="course-card-description">Discover machine learning principles and gain hands-on experience with scikit-learn. Build, evaluate, and optimize predictive models for real-world problems.</p>
 
       <div class="course-skills">
         <span class="skill-tag">Scikit-learn</span>
         <span class="skill-tag">Algorithms</span>
-        <span class="skill-tag">Models</span>
-        <span class="skill-tag">Tuning</span>
+        <span class="skill-tag">Model Evaluation</span>
+        <span class="skill-tag">Hyperparameter Tuning</span>
       </div>
 
       <div class="course-meta">
@@ -132,39 +219,10 @@ article.md-content__inner {
       </div>
     </div>
 
-    <!-- Deep Learning & AI Card -->
+    <!-- Time Series Analysis Card -->
     <div class="course-card-modern">
-      <h3 class="course-card-title">Deep Learning & AI</h3>
-      <p class="course-card-description">Master neural networks, deep learning architectures, and AI techniques. Build cutting-edge models using PyTorch and modern deep learning frameworks.</p>
-
-      <div class="course-skills">
-        <span class="skill-tag">PyTorch</span>
-        <span class="skill-tag">Neural Networks</span>
-        <span class="skill-tag">CNNs</span>
-        <span class="skill-tag">RNNs</span>
-      </div>
-
-      <div class="course-meta">
-        <div class="meta-item">
-          <span class="meta-label">Duration</span>
-          <span class="meta-value">8 weeks</span>
-        </div>
-        <div class="meta-item">
-          <span class="meta-label">Level</span>
-          <span class="meta-value">Advanced</span>
-        </div>
-      </div>
-
-      <div class="course-card-buttons">
-        <a href="https://forms.gle/CPL4Rs2pmuR4yToKA" target="_blank" class="btn btn-primary btn-small">Enroll Now</a>
-        <a href="/Deep%20Learning/outline/" class="btn btn-secondary btn-small">Use Free Resources</a>
-      </div>
-    </div>
-
-    <!-- Time Series Card -->
-    <div class="course-card-modern">
-      <h3 class="course-card-title">Time Series</h3>
-      <p class="course-card-description">Learn time series analysis and forecasting techniques. Master ARIMA, seasonal decomposition, and advanced forecasting methods.</p>
+      <h3 class="course-card-title">Time Series Analysis</h3>
+      <p class="course-card-description">Learn time series analysis and forecasting techniques. Master ARIMA, seasonal decomposition, trend analysis, and advanced forecasting methods for temporal data.</p>
 
       <div class="course-skills">
         <span class="skill-tag">ARIMA</span>
@@ -190,32 +248,32 @@ article.md-content__inner {
       </div>
     </div>
 
-    <!-- Maths & Statistics Card -->
+    <!-- Deep Learning Card -->
     <div class="course-card-modern">
-      <h3 class="course-card-title">Maths & Statistics</h3>
-      <p class="course-card-description">Build a strong mathematical foundation for data science. Master statistics, probability, linear algebra, and calculus concepts.</p>
+      <h3 class="course-card-title">Deep Learning with PyTorch</h3>
+      <p class="course-card-description">Master neural networks and deep learning architectures using PyTorch. Build CNNs, implement gradient descent, and create cutting-edge AI models.</p>
 
       <div class="course-skills">
-        <span class="skill-tag">Statistics</span>
-        <span class="skill-tag">Probability</span>
-        <span class="skill-tag">Linear Algebra</span>
-        <span class="skill-tag">Calculus</span>
+        <span class="skill-tag">PyTorch</span>
+        <span class="skill-tag">Neural Networks</span>
+        <span class="skill-tag">CNNs</span>
+        <span class="skill-tag">Deep Learning</span>
       </div>
 
       <div class="course-meta">
         <div class="meta-item">
           <span class="meta-label">Duration</span>
-          <span class="meta-value">6 weeks</span>
+          <span class="meta-value">8 weeks</span>
         </div>
         <div class="meta-item">
           <span class="meta-label">Level</span>
-          <span class="meta-value">Intermediate</span>
+          <span class="meta-value">Advanced</span>
         </div>
       </div>
 
       <div class="course-card-buttons">
         <a href="https://forms.gle/CPL4Rs2pmuR4yToKA" target="_blank" class="btn btn-primary btn-small">Enroll Now</a>
-        <a href="/Maths%20%26%20Statistics/50_maths_and_stats_for_ds/" class="btn btn-secondary btn-small">Use Free Resources</a>
+        <a href="/Deep%20Learning/outline/" class="btn btn-secondary btn-small">Use Free Resources</a>
       </div>
     </div>
   </div>
