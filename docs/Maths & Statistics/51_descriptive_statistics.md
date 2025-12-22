@@ -833,7 +833,7 @@ import nbdev; nbdev.nbdev_export()
 <script src="https://utteranc.es/client.js"
         repo="dataideaorg/dataidea-science"
         issue-term="pathname"
-        theme="github-light"
+        theme="github-dark"
         crossorigin="anonymous"
         async>
 </script>
