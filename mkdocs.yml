@@ -46,13 +46,6 @@ nav:
           - Hash Tables: DSA/06_hash_tables.md
           - Sorting Algorithms: DSA/07_sorting_algorithms.md
   - Data Collection, Visualization & Analysis:
-      - SQL:
-          - Introduction: Data Collection and Visulization/SQL/01_introduction.md
-          - Basic Queries: Data Collection and Visulization/SQL/02_basic_queries.md
-          - Filtering: Data Collection and Visulization/SQL/03_filtering.md
-          - Aggregate Functions: Data Collection and Visulization/SQL/04_aggregate_functions.md
-          - Joins: Data Collection and Visulization/SQL/05_joins.md
-          - Subqueries: SQL/06_subqueries.md
       - Data Collection:
           - KoboToolbox: Data Collection and Visulization/kobo_toolbox.md
       - Data Analysis Libraries:
@@ -64,12 +57,20 @@ nav:
           - Weather Data Project: Data Collection and Visulization/21_weather_data.ipynb
           - Data Exploration & Cleaning Exercise: Data Collection and Visulization/32_data_exploration_and_cleaning_exercise.ipynb
       - Mathematics & Statistics for Data Analysis:
-          - Overview: Maths & Statistics/50_maths_and_stats_for_ds.md
-          - Eigen Values & Vectors: Maths & Statistics/1_eigen_values_vectors.md
-          - Descriptive Statistics: Maths & Statistics/51_descriptive_statistics.md
-          - Inferential Statistics: Maths & Statistics/52_inferencial_statistics.md
-          - Statistical Models: Maths & Statistics/53_implementing_statistical_models.md
-          - Hypothesis Testing: Maths & Statistics/hypothesis_testing.md
+          - Introduction: Maths & Statistics/01_introduction.md
+          - Descriptive Statistics: Maths & Statistics/02_descriptive_statistics.md
+          - Probability Foundations: Maths & Statistics/03_probability_foundations.md
+          - Inferential Statistics: Maths & Statistics/04_inferential_statistics.md
+          - Statistical Models: Maths & Statistics/05_statistical_models.md
+          - Advanced Linear Algebra: Maths & Statistics/06_linear_algebra_advanced.md
+          - Hypothesis Testing Quiz: Maths & Statistics/hypothesis_testing.md
+      - SQL:
+          - Introduction: Data Collection and Visulization/SQL/01_introduction.md
+          - Basic Queries: Data Collection and Visulization/SQL/02_basic_queries.md
+          - Filtering: Data Collection and Visulization/SQL/03_filtering.md
+          - Aggregate Functions: Data Collection and Visulization/SQL/04_aggregate_functions.md
+          - Joins: Data Collection and Visulization/SQL/05_joins.md
+          - Subqueries: SQL/06_subqueries.md
   - Machine Learning & AI:
       - Foundations:
           - Overview of Machine Learning: Machine Learning/41_overview_of_machine_learning.ipynb

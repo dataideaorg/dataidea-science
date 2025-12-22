@@ -9,6 +9,31 @@ keywords: [descriptive statistics, "what is descriptive statistics", Measures of
 
 ![Photo by DATAIDEA](../../../assets/banner4.png)
 
+## Introduction
+
+Descriptive statistics is a branch of statistics that deals with the presentation and summary of data in a meaningful and informative way. This module provides the foundation for understanding your data before moving to more advanced statistical analysis.
+
+## Learning Objectives
+
+By the end of this module, you will be able to:
+
+- Calculate and interpret measures of central tendency (mean, median, mode)
+- Understand and apply measures of variability (variance, standard deviation, range, IQR)
+- Describe distribution shape using skewness and kurtosis
+- Measure associations between variables using correlation and chi-square tests
+- Use Python to compute and visualize descriptive statistics
+
+## Prerequisites
+
+Before starting this module, you should be familiar with:
+- Basic Python programming
+- NumPy and Pandas basics
+- Basic data visualization with Matplotlib
+- [Introduction to Mathematics & Statistics](01_introduction.md)
+
+## Next Steps
+
+After completing this module, you'll be ready to learn about [Probability Foundations](03_probability_foundations.md) and [Inferential Statistics](04_inferential_statistics.md).
 
 ```python
 #| hide
@@ -818,6 +843,29 @@ Age Interval | Frequency
 90-99 |	3
 
 **Note:** *The intervals for the values are also called bin*
+
+## Key Takeaways
+
+1. **Measures of central tendency** (mean, median, mode) describe where data is centered.
+2. **Measures of variability** (variance, standard deviation, range, IQR) describe how spread out data is.
+3. **Skewness** indicates asymmetry; **kurtosis** indicates tail heaviness.
+4. **Correlation** measures linear relationships between continuous variables.
+5. **Chi-square tests** assess associations between categorical variables.
+6. Always visualize your data alongside numerical summaries for better understanding.
+
+## Applications in Data Science
+
+- **Exploratory Data Analysis (EDA)**: First step in any data science project
+- **Data quality assessment**: Identify outliers, missing patterns, data quality issues
+- **Feature engineering**: Understand relationships to create better features
+- **Model assumptions**: Check if data meets assumptions for statistical models
+- **Communication**: Summarize findings for stakeholders
+
+## Next Steps
+
+Now that you understand descriptive statistics, you're ready to learn about:
+- [Probability Foundations](03_probability_foundations.md) - Understanding uncertainty and probability
+- [Inferential Statistics](04_inferential_statistics.md) - Making inferences about populations
 
 ### Further Reading
 
