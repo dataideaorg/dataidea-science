@@ -53,15 +53,16 @@ nav:
           - Aggregate Functions: Data Collection and Visulization/SQL/04_aggregate_functions.md
           - Joins: Data Collection and Visulization/SQL/05_joins.md
           - Subqueries: SQL/06_subqueries.md
+      - Data Collection:
+          - KoboToolbox: Data Collection and Visulization/kobo_toolbox.md
       - Data Analysis Libraries:
           - NumPy Crash Course: Python/Libraries/12_numpy.ipynb
           - Pandas Crash Course: Python/Libraries/13_pandas.ipynb
-      - Data Collection & Exploration:
+          - Matplotlib Crash Course: Data Collection and Visulization/31_matplotlib_refined.ipynb
+      - Data Exploration & Cleaning:
+          - Handling Missing Data: Data Collection and Visulization/76_handling_missing_data.ipynb
           - Weather Data Project: Data Collection and Visulization/21_weather_data.ipynb
           - Data Exploration & Cleaning Exercise: Data Collection and Visulization/32_data_exploration_and_cleaning_exercise.ipynb
-          - Handling Missing Data: Data Collection and Visulization/76_handling_missing_data.ipynb
-      - Visualization:
-          - Matplotlib Crash Course: Data Collection and Visulization/31_matplotlib_refined.ipynb
       - Mathematics & Statistics for Data Analysis:
           - Overview: Maths & Statistics/50_maths_and_stats_for_ds.md
           - Eigen Values & Vectors: Maths & Statistics/1_eigen_values_vectors.md
