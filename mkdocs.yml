@@ -34,13 +34,6 @@ nav:
       - Objective Quiz: Python/Exercises/11_python_objective_quiz.ipynb
       - True or False: Python/Exercises/12_true_or_false_quiz.ipynb
       - End of Course: Python/Exercises/13_end_of_course_exercise.ipynb
-  - SQL:
-    - Introduction: SQL/01_introduction.md
-    - Basic Queries: SQL/02_basic_queries.md
-    - Filtering: SQL/03_filtering.md
-    - Aggregate Functions: SQL/04_aggregate_functions.md
-    - Joins: SQL/05_joins.md
-    - Subqueries: SQL/06_subqueries.md
   - Git & GitHub:
     - Introduction: Git/01_introduction.md
     - Basic Commands: Git/02_basic_commands.md
@@ -48,7 +41,22 @@ nav:
     - GitHub Basics: Git/04_github.md
     - Collaboration: Git/05_collaboration.md
     - Advanced Git: Git/06_advanced.md
+  - Data Structures & Algorithms:
+    - Introduction: DSA/01_introduction.md
+    - Arrays and Lists: DSA/02_arrays_and_lists.md
+    - Stacks and Queues: DSA/03_stacks_and_queues.md
+    - Linked Lists: DSA/04_linked_lists.md
+    - Trees: DSA/05_trees.md
+    - Hash Tables: DSA/06_hash_tables.md
+    - Sorting Algorithms: DSA/07_sorting_algorithms.md
   - Data Collection and Visualization:
+      - SQL:
+          - Introduction: Data Collection and Visulization/SQL/01_introduction.md
+          - Basic Queries: Data Collection and Visulization/SQL/02_basic_queries.md
+          - Filtering: Data Collection and Visulization/SQL/03_filtering.md
+          - Aggregate Functions: Data Collection and Visulization/SQL/04_aggregate_functions.md
+          - Joins: Data Collection and Visulization/SQL/05_joins.md
+          - Subqueries: SQL/06_subqueries.md
       - NumPy Crash Course: Python/Libraries/12_numpy.ipynb
       - Pandas Crash Course: Python/Libraries/13_pandas.ipynb
       - Weather Data: Data Collection and Visulization/21_weather_data.ipynb
@@ -191,14 +199,13 @@ theme:
   features:
     # header
     - header.autohide
-
     # navigation
     - navigation.footer
     - navigation.top
     - navigation.tabs
-    - navigation.expand
-    - navigation.sections
-    # - navigation.indexes  # Disabled to show subsections in sidebar
+    # - navigation.expand  # Disabled to make sections collapsible
+    # - navigation.sections  # Disabled to make sections collapsible
+    - navigation.indexes
     - content.code.copy
 
     # announcements
