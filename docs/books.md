@@ -29,7 +29,7 @@ The definitive guide to using Python for data analysis. Learn pandas, NumPy, and
 
 **Topics:** Python | Data Analysis | Pandas
 
-[Download PDF](#)
+[Download PDF](https://drive.google.com/file/d/1H-LRD2vJO0IV3uPbgrKIvvBmbiKh3Sky/view?usp=sharing)
 
 ---
 
@@ -40,7 +40,7 @@ A comprehensive guide to machine learning with scikit-learn, Keras, and TensorFl
 
 **Topics:** Machine Learning | Scikit-learn | TensorFlow
 
-[Download PDF](#)
+[Download PDF](https://drive.google.com/file/d/1-zWO7TRDFZrZLYn_rOSl8eL0NZDKpCkk/view?usp=sharing)
 
 ---
 
@@ -51,40 +51,7 @@ The definitive textbook on deep learning. Covers the mathematical foundations an
 
 **Topics:** Deep Learning | Neural Networks | Advanced
 
-[Download PDF](#)
-
----
-
-## Introduction to Statistical Learning
-**Authors:** Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani
-
-An accessible introduction to statistical learning methods. Includes R code examples and practical applications.
-
-**Topics:** Statistics | Machine Learning | R
-
-[Download PDF](#)
-
----
-
-## The Elements of Statistical Learning
-**Authors:** Trevor Hastie, Robert Tibshirani, Jerome Friedman
-
-A comprehensive treatment of modern statistical learning. More advanced than ISL, covering theory and methodology.
-
-**Topics:** Statistics | Machine Learning | Theory | Advanced
-
-[Download PDF](#)
-
----
-
-## Pattern Recognition and Machine Learning
-**Author:** Christopher Bishop
-
-A comprehensive introduction to pattern recognition and machine learning from a Bayesian perspective.
-
-**Topics:** Pattern Recognition | Bayesian Methods | Advanced
-
-[Download PDF](#)
+[Download PDF](https://drive.google.com/file/d/1PnxLagMCX49BsUN3o41oYXVzcWjY15Lu/view?usp=drive_link)
 
 ---
 
