@@ -19,9 +19,6 @@ roadmap will provide a clear and structured path.
 
 ---
 
-
----
-
 ## Python for Data Analysis
 **Author:** Wes McKinney
 
