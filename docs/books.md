@@ -52,5 +52,16 @@ The definitive textbook on deep learning. Covers the mathematical foundations an
 
 ---
 
+## Feature Engineering for Machine Learning
+**Authors:** Ian Goodfellow, Yoshua Bengio, Aaron Courville
+
+Machine learning fits mathematical models to data in order to derive insights or make predictions.
+
+**Topics:** Feature Engineering, Machine Learning, Neural Networks
+
+[Download PDF](Machine learning fits mathematical models to data in order to derive insights or make predictions.)
+
+---
+
 !!! tip "Suggest a Book"
     Know a great data science book that should be on this list? [Email us](mailto:dataideaorg@gmail.com) your suggestions!
