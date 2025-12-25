@@ -2,7 +2,19 @@
 
 {% block extrahead %}
   <!-- Google AdSense -->
-
+  <!-- Google Translate Widget -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,fr,es,pt,ar,sw',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false,
+        gaTrack: true,
+        gaId: 'G-ZD84FCME05'
+      }, 'google_translate_element');
+    }
+  </script>
 {% endblock %}
 
 {% block announce %}
@@ -20,6 +32,12 @@
     </a>
   </div>
 </div>
+{% endblock %}
+
+{% block content %}
+  <!-- Google Translate Element -->
+  <div id="google_translate_element"></div>
+  {{ super() }}
 {% endblock %}
 
 {% block styles %}
