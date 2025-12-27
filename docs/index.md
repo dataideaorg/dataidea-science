@@ -374,7 +374,7 @@ article.md-content__inner {
     <p>
       To be among the first to hear about future updates of the course materials, simply enter your email below, follow us on
       <a href="https://x.com/dataideaorg"><span class="material-icons" style="font-size: 1rem; vertical-align: middle;">open_in_new</span> Twitter</a>,
-      or subscribe to our <a href="https://www.youtube.com/@dataidea-science"><span class="material-icons" style="font-size: 1rem; vertical-align: middle;">play_circle</span> YouTube channel</a>.
+      or subscribe to our <a href="https://www.youtube.com/@dataideaorg"><span class="material-icons" style="font-size: 1rem; vertical-align: middle;">play_circle</span> YouTube channel</a>.
     </p>
     <script async src="https://subscribe-forms.beehiiv.com/embed.js"></script>
     <iframe src="https://subscribe-forms.beehiiv.com/1183471d-1aea-40d3-aa5e-81264543bdac" class="beehiiv-embed" data-test-id="beehiiv-embed" frameborder="0" scrolling="no" style="width: 400px; height: 45px; margin: 0; border-radius: 0px 0px 0px 0px !important; background-color: transparent; box-shadow: 0 0 #0000; max-width: 100%;"></iframe>

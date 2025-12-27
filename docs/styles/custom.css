@@ -451,11 +451,11 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Links */
 .md-typeset a {
-    color: var(--text-secondary);
+    color: #008374;
 }
 
 .md-typeset a:hover {
-    color: var(--text-primary);
+    color: #67FFF0;
 }
 
 /* Admonitions (info boxes) */
