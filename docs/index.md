@@ -38,8 +38,8 @@ article.md-content__inner {
 
 <section class="courses-section" id="courses" style="margin-top: 0; padding-top: 0;">
   <div class="section-header">
-    <h1 class="section-title-modern">Programming for Data Science</h1>
-<p class="partnerships-description">
+    <h2 class="section-title-modern">Programming for Data Science</h2>
+   <p class="partnerships-description">
       This documentation covers essential technologies and tools you need to become a confident Fullstack Data Scientist. These courses can be taken individually or as a whole comprehensive course.
     </p>
   </div>
